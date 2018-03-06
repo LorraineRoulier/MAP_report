@@ -17,6 +17,7 @@
  \usepackage{soul}
  \usepackage{color}
  \usepackage{amsfonts}
+ \usepackage{amsmath}
  
  
 \title{Low Dimensional Embedding of Environmental Variables}      % renseigne le titre
@@ -66,6 +67,21 @@ The subset is often a slice of longitudes containing all latitudes, as we assume
 \caption{An example of subset in grey}
 \end{figure}
 
+We classified the data according to the latitude, creating five classes listed in the table below: 
+\begin{figure}[H]
+ \begin{center}
+	
+	\begin{tabular}{|c|c|c|c|c|c|}
+		 \hline    
+	  	& North &Temperate north & Equator &  Temperate South & South\\ 
+		\hline
+		Latitudes & 90 to 66 & 66 to 23 & 23 to -23 & -23 to -66 & -66 to -90 \\
+		\hline
+		  \end{tabular}
+\end{center}
+\caption{First lign of our dataset}
+\end{figure}
+
 \section{Principal Component Analysis - PCA}
 	\subsection{Method}
 	
@@ -79,7 +95,47 @@ subject to $ M \in \mathcal{O}^{d \times r} $ where $ r<d $.
 	\subsection{Results}
 		\subsubsection{Two dimensions}
 		
-		We first implemented PCA and ran it with only two principal components
+		We first implemented PCA and ran it with only two principal components, which yielded the following graph for the whole dataset. The associated eigenvectors were 
+		\begin{align*}
+			y_{1} &= \begin{bmatrix} 
+					-0.94220902\\
+					 -0.31329122 \\
+					  0.10889051\\
+					   -0.04573547\\
+					     0.01191187
+				      \end{bmatrix}
+		\end{align*} 
+		and 
+		\begin{align*}
+			y_{2} &= \begin{bmatrix} 
+				      0.02637512\\
+				       -0.40428947\\
+				        -0.9117768 \\  
+				        0.04144017\\
+				         -0.05291649
+				      \end{bmatrix}
+		\end{align*} 
+		
+		This enables us to understand the meaning of these vectors. $ y_{1} $ is mostly related to a decreasing temperature and pressure, and $ y_{2} $ represents decreasing humidity and pressure. 
+		
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.5]{pca2.png}
+\end{center}
+\caption{PCA with two components}
+\end{figure}
+
+We can see on the graph that even if there is a strong dispersion, equator values are located at higher temperatures. On the contrary, north and south pole values are located at lower temperatures. Green and red classes overlap as these to categories have similar climate conditions. 
+
+Although it is an understandable figure, this is not satisfying. We plot the eigenvalues to see their relative importance in the dimension reduction. 
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{eigen.png}
+\end{center}
+\caption{PCA with two components}
+\end{figure}
+
 \section{Kernel Principal Component Analysis}
 	\subsection{Method}
 	\subsection{Results}
