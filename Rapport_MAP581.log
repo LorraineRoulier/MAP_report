@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.6)  6 MAR 2018 11:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.6)  6 MAR 2018 16:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -599,7 +599,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<polytechnique-armes.pdf, id=68, 195.21231pt x 257.65057pt>
+<polytechnique-armes.pdf, id=72, 195.21231pt x 257.65057pt>
 File: polytechnique-armes.pdf Graphic file (type pdf)
 
 <use polytechnique-armes.pdf>
@@ -612,7 +612,7 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Info: Redefining \\ on input line 34.
 
-<polytechnique-filetcourtbleu.pdf, id=69, 28.40442pt x 2.16678pt>
+<polytechnique-filetcourtbleu.pdf, id=73, 28.40442pt x 2.16678pt>
 File: polytechnique-filetcourtbleu.pdf Graphic file (type pdf)
 
 <use polytechnique-filetcourtbleu.pdf>
@@ -657,7 +657,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<polytechnique-logovert.pdf, id=70, 196.53926pt x 267.24042pt>
+<polytechnique-logovert.pdf, id=74, 196.53926pt x 267.24042pt>
 File: polytechnique-logovert.pdf Graphic file (type pdf)
 
 <use polytechnique-logovert.pdf>
@@ -678,7 +678,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write4
 \openout4 = `Rapport_MAP581.toc'.
 
- <polytechnique-logohori.pdf, id=152, 195.52248pt x 85.3575pt>
+ <polytechnique-logohori.pdf, id=157, 195.52248pt x 85.3575pt>
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 
 <use polytechnique-logohori.pdf>
@@ -693,36 +693,52 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 52.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
+Overfull \hbox (33.5951pt too wide) in paragraph at lines 48--55
+ [] 
+ []
+
+<latlon.jpg, id=188, 26.54324pt x 30.28342pt>
+File: latlon.jpg Graphic file (type jpg)
+ <use latlon.jpg>
+Package pdftex.def Info: latlon.jpg used on input line 64.
+(pdftex.def)             Requested size: 106.1726pt x 121.1333pt.
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 84.
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 73.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
  [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.84 \end{document}
-                   ]
+l.73 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.73 
+      <./latlon.jpg>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
 File: polytechnique-logohori.pdf Graphic file (type pdf)
  <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 84.
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 97.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
  [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
- (./Rapport_MAP581.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 84.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 84.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
+
+(./Rapport_MAP581.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
 Package rerunfilecheck Info: File `Rapport_MAP581.out' has not changed.
-(rerunfilecheck)             Checksum: A1CB7A9E2BF32CE376E38FFCFA765247;901.
+(rerunfilecheck)             Checksum: 2712AE3B0BFBEE00C0A18D6211D33EF4;975.
  ) 
 Here is how much of TeX's memory you used:
- 9431 strings out of 493014
- 140232 string characters out of 6133352
- 247596 words of memory out of 5000000
- 12791 multiletter control sequences out of 15000+600000
+ 9445 strings out of 493014
+ 140453 string characters out of 6133352
+ 246253 words of memory out of 5000000
+ 12801 multiletter control sequences out of 15000+600000
  63394 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,10n,31p,856b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -741,10 +757,10 @@ type1/public/lm/lmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
 10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></u
 sr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Rapport_MAP581.pdf (4 pages, 1252563 bytes).
+Output written on Rapport_MAP581.pdf (4 pages, 1291072 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
- 149 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 260 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 162 words of extra memory for PDF output out of 10000 (max. 10000000)
 
