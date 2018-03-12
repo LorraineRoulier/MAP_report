@@ -141,10 +141,80 @@ Although it is an understandable figure, this is not satisfying. We plot the eig
 	\subsection{Results}
 \section{Multidimensional Scaling - MDS}
 	\subsection{Method}
+	Multidimensional scaling is a non-linear approach to reduce dimension of a dataset. The principle is quite different from PCA: given a matrix of distance or "`dissimilarity"', MDS aims at reconstructing a map preserving at best the distances between datas. In our example, the MDS algorithm aims to place each object in 2-dimensional space such that the between-object distances are preserved as well as possible.
+	Given a distance matrix D of dimension n*p (p=5 for us) , MDS attempts to find the datapoints $y_1$,... $y_t$ in dimension d<p (d=2 for us) that minimizes:
+	
+	
+		 \[\sum\limits_{i=1}^{t}[\sum\limits_{j=1}^{t}d_{ij}^{(X)}-d_{ij}^{(Y)}]
+			\]
+		
+
+	with $d_{ij}^{(X)}$ and $d_{ij}^{(Y)}$ respectively the euclidean distance between pairwise i and j in the original  n*p matrix $D^{(X)}$  and in the computed n*d matrix $D^{(Y)}$.
+	
+	As the distance matrix $D^{(X)}$  can be converted into a kernel matrix of inner products $X^TX$ by 
+	\[ X^TX=-1/2HD^{(X)}H
+		\]
+
+H can be written as $H=I-ee^T$ and $e$ is the vector of ones. Thus, ??? becomes:
+	\[\sum\limits_{i=1}^{t}\sum\limits_{j=1}^{t} x_{i}^{T}x_{j}-y_{i}^{T}y_{j}
+		\]
+	It can be shown that the solution is $Y=\Lambda^{1/2}V^T$ with $V$ the eigenvectors of $X^TX$ of the top d eigenvalues present in $\Lambda$.
+	The only and main parameter of this method is the norm used to calculate the distance matrix. By default we use the euclidean norm here. 
+	
+	
 	\subsection{Results}
+	
+	Figure 6 shows the results of MDS with our previous dataset. We use the same grandeurs (temperature, radiation, wind speed, humidity and pressure) but not the same number of lines. As MDS was extremeley low and seemed to use a lot of memory, we could not run the programm for more than 600 rows. Here are the result for 546 rows: we filtered our dataset with latitudes < 0 (ie. south hemisphere) and longitude between 0 and 5 degrees. 
+	
+	\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 1]{graphMDS.png}
+\end{center}
+\caption{results of MDS in 2D}
+\end{figure}
+	
+	One indicator to estimate of the reconstruction is accurate is the 'stress'. It is roughly the square difference between the final distance of two items in the MDS model and the true distance between them. The exact formula is: 
+		
+			\[ s = \sqrt{\frac{\sum (d_ij-d(i,j))?}{\sum d_ij?} 
+		\]
+		
+		The aim of MDS is to minimize this stress. Figure 7 presents the value of stress depending on the number of lines. We can see it is relatively low (<0,002) for more than 500 rows.
+		
+	\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 1]{stressMDSnblines.png}
+\end{center}
+\caption{stress as a function of number of rows}
+\end{figure}
+
 \section{Isomap}
 	\subsection{Method}
+	
+	Isomap is a low dimensional embedding method similar to MDS. The difference is, distance is not computed with euclidean norm but with geodesic distance. 
 	\subsection{Results}
+	
+	As the main parameter of the method is the number of nearest neighbors taken into account, we present infigure 8 the result of isomap for number of neighbour from 1 to 11 neighbors. 
+	
+	\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.5]{graphiso.png}
+\end{center}
+\caption{results of isomap depending on the number of neighbors considered from 2 to 12}
+\end{figure}
+
+It is obvious that the number of neighbours considered strongly influence the 2D distribution of our dataset. To know which graph is the most accurate, we refer to the 'reconstruction error'. We computed this reconsruction error with respect to the number of neighbours considered. The results are presented in figure ??
+
+We also computed the error reconstruction as a function of the number of rows in figure 9. This error keeps increasing with the number or rows, so isomap accuracy seems to be limited by the size of the dataset.
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{isoerrorneighbour.png}
+\end{center}
+\caption{reconstruction error as a function of number of neighbours considered}
+\end{figure}
+
+It is interesting to see that from eight neighbours, error seems to stabilize around 2,5. Indeed, we can see with graphs of figure 8 that from eight neighbours, graphs look quite all the same. Those are the most 'accurate' representations.
+	
 \section{Comparing the different methods}
 \section{Conclusion}
 \section{Bibliography}
