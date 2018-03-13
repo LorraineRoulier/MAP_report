@@ -18,8 +18,9 @@
  \usepackage{color}
  \usepackage{amsfonts}
  \usepackage{amsmath}
- 
- 
+
+\DeclareMathOperator{\e}{e}
+
 \title{Low Dimensional Embedding of Environmental Variables}      % renseigne le titre
 \subtitle{EA MAP581}
 \author{Flore Martin and Lorraine Roulier}           %   "   "   l'auteur
@@ -142,6 +143,7 @@ Although it is an understandable figure, this is not satisfying. We plot the eig
 		\subsubsection{Three dimensions}
 		
 We attempted to run the PCA method with three principal components, 
+
 \section{Kernel Principal Component Analysis}
 	\subsection{Method}
 	
@@ -154,16 +156,45 @@ where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$
 	This kernel will enable us to bypass the higher dimension calculation of the variance in the feature space. We only need to compute the pairwise values for $\phi$, but there is no need to explicitly define $\phi$.
 	
 	The downside of this method is that since we don't compute directly the eigenvectors and eigenvalues of $\phi$, the result is the projection of our dataset onto the eigenvectors. We thus don't have access to a simple interpretation of the principal components. 
-	 
+	
+	A classic kernel that is often used is the RBF function that is defined below: 
+	 \[ K(x_{i},x_{j}) = \e{- \gamma \| x_{i} - x_{j} \| }\]
+
 	\subsection{Results}
 	
-	Kernel PCA has a complexity of $ O(n^{2}) $ so we decided to run it on a subset of our dataset. Here is the two dimension result for all latitudes between longitudes -15 and +15. 
+	Kernel PCA has a complexity of $ O(n^{3}) $ so we decided to run it on a subset of our dataset. Here is the two dimension result for all latitudes between longitudes -15 and +15. 
 	
 	
-	The black dots are all dots along one longitude. We see however that there is a degenerescence: -15 and +15 longitude are projected on the same positions.
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.5]{kpca_first.png}
+\end{center}
+\caption{Kernel PCA with two components and the RBF kernel}
+\end{figure}
+
+	The black dots are all dots along one longitude, here 15. We see however that there is a degenerescence: -15 and +15 longitude are projected on the same positions. When changing the gamma
 	
 	Another noticable flaw is the peak on the graph when we would expect the dots of same longitude to form a circle. The 3D visualisation of the graphic enables us to understand that peak: as we can see on the figure below, the lines that define one longitude form a sort of infinity symbol, a twisted circle, that can't render smoothly in two dimensions. 
 	
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.5]{3Dkpca.png}
+\end{center}
+\caption{3D Kernel PCA}
+\end{figure}
+
+The dots representing the south and north poles are still closer together however, which might come from the smaller range of temperatures and climate conditions reached in these areas. 
+
+We tried to change the $ \gamma $ parameter, but it had no influence on the degenerescence. Changing the kernel function to a polynomial one however destroyed the degenerescence, but created a node on equatorial values as it can be observed just below. The purple and black lines represent the -15 and 15 longitudes: they are clearly different. 
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.5]{kpca_poly.png}
+\end{center}
+\caption{Kernel PCA with polynomial kernel}
+\end{figure}
+
+
 \section{Multidimensional Scaling - MDS}
 	\subsection{Method}
 	Multidimensional scaling is a non-linear approach to reduce dimension of a dataset. The principle is quite different from PCA: given a matrix of distance or "`dissimilarity"', MDS aims at reconstructing a map preserving at best the distances between datas. In our example, the MDS algorithm aims to place each object in 2-dimensional space such that the between-object distances are preserved as well as possible.
@@ -206,7 +237,7 @@ H can be written as $H=I-ee^T$ and $e$ is the vector of ones. Thus, ??? becomes:
 		
 	\begin{figure}[H]
  \begin{center}
-	%\includegraphics[scale = 1]{stressMDSnblines.png}
+	\includegraphics[scale = 1]{stressMDSnblines.png}
 \end{center}
 \caption{stress as a function of number of rows}
 \end{figure}
@@ -241,11 +272,39 @@ It is interesting to see that from eight neighbours, error seems to stabilize ar
 	
 \section{Comparing the different methods}
 
-	
-	
 	\subsection{Time comparison}
-	In figure 10, we present computing time for each method as a function of the number of rows.
-	From this we can conclude that the quickest method is PCA. Then comes kernel PCA, isomap and MDS. It is quite surprising to see that isomap is quicker than MDS for the same number of rows. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. WE found an explanation on the "`manifold guide"' of skicit.
+	
+	We implemented manually PCA, but for the other methods we used the built in fonction of the scikit package on python. 
+	PCA's running time varies linearly with the number of rows as we can see on the graphic below 
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{pcatime.png}
+\end{center}
+\caption{running time for PCA}
+\end{figure}
+
+Kernel PCA was slower, we did not compute its running time for all the dataset, only until 12000 rows. It yields the following graph. 
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[c]{.46\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.5]{kpcatime.png} %gauche bas droite haut
+		\centering
+		\caption{running time for Kernel PCA}
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.46\linewidth}
+                  \centering
+        		\includegraphics[scale=0.5]{kpcatimpe.png}
+        		\centering
+		\caption{Kernel PCA running time is a $O(n^{3})$}
+    \end{minipage}
+\end{figure}
+
+	In figure 10, we present computing time for different methods as a function of the number of rows.
+	From this we can conclude that the quickest method is PCA. Then comes kernel PCA, isomap and MDS. It is quite surprising to see that isomap is quicker than MDS for the same number of rows. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. We found an explanation on the "`manifold guide"' of skicit.
 	
 	\begin{quotation}
 \begin{quote}
@@ -261,7 +320,7 @@ In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensio
 		 \hline    
 	  	Method & PCA & Kernel PCA & MDS & Isomap \\ 
 		\hline
-		Complexity & $O(n^2)$ & $O(?)$ & $O(n^3)$  &  \\
+		Complexity & $O(n)$ & $O(n^3)$ & $O(n^3)$  &  \\
 		\hline
 		  \end{tabular}
 	
@@ -283,22 +342,7 @@ We also check how isomap computing time varies with the number of neighbor taken
 \caption{computing time for isomap as a function of the number of neighbors considered}
 \end{figure}
 
-
-\subsection{error and preserved information}
-
-
-	\subsection{Running time}
-
-	We implemented manually PCA, but for the other methods we used the built in fonction of the scikit package on python. 
-	PCA's running time varies linearly with the number of rows as we can see on the graphic below 
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.8]{pcatime.png}
-\end{center}
-\caption{running time for PCA}
-\end{figure}
-
+\subsection{Error and preserved information}
 
 \section{Conclusion}
 \section{Bibliography}
