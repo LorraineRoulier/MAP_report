@@ -9,7 +9,7 @@
 \usepackage[hidelinks,hyperfootnotes=false]{hyperref}
 \usepackage{graphicx}
 \usepackage[titlepage]{polytechnique}
-\usepackage{textcomp}
+%\usepackage{textcomp}
 \usepackage{float}
 \usepackage{enumerate}
 \usepackage{enumitem}%textbullets
@@ -54,7 +54,7 @@ We used a set of datasets we found on the NASA website, that gathered various me
 		\hline
 		  \end{tabular}
 \end{center}
-\caption{First lign of our dataset}
+\caption{First row of our dataset}
 \end{figure}
 
 The latitude parameter varies from -90 to 89 and the longitude parameter varies from -180 to 179. the negative values are for the south hemisphere, the positive ones for the north. Depending on the running time of the method, we did not compute the dimension reduction with the 64800 lines, but with a subset. 
@@ -175,7 +175,7 @@ H can be written as $H=I-ee^T$ and $e$ is the vector of ones. Thus, ??? becomes:
 	
 	One indicator to estimate of the reconstruction is accurate is the 'stress'. It is roughly the square difference between the final distance of two items in the MDS model and the true distance between them. The exact formula is: 
 		
-			\[ s = \sqrt{\frac{\sum (d_ij-d(i,j))?}{\sum d_ij?} 
+			\[ s = \sqrt{\frac{\sum (d_{ij}-d(i,j))}{\sum d_{ij}} }
 		\]
 		
 		The aim of MDS is to minimize this stress. Figure 7 presents the value of stress depending on the number of lines. We can see it is relatively low (<0,002) for more than 500 rows.
@@ -216,6 +216,50 @@ We also computed the error reconstruction as a function of the number of rows in
 It is interesting to see that from eight neighbours, error seems to stabilize around 2,5. Indeed, we can see with graphs of figure 8 that from eight neighbours, graphs look quite all the same. Those are the most 'accurate' representations.
 	
 \section{Comparing the different methods}
+	
+	
+	\subsection{Time comparison}
+	In figure 10, we present computing time for each method as a function of the number of rows.
+	From this we can conclude that the quickest method is PCA. Then comes kernel PCA, isomap and MDS. It is quite surprising to see that isomap is quicker than MDS for the same number of rows. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. WE found an explanation on the "`manifold guide"' of skicit.
+	
+	\begin{quotation}
+\begin{quote}
+In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensional Scaling on the S-Curve dataset [...]. In the third stage of algorithm, the implementation uses Partial Eigen Value decomposition instead of MDS which is the version proposed by the researchers	
+	\end{quote}		
+	\end{quotation}
+	
+	We did not use the "`S curve dataset"' as mentioned above, but we may think that due to the round shape of earth, our dataset is quite similar to the S-curve and thus Isomap runs faster than MDS.
+	
+	
+	
+		\begin{tabular}{|c|c|c|c|c|}
+		 \hline    
+	  	Method & PCA & Kernel PCA & MDS & Isomap \\ 
+		\hline
+		Complexity & $O(n^2)$ & $O(?)$ & $O(n^3)$  &  \\
+		\hline
+		  \end{tabular}
+	
+
+	
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{isomdstime.png}
+\end{center}
+\caption{computing time comparison}
+\end{figure}
+
+
+We also check how isomap computing time varies with the number of neighbor taken into account. Figure 11 shows that isomap efficiency time increases with the number of neighbors. So isomap efficiency of computing time may be limited by the number of neighbors.
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{timeisoneigh.png}
+\end{center}
+\caption{computing time for isomap as a function of the number of neighbors considered}
+\end{figure}
+
+
+\subsection{error and preserved information}
 \section{Conclusion}
 \section{Bibliography}
 
