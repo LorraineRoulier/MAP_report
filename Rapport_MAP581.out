@@ -3,15 +3,17 @@
 \BOOKMARK [2][-]{subsection.2.1}{Method}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Results}{section.2}% 4
 \BOOKMARK [3][-]{subsubsection.2.2.1}{Two dimensions}{subsection.2.2}% 5
-\BOOKMARK [1][-]{section.3}{Kernel Principal Component Analysis}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{Method}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.2}{Results}{section.3}% 8
-\BOOKMARK [1][-]{section.4}{Multidimensional Scaling - MDS}{}% 9
-\BOOKMARK [2][-]{subsection.4.1}{Method}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.2}{Results}{section.4}% 11
-\BOOKMARK [1][-]{section.5}{Isomap}{}% 12
-\BOOKMARK [2][-]{subsection.5.1}{Method}{section.5}% 13
-\BOOKMARK [2][-]{subsection.5.2}{Results}{section.5}% 14
-\BOOKMARK [1][-]{section.6}{Comparing the different methods}{}% 15
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 16
-\BOOKMARK [1][-]{section.8}{Bibliography}{}% 17
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Three dimensions}{subsection.2.2}% 6
+\BOOKMARK [1][-]{section.3}{Kernel Principal Component Analysis}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Method}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Results}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Multidimensional Scaling - MDS}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Method}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Results}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Isomap}{}% 13
+\BOOKMARK [2][-]{subsection.5.1}{Method}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.2}{Results}{section.5}% 15
+\BOOKMARK [1][-]{section.6}{Comparing the different methods}{}% 16
+\BOOKMARK [2][-]{subsection.6.1}{Running time}{section.6}% 17
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 18
+\BOOKMARK [1][-]{section.8}{Bibliography}{}% 19

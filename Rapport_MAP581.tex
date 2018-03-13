@@ -54,7 +54,7 @@ We used a set of datasets we found on the NASA website, that gathered various me
 		\hline
 		  \end{tabular}
 \end{center}
-\caption{First lign of our dataset}
+\caption{First row of our dataset}
 \end{figure}
 
 The latitude parameter varies from -90 to 89 and the longitude parameter varies from -180 to 179. the negative values are for the south hemisphere, the positive ones for the north. Depending on the running time of the method, we did not compute the dimension reduction with the 64800 lines, but with a subset. 
@@ -92,6 +92,9 @@ We classified the data according to the latitude, creating five classes listed i
 \[ \| X - MM^{T}X \|^{2} \]
 subject to $ M \in \mathcal{O}^{d \times r} $ where $ r<d $.
 
+The r greatest eigenvalues of $ XX^{T} = PDP^{T}$ yield the maximum $ M = P_{r} $ where the columns are the eigenvectors associated to the eigenvalues mentioned above. 
+
+The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this example, there are r principal components for the PCA
 	\subsection{Results}
 		\subsubsection{Two dimensions}
 		
@@ -136,14 +139,35 @@ Although it is an understandable figure, this is not satisfying. We plot the eig
 \caption{PCA with two components}
 \end{figure}
 
+		\subsubsection{Three dimensions}
+		
+We attempted to run the PCA method with three principal components, 
 \section{Kernel Principal Component Analysis}
 	\subsection{Method}
+	
+	Kernel Principal Component analysis is a non linear method for dimension reduction. Instead of directly maximizing the variance of $X$, we map it into a larger dimension space called the feature space, using a non linear function $\phi$. 
+	
+	Instead of directly mapping $X$ into the feature space, we use a kernel, that represents a similarity function between pairs. Let $K$ be this kernel, then 
+	\[ K(x_{i},x_{j}) = \phi(x_{î}) \phi(x_{j})^{T}\]
+where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$ 
+	
+	This kernel will enable us to bypass the higher dimension calculation of the variance in the feature space. We only need to compute the pairwise values for $\phi$, but there is no need to explicitly define $\phi$.
+	
+	The downside of this method is that since we don't compute directly the eigenvectors and eigenvalues of $\phi$, the result is the projection of our dataset onto the eigenvectors. We thus don't have access to a simple interpretation of the principal components. 
+	 
 	\subsection{Results}
+	
+	Kernel PCA has a complexity of $ O(n^{2}) $ so we decided to run it on a subset of our dataset. Here is the two dimension result for all latitudes between longitudes -15 and +15. 
+	
+	
+	The black dots are all dots along one longitude. We see however that there is a degenerescence: -15 and +15 longitude are projected on the same positions.
+	
+	Another noticable flaw is the peak on the graph when we would expect the dots of same longitude to form a circle. The 3D visualisation of the graphic enables us to understand that peak: as we can see on the figure below, the lines that define one longitude form a sort of infinity symbol, a twisted circle, that can't render smoothly in two dimensions. 
+	
 \section{Multidimensional Scaling - MDS}
 	\subsection{Method}
 	Multidimensional scaling is a non-linear approach to reduce dimension of a dataset. The principle is quite different from PCA: given a matrix of distance or "`dissimilarity"', MDS aims at reconstructing a map preserving at best the distances between datas. In our example, the MDS algorithm aims to place each object in 2-dimensional space such that the between-object distances are preserved as well as possible.
 	Given a distance matrix D of dimension n*p (p=5 for us) , MDS attempts to find the datapoints $y_1$,... $y_t$ in dimension d<p (d=2 for us) that minimizes:
-	
 	
 		 \[\sum\limits_{i=1}^{t}[\sum\limits_{j=1}^{t}d_{ij}^{(X)}-d_{ij}^{(Y)}]
 			\]
@@ -175,14 +199,14 @@ H can be written as $H=I-ee^T$ and $e$ is the vector of ones. Thus, ??? becomes:
 	
 	One indicator to estimate of the reconstruction is accurate is the 'stress'. It is roughly the square difference between the final distance of two items in the MDS model and the true distance between them. The exact formula is: 
 		
-			\[ s = \sqrt{\frac{\sum (d_ij-d(i,j))?}{\sum d_ij?} 
+			\[ s = \sqrt{\frac{\sum (d_{ij}-d(i,j))}{\sum d_{ij}}}
 		\]
 		
 		The aim of MDS is to minimize this stress. Figure 7 presents the value of stress depending on the number of lines. We can see it is relatively low (<0,002) for more than 500 rows.
 		
 	\begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 1]{stressMDSnblines.png}
+	%\includegraphics[scale = 1]{stressMDSnblines.png}
 \end{center}
 \caption{stress as a function of number of rows}
 \end{figure}
@@ -216,6 +240,20 @@ We also computed the error reconstruction as a function of the number of rows in
 It is interesting to see that from eight neighbours, error seems to stabilize around 2,5. Indeed, we can see with graphs of figure 8 that from eight neighbours, graphs look quite all the same. Those are the most 'accurate' representations.
 	
 \section{Comparing the different methods}
+
+	\subsection{Running time}
+
+	We implemented manually PCA, but for the other methods we used the built in fonction of the scikit package on python. 
+	PCA's running time varies linearly with the number of rows as we can see on the graphic below 
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{pcatime.png}
+\end{center}
+\caption{running time for PCA}
+\end{figure}
+
+
 \section{Conclusion}
 \section{Bibliography}
 
