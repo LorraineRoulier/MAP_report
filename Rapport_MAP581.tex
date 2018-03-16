@@ -40,10 +40,16 @@
 
 \section{Introduction}
 
-Climate data amounts very quickly to a lot of unused data. In a day, we can collect temperature, pressure, wind data all over the world with satellites, even hourly. Our project was two sided. First, we familiarized with various dimension reduction techniques, then we attempted to show that the geographical position of a point on the planet - e.g. it's latitude and longitude - were embedded in the climate data one could gather on it. 
+ Dimension reduction refers to the process of reducing the number of random variables under consideration. It is an efficient way to analyze a large dataset of high dimension. For instance, dimensionality reduction can be used
+for  \textbf{visualizing}  or  exploring  structure  in  data. It provides a \textbf{simple geometric interpretation} by mapping  in 2D or 3D an original dataset of dimension d > 3. A 2D or 3D mapping is thus much easy to interpret for us human. In terms of performance, having data of high dimensionality is problematic because it can mean \textbf{high computational cost} to compute. Finally, dimensional reduction is often used for classification. Data points are being clustered, it is a way to establish clusters of gene and of population for example.
 
-Dimension reduction techniques can be divided in two classes, linear dimension reduction and non linear dimension reduction. However, in all methods, the main goal is to figure out a similarity function between vectors. Such a function will then enable to sort the dataset into classes of vectors with similar features, which would have been more intricate with the initial dataset. 
-We used a set of datasets we found on the NASA website, that gathered various means on climate variables over 22 years at every given latitude and longitude. These variables are gathered in the table below
+In practice, dimension reduction is widely used for denoising  or  compressing  data, and embedding image processing like facial recognition.
+
+
+\section{Dataset presentation}
+
+Climate data amounts very quickly to a lot of unused data. In a day, we can collect temperature, pressure, wind data all over the world with satellites, even hourly. We used a set of datasets we found on the NASA website, that gathered various means on climate variables over 22 years at every given latitude and longitude. Thoses dataset can de bound here: https://eosweb.larc.nasa.gov/cgi-bin/sse/global.cgi?email=skip@larc.nasa.gov. 
+AS each variable (temperature, radiation, pressure, wind speed and humidity) was stored in a separate dataset, we first had to merge all of them in a final table presented below:
 
 \begin{figure}[H]
  \begin{center}
@@ -59,8 +65,8 @@ We used a set of datasets we found on the NASA website, that gathered various me
 \caption{Variables of our dataset}
 \end{figure}
 
-The latitude parameter varies from -90 to 89 and the longitude parameter varies from -180 to 179. the negative values are for the south hemisphere, the positive ones for the north. Depending on the running time of the method, we did not compute the dimension reduction with the 64800 lines, but with a subset. 
-The subset is often a slice of longitudes containing all latitudes, as we assumed that the critical parameter to differenciate climate data was the latitude. 
+The latitude parameter varies from -90 to 89 and the longitude parameter varies from -180 (south pole)  to 179 (north pole). Depending on the running time of the method, we did not compute the dimension reduction with the 64800 lines, but with a subset. 
+The subset is often a slice of longitudes containing all latitudes, as we assumed that the critical parameter to differentiate climate data was the latitude. We will detail the subset considered in every method. 
 
 \begin{figure}[H]
  \begin{center}
@@ -86,20 +92,85 @@ We classified the data according to the latitude, creating five classes listed i
 \caption{Our classification  }
 \end{figure}
 
-\section{Principal Component Analysis - PCA}
-	\subsection{Method}
+\section{Methods}
+
+Dimension reduction techniques can be divided in two classes, linear dimension reduction and non linear dimension reduction. However, in all methods, the main goal is to figure out a similarity function between vectors. Such a function will then enable to sort the dataset into classes of vectors with similar features, which would have been more intricate with the initial dataset. 
+
+Our project was two sided. First, we familiarized with various dimension reduction techniques, then we attempted to show that the geographical position of a point on the planet - e.g. it's latitude and longitude - were embedded in the climate data one could gather on it. 
+
+	\subsection{Principal Component Analysis - PCA}
 	
-		Principal Component Analysis detects tendencies in the data by maximizing the variance of the dataset matrix. 		
+		Principal Component Analysis detects tendencies in the data by maximizing the variance of the dataset matrix. There is an easy approach to understand PCA with a 2D dataset. On Figure ??, we have plotted a 2D dataset. If we implement 2D-PCA, we will find two new axes that reflects at best the variances of datapoints. Those ares the green axes. PCA just 'rotates' the figure to find a more explicit 'point of view'. The yielded axes are a linear combination of the original axes. 
+		
+		\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.5]{PCAexpli.png}
+\end{center}
+\caption{role of PCA  - interpretation}
+\end{figure}
+		
+		
+		From a mathematical point of view, PCA yields an orthonormal matrix that can be diagonalized. The largest eigenvalues point to the eigenvectors that contain the most information about the dataset. 
+		
 		Let $ X \in \mathbb{R}^{d \times n} $ be our dataset where d is the number of variables and n the sample size, PCA maximizes the following equation :
 %%
 \[ \| X - MM^{T}X \|^{2}_{F} \]
 subject to $ M \in \mathcal{O}^{d \times r} $ where $ r<d $ and $ \mathcal{O}^{d \times r}  $ is the space of orthogonal matrix and we use the Froebenius norm.
 
+<<<<<<< HEAD
 The maximum of the previous function is reached by the covariance matrix of the dataset: the r greatest eigenvalues of $ XX^{T} = PDP^{T}$ yield the maximum $ M = P_{r} $ where the columns are the eigenvectors associated to the eigenvalues mentioned above. The largest eigenvalues point to the eigenvectors that contain the most information about the dataset. 
 
 The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this example, there are r principal components for the PCA. 
-	\subsection{Results}
-		\subsubsection{Two dimensions}
+
+	\subsection{Kernel PCA}
+
+Kernel Principal Component analysis is a non linear method for dimension reduction. Instead of directly maximizing the variance of $X$, we map it into a larger dimension space called the feature space, using a non linear function $\phi$. 
+	
+	Instead of directly mapping $X$ into the feature space, we use a kernel, that represents a similarity function between pairs. Let $K$ be this kernel, then 
+	\[ K(x_{i},x_{j}) = \phi(x_{î}) \phi(x_{j})^{T}\]
+where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$ 
+	
+	This kernel will enable us to bypass the higher dimension calculation of the variance in the feature space. We only need to compute the pairwise values for $\phi$, but there is no need to explicitly define $\phi$.
+	
+	The downside of this method is that since we don't compute directly the eigenvectors and eigenvalues of $\phi$, the result is the projection of our dataset onto the eigenvectors. We thus don't have access to a simple interpretation of the principal components. 
+	
+	A classic kernel that is often used is the RBF function that is defined below: 
+	 \[ K(x_{i},x_{j}) = \e{- \gamma \| x_{i} - x_{j} \| }\]
+	
+	\subsection{Multidimensional scaling}
+	
+	Multidimensional scaling is a non-linear approach to reduce dimension of a dataset. The principle is quite different from PCA: given a matrix of distance or "`dissimilarity"', MDS aims at reconstructing a map preserving at best the distances between datas. In our example, the MDS algorithm aims to place each object in 2-dimensional space such that the between-object distances are preserved as well as possible.
+	Given a distance matrix D of dimension n*p (p=5 for us) , MDS attempts to find the datapoints $y_1$,... $y_t$ in dimension d<p (d=2 for us) that minimizes:
+	
+		 \[\sum\limits_{i=1}^{t}[\sum\limits_{j=1}^{t}d_{ij}^{(X)}-d_{ij}^{(Y)}]
+			\]
+		
+	with $d_{ij}^{(X)}$ the euclidean distance between pairwise i and j in the original  $n \times p$ matrix $D^{(X)}$ and $d_{ij}^{(Y)}$ the euclidean distance between pairwise i and j in the original  $n \times p$ matrix $D^{(X)}$  and in the computed n*d matrix $D^{(Y)}$.
+	
+	A basic approach to understand MDS is to use the example of cities. The input is the distance matrix between cities on the left on figure ??. MDS enabales us to find coordonates of each city based on this distance matrix.
+	
+	\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.6]{MDSexpli.png}
+\end{center}
+\caption{role of MDS  - interpretation}
+\end{figure}
+
+	\subsection{Isomap}
+	
+	Isomap is a low dimensional embedding method similar to MDS. The difference is, distance is not computed with euclidean norm but with geodesic distance. As the earth shape is round, isomap seems more relevant than MDS. ON figure ??, we can see the difference between the geodisic distance (in red) used in isomap, and the eucliean distance used in MDS ( in blue).
+	
+	\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.6]{isoexpli.png}
+\end{center}
+\caption{geodisic and euclidean distance}
+\end{figure}
+	
+	
+\section{Results}
+	\subsection{graphic interpretation}
+		\subsubsection{PCA}
 		
 		We first implemented PCA and ran it with only two principal components, which yielded the following graph for the whole dataset. The associated eigenvectors were 
 		\begin{align*}
@@ -134,7 +205,7 @@ The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this
         		\includegraphics[scale=0.1]{colors.png}
     \end{minipage}
     \caption{PCA with two components}
-\end{figure}
+\end{figure}	
 
  \begin{center}
 	\begin{tabular}{|c|c|c|c|c|}
@@ -207,24 +278,8 @@ We attempted to run the PCA method with three principal components,
     \caption{Temperature as a function of latitude and longitude in $\hat{X}$ }
 \end{figure}
 
-
-\section{Kernel Principal Component Analysis}
-	\subsection{Method}
-	
-	Kernel Principal Component analysis is a non linear method for dimension reduction. Instead of directly maximizing the variance of $X$, we map it into a larger dimension space called the feature space, using a non linear function $\phi$. 
-	
-	Instead of directly mapping $X$ into the feature space, we use a kernel, that represents a similarity function between pairs. Let $K$ be this kernel, then 
-	\[ K(x_{i},x_{j}) = \phi(x_{î}) \phi(x_{j})^{T}\]
-where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$ 
-	
-	This kernel will enable us to bypass the higher dimension calculation of the variance in the feature space. We only need to compute the pairwise values for $\phi$, but there is no need to explicitly define $\phi$.
-	
-	The downside of this method is that since we don't compute directly the eigenvectors and eigenvalues of $\phi$, the result is the projection of our dataset onto the eigenvectors. We thus don't have access to a simple interpretation of the principal components. 
-	
-	A classic kernel that is often used is the RBF function that is defined below: 
-	 \[ K(x_{i},x_{j}) = \e{- \gamma \| x_{i} - x_{j} \| }\]
-
-	\subsection{Results}
+		
+			\subsubsection{Kernel PCA}
 	
 	Kernel PCA has a complexity of $ O(n^{3}) $ so we decided to run it on a subset of our dataset. Here is the two dimension result for all latitudes between longitudes -15 and +15. 
 	
@@ -258,32 +313,9 @@ We tried to change the $ \gamma $ parameter, but it had no influence on the dege
 \caption{Kernel PCA with polynomial kernel}
 \end{figure}
 
-
-\section{Multidimensional Scaling - MDS}
-	\subsection{Method}
-	Multidimensional scaling is a non-linear approach to reduce dimension of a dataset. The principle is quite different from PCA: given a matrix of distance or "`dissimilarity"', MDS aims at reconstructing a map preserving at best the distances between datas. In our example, the MDS algorithm aims to place each object in 2-dimensional space such that the between-object distances are preserved as well as possible.
-	Given a distance matrix D of dimension n*p (p=5 for us) , MDS attempts to find the datapoints $y_1$,... $y_t$ in dimension d<p (d=2 for us) that minimizes:
+			\subsubsection{Multidimensional Scaling - MDS}
 	
-		 \[\sum\limits_{i=1}^{t}[\sum\limits_{j=1}^{t}d_{ij}^{(X)}-d_{ij}^{(Y)}]
-			\]
-		
-
-	with $d_{ij}^{(X)}$ and $d_{ij}^{(Y)}$ respectively the euclidean distance between pairwise i and j in the original  n*p matrix $D^{(X)}$  and in the computed n*d matrix $D^{(Y)}$.
-	
-	As the distance matrix $D^{(X)}$  can be converted into a kernel matrix of inner products $X^TX$ by 
-	\[ X^TX=-1/2HD^{(X)}H
-		\]
-
-H can be written as $H=I-ee^T$ and $e$ is the vector of ones. Thus, ??? becomes:
-	\[\sum\limits_{i=1}^{t}\sum\limits_{j=1}^{t} x_{i}^{T}x_{j}-y_{i}^{T}y_{j}
-		\]
-	It can be shown that the solution is $Y=\Lambda^{1/2}V^T$ with $V$ the eigenvectors of $X^TX$ of the top d eigenvalues present in $\Lambda$.
-	The only and main parameter of this method is the norm used to calculate the distance matrix. By default we use the euclidean norm here. 
-	
-	
-	\subsection{Results}
-	
-	Figure 6 shows the results of MDS with our previous dataset. We use the same grandeurs (temperature, radiation, wind speed, humidity and pressure) but not the same number of lines. As MDS was extremeley low and seemed to use a lot of memory, we could not run the programm for more than 600 rows. Here are the result for 546 rows: we filtered our dataset with latitudes < 0 (ie. south hemisphere) and longitude between 0 and 5 degrees. 
+	As MDS was extremeley low and seemed to use a lot of memory, we could not run the programm for more than 600 datapoints (ie 600 rows).Therefore, we used a new subset of longitudes between 0° and +5°, reducind the datasize to 546 datapoints. Figure 6 shows the results of MDS. 
 	
 	\begin{figure}[H]
  \begin{center}
@@ -292,27 +324,9 @@ H can be written as $H=I-ee^T$ and $e$ is the vector of ones. Thus, ??? becomes:
 \caption{results of MDS in 2D}
 \end{figure}
 	
-	One indicator to estimate of the reconstruction is accurate is the 'stress'. It is roughly the square difference between the final distance of two items in the MDS model and the true distance between them. The exact formula is: 
-		
-			\[ s = \sqrt{\frac{\sum (d_{ij}-d(i,j))}{\sum d_{ij}}}
-		\]
-		
-		The aim of MDS is to minimize this stress. Figure 7 presents the value of stress depending on the number of lines. We can see it is relatively low (<0,002) for more than 500 rows.
-		
-	\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 1]{stressMDSnblines.png}
-\end{center}
-\caption{stress as a function of number of rows}
-\end{figure}
-
-\section{Isomap}
-	\subsection{Method}
+			\subsubsection{isomap}
 	
-	Isomap is a low dimensional embedding method similar to MDS. The difference is, distance is not computed with euclidean norm but with geodesic distance. 
-	\subsection{Results}
-	
-	As the main parameter of the method is the number of nearest neighbors taken into account, we present infigure 8 the result of isomap for number of neighbour from 1 to 11 neighbors. 
+	As the main parameter of the method is the number of nearest neighbors taken into account, we present in figure  ?? the result of isomap for number of neighbour between 1 to and neighbors. 
 	
 	\begin{figure}[H]
  \begin{center}
@@ -323,8 +337,6 @@ H can be written as $H=I-ee^T$ and $e$ is the vector of ones. Thus, ??? becomes:
 
 It is obvious that the number of neighbours considered strongly influence the 2D distribution of our dataset. To know which graph is the most accurate, we refer to the 'reconstruction error'. We computed this reconsruction error with respect to the number of neighbours considered. The results are presented in figure ??
 
-We also computed the error reconstruction as a function of the number of rows in figure 9. This error keeps increasing with the number or rows, so isomap accuracy seems to be limited by the size of the dataset.
-
 \begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.8]{isoerrorneighbour.png}
@@ -333,10 +345,9 @@ We also computed the error reconstruction as a function of the number of rows in
 \end{figure}
 
 It is interesting to see that from eight neighbours, error seems to stabilize around 2,5. Indeed, we can see with graphs of figure 8 that from eight neighbours, graphs look quite all the same. Those are the most 'accurate' representations.
-	
-\section{Comparing the different methods}
 
-	\subsection{Time comparison}
+
+		\subsection{Time comparison}
 	
 	We implemented manually PCA, but for the other methods we used the built in fonction of the scikit package on python. 
 	PCA's running time varies linearly with the number of rows as we can see on the graphic below 
@@ -376,8 +387,7 @@ In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensio
 	\end{quote}		
 	\end{quotation}
 	
-	We did not use the "`S curve dataset"' as mentioned above, but we may think that due to the round shape of earth, our dataset is quite similar to the S-curve and thus Isomap runs faster than MDS.
-	
+	We did not use the 'S curve dataset' as mentioned above, but we may think that due to the round shape of earth, our dataset is quite similar to the S-curve and thus Isomap runs faster than MDS. For a fixed dimension d, the following table present the complexity of every method as it appeared to us.
 	
 	
 		\begin{tabular}{|c|c|c|c|c|}
@@ -399,6 +409,7 @@ In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensio
 
 
 We also check how isomap computing time varies with the number of neighbor taken into account. Figure 11 shows that isomap efficiency time increases with the number of neighbors. So isomap efficiency of computing time may be limited by the number of neighbors.
+
 \begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.8]{timeisoneigh.png}
@@ -406,8 +417,48 @@ We also check how isomap computing time varies with the number of neighbor taken
 \caption{computing time for isomap as a function of the number of neighbors considered}
 \end{figure}
 
-\subsection{Error and preserved information}
+		\subsection{Error and preserved information}
+			\subsubsection{PCA}
 
+	The main indicator of how much information has been preserved with PCA lies in eigenvalues. We plot the eigenvalues to see their relative importance in the dimension reduction.
+
+\begin{figure}[H]
+ \begin{center}
+	%\includegraphics[scale = 0.8]{eigen.png} à remplacer par l'autre
+\end{center}
+\caption{PCA with two components}
+\end{figure}
+
+We can see that with only two components, we obtain an explaned variance of ??, which is quite enough to interpret our dataset. PCA seems to be a relevant technic to analyse data, and in particular to establish classification.
+
+			\subsubsection{MDS}
+			
+			One indicator to estimate of the reconstruction is accurate is the 'stress'. It is roughly the square difference between the final distance of two items in the MDS model and the true distance between them. The exact formula is: 
+		
+			\[ s = \sqrt{\frac{\sum (d_{ij}-d(i,j))}{\sum d_{ij}}}
+		\]
+		
+		The aim of MDS is to minimize this stress. Figure 7 presents the value of stress depending on the number of lines. We can see it is relatively low (<0,002) with our dataset.
+		
+	\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 1]{stressMDSnblines.png}
+\end{center}
+\caption{stress as a function of sample size}
+\end{figure}
+
+			\subsubsection{isomap}
+
+We have already talked about error reconstruction of isomap, a function already embedded in scikit. We also computed the error reconstruction as a function of the number of rows in figure ??. This error keeps increasing with the dataset size, so isomap accuracy seems to be limited by the size of the dataset.
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{isoerrorsize.png}
+\end{center}
+\caption{reconstruction error as a function of the datasize}
+\end{figure}
+
+		
 \section{Conclusion}
 \section{Bibliography}
 
