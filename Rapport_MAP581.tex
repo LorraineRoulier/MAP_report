@@ -18,6 +18,7 @@
  \usepackage{color}
  \usepackage{amsfonts}
  \usepackage{amsmath}
+ \usepackage{tikz} %draw dots
 
 \DeclareMathOperator{\e}{e}
 
@@ -55,7 +56,7 @@ We used a set of datasets we found on the NASA website, that gathered various me
 		\hline
 		  \end{tabular}
 \end{center}
-\caption{First row of our dataset}
+\caption{Variables of our dataset}
 \end{figure}
 
 The latitude parameter varies from -90 to 89 and the longitude parameter varies from -180 to 179. the negative values are for the south hemisphere, the positive ones for the north. Depending on the running time of the method, we did not compute the dimension reduction with the 64800 lines, but with a subset. 
@@ -68,7 +69,7 @@ The subset is often a slice of longitudes containing all latitudes, as we assume
 \caption{An example of subset in grey}
 \end{figure}
 
-We classified the data according to the latitude, creating five classes listed in the table below: 
+We classified the data according to the latitude, creating five classes listed in the table below. A more visual picture of our classification is given when we introduce the results of the different dimension reduction methods. 
 \begin{figure}[H]
  \begin{center}
 	
@@ -78,56 +79,72 @@ We classified the data according to the latitude, creating five classes listed i
 		\hline
 		Latitudes & 90 to 66 & 66 to 23 & 23 to -23 & -23 to -66 & -66 to -90 \\
 		\hline
+		 & \tikz\draw[blue,fill=blue] (0,0) circle (.5ex); & \tikz\draw[red,fill=red] (0,0) circle (.5ex); & \tikz\draw[green,fill=green] (0,0) circle (.5ex); & \tikz\draw[yellow,fill=yellow] (0,0) circle (.5ex); & \tikz\draw[pink,fill=pink] (0,0) circle (.5ex); \\
+		\hline
 		  \end{tabular}
 \end{center}
-\caption{First lign of our dataset}
+\caption{Our classification  }
 \end{figure}
 
 \section{Principal Component Analysis - PCA}
 	\subsection{Method}
 	
-		Principal Component Analysis detects tendencies in the data by maximizing the variance of the dataset matrix. This yields an orthonormal matrix that can be diagonalized. The largest eigenvalues point to the eigenvectors that contain the most information about the dataset. 
-		
-		Let $ X \in \mathbb{R}^{d \times n} $ be our dataset, PCA maximizes the following equation :
+		Principal Component Analysis detects tendencies in the data by maximizing the variance of the dataset matrix. 		
+		Let $ X \in \mathbb{R}^{d \times n} $ be our dataset where d is the number of variables and n the sample size, PCA maximizes the following equation :
 %%
-\[ \| X - MM^{T}X \|^{2} \]
-subject to $ M \in \mathcal{O}^{d \times r} $ where $ r<d $.
+\[ \| X - MM^{T}X \|^{2}_{F} \]
+subject to $ M \in \mathcal{O}^{d \times r} $ where $ r<d $ and $ \mathcal{O}^{d \times r}  $ is the space of orthogonal matrix and we use the Froebenius norm.
 
-The r greatest eigenvalues of $ XX^{T} = PDP^{T}$ yield the maximum $ M = P_{r} $ where the columns are the eigenvectors associated to the eigenvalues mentioned above. 
+The maximum of the previous function is reached by the covariance matrix of the dataset: the r greatest eigenvalues of $ XX^{T} = PDP^{T}$ yield the maximum $ M = P_{r} $ where the columns are the eigenvectors associated to the eigenvalues mentioned above. The largest eigenvalues point to the eigenvectors that contain the most information about the dataset. 
 
-The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this example, there are r principal components for the PCA
+The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this example, there are r principal components for the PCA. 
 	\subsection{Results}
 		\subsubsection{Two dimensions}
 		
 		We first implemented PCA and ran it with only two principal components, which yielded the following graph for the whole dataset. The associated eigenvectors were 
 		\begin{align*}
 			y_{1} &= \begin{bmatrix} 
-					-0.94220902\\
-					 -0.31329122 \\
-					  0.10889051\\
-					   -0.04573547\\
-					     0.01191187
+					-0.94\\
+					 -0.31 \\
+					  0.11\\
+					   -0.04\\
+					     0.01
 				      \end{bmatrix}
 		\end{align*} 
 		and 
 		\begin{align*}
 			y_{2} &= \begin{bmatrix} 
-				      0.02637512\\
-				       -0.40428947\\
-				        -0.9117768 \\  
-				        0.04144017\\
-				         -0.05291649
+				      0.03\\
+				       -0.40\\
+				        -0.91 \\  
+				        0.04\\
+				         -0.05
 				      \end{bmatrix}
 		\end{align*} 
 		
 		This enables us to understand the meaning of these vectors. $ y_{1} $ is mostly related to a decreasing temperature and pressure, and $ y_{2} $ represents decreasing humidity and pressure. 
-		
+
 \begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.5]{pca2.png}
-\end{center}
-\caption{PCA with two components}
+	\centering
+	\begin{minipage}[r]{.86\linewidth}
+      		\includegraphics[scale=0.4]{pca2.png} %gauche bas droite haut
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[l]{.12\linewidth}
+        		\includegraphics[scale=0.1]{colors.png}
+    \end{minipage}
+    \caption{PCA with two components}
 \end{figure}
+
+ \begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+		 \hline    
+	  	 North &Temperate north & Equator &  Temperate South & South\\ 
+		\hline
+		  \tikz\draw[blue,fill=blue] (0,0) circle (.5ex); & \tikz\draw[red,fill=red] (0,0) circle (.5ex); & \tikz\draw[green,fill=green] (0,0) circle (.5ex); & \tikz\draw[yellow,fill=yellow] (0,0) circle (.5ex); & \tikz\draw[pink,fill=pink] (0,0) circle (.5ex); \\
+		\hline
+		  \end{tabular}
+\end{center}
 
 We can see on the graph that even if there is a strong dispersion, equator values are located at higher temperatures. On the contrary, north and south pole values are located at lower temperatures. Green and red classes overlap as these to categories have similar climate conditions. 
 
@@ -135,7 +152,7 @@ Although it is an understandable figure, this is not satisfying. We plot the eig
 
 \begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 0.8]{eigen.png}
+	\includegraphics[scale = 0.6]{eigen.png}
 \end{center}
 \caption{PCA with two components}
 \end{figure}
@@ -143,6 +160,53 @@ Although it is an understandable figure, this is not satisfying. We plot the eig
 		\subsubsection{Three dimensions}
 		
 We attempted to run the PCA method with three principal components, 
+		
+		\subsubsection{Comparison of the dataset and its estimation by PCA}
+		
+		It is possible to built an estimated $ \hat{X} $ dataset from the projected data of PCA. We plotted the first column of the dataset, the temperature for $X $ and $ \hat{X} $ as a function of latitude and longitude. Even if the curve is reversed and the numerical values are not correct, the structure of the data is saved. 
+		
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[c]{.30\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.3]{temp1.png} %gauche bas droite haut
+		\centering
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.30\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{temp2.png}
+        		\centering
+    \end{minipage}
+     \begin{minipage}[c]{.30\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{temp3.png}
+        		\centering
+    \end{minipage}
+    \caption{Temperature as a function of latitude and longitude in $X$ }
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[c]{.30\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.3]{esttemp1.png} %gauche bas droite haut
+		\centering
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.30\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{esttemp2.png}
+        		\centering
+    \end{minipage}
+     \begin{minipage}[c]{.30\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{esttemp3.png}
+        		\centering
+    \end{minipage}
+    \caption{Temperature as a function of latitude and longitude in $\hat{X}$ }
+\end{figure}
+
 
 \section{Kernel Principal Component Analysis}
 	\subsection{Method}
