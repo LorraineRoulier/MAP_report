@@ -117,7 +117,6 @@ Our project was two sided. First, we familiarized with various dimension reducti
 \[ \| X - MM^{T}X \|^{2}_{F} \]
 subject to $ M \in \mathcal{O}^{d \times r} $ where $ r<d $ and $ \mathcal{O}^{d \times r}  $ is the space of orthogonal matrix and we use the Froebenius norm.
 
-<<<<<<< HEAD
 The maximum of the previous function is reached by the covariance matrix of the dataset: the r greatest eigenvalues of $ XX^{T} = PDP^{T}$ yield the maximum $ M = P_{r} $ where the columns are the eigenvectors associated to the eigenvalues mentioned above. The largest eigenvalues point to the eigenvectors that contain the most information about the dataset. 
 
 The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this example, there are r principal components for the PCA. 
@@ -330,9 +329,9 @@ We tried to change the $ \gamma $ parameter, but it had no influence on the dege
 	
 	\begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 0.5]{graphiso.png}
+	\includegraphics[scale = 0.8]{graphiso.png}
 \end{center}
-\caption{results of isomap depending on the number of neighbors considered from 2 to 12}
+\caption{results of isomap depending on the number of neighbors considered from 2 to 8}
 \end{figure}
 
 It is obvious that the number of neighbours considered strongly influence the 2D distribution of our dataset. To know which graph is the most accurate, we refer to the 'reconstruction error'. We computed this reconsruction error with respect to the number of neighbours considered. The results are presented in figure ??
@@ -344,7 +343,7 @@ It is obvious that the number of neighbours considered strongly influence the 2D
 \caption{reconstruction error as a function of number of neighbours considered}
 \end{figure}
 
-It is interesting to see that from eight neighbours, error seems to stabilize around 2,5. Indeed, we can see with graphs of figure 8 that from eight neighbours, graphs look quite all the same. Those are the most 'accurate' representations.
+It is interesting to see that from eight neighbors, error seems to stabilize around 2,5. So the most 'accurate' representation should be with 8 neighbors.
 
 
 		\subsection{Time comparison}
@@ -378,8 +377,8 @@ Kernel PCA was slower, we did not compute its running time for all the dataset, 
     \end{minipage}
 \end{figure}
 
-	In figure 10, we present computing time for different methods as a function of the number of rows.
-	From this we can conclude that the quickest method is PCA. Then comes kernel PCA, isomap and MDS. It is quite surprising to see that isomap is quicker than MDS for the same number of rows. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. We found an explanation on the "`manifold guide"' of skicit.
+	In figure 10, we present computing time for different methods as a function of the sample size.
+	From this we can conclude that the quickest method is PCA. Then comes kernel PCA, isomap and MDS. It is quite surprising to see that isomap is quicker than MDS for the same number of rows. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. We found an explanation on the 'manifold guide' of skicit.
 	
 	\begin{quotation}
 \begin{quote}
@@ -449,7 +448,18 @@ We can see that with only two components, we obtain an explaned variance of ??, 
 
 			\subsubsection{isomap}
 
-We have already talked about error reconstruction of isomap, a function already embedded in scikit. We also computed the error reconstruction as a function of the number of rows in figure ??. This error keeps increasing with the dataset size, so isomap accuracy seems to be limited by the size of the dataset.
+We have already talked about error reconstruction of isomap, a function already embedded in scikit. It may be interesting to see how reconstruction erro evolve with the number of dimension taken into account. On figure ?? we compare how reconstruction error evolve with dimension? We make dimension vary between 2 and 3.
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{isoerrorneighbourD.png}
+\end{center}
+\caption{reconstruction error as a function of the datasize}
+\end{figure}
+
+We can clearly see that error is slimmer in 3D than in 2D. It seems logic as in 3D we reduce less dimension than in 2D. But as the number of neighbors increases, both of 2D and 3D reconstruction error seem to stabilize around ?.
+
+ We also computed the error reconstruction as a function of the sample size in figure ??. This error keeps increasing with the dataset size, so isomap accuracy seems to be limited by the size of the dataset.
 
 \begin{figure}[H]
  \begin{center}

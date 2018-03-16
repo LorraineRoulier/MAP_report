@@ -1,4 +1,4 @@
-\select@language {french}
+\babel@toc {french}{}
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}
 \contentsline {section}{\numberline {2}Dataset presentation}{3}{section.2}
 \contentsline {section}{\numberline {3}Methods}{4}{section.3}
@@ -19,5 +19,5 @@
 \contentsline {subsubsection}{\numberline {4.3.1}PCA}{19}{subsubsection.4.3.1}
 \contentsline {subsubsection}{\numberline {4.3.2}MDS}{19}{subsubsection.4.3.2}
 \contentsline {subsubsection}{\numberline {4.3.3}isomap}{20}{subsubsection.4.3.3}
-\contentsline {section}{\numberline {5}Conclusion}{21}{section.5}
-\contentsline {section}{\numberline {6}Bibliography}{21}{section.6}
+\contentsline {section}{\numberline {5}Conclusion}{22}{section.5}
+\contentsline {section}{\numberline {6}Bibliography}{22}{section.6}
