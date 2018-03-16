@@ -47,8 +47,7 @@ In practice, dimension reduction is widely used for denoising  or  compressing  
 
 
 \section{Dataset presentation}
-
-Climate data amounts very quickly to a lot of unused data. In a day, we can collect temperature, pressure, wind data all over the world with satellites, even hourly. We used a set of datasets we found on the NASA website, that gathered various means on climate variables over 22 years at every given latitude and longitude. Thoses dataset can de bound here: https://eosweb.larc.nasa.gov/cgi-bin/sse/global.cgi?email=skip@larc.nasa.gov. 
+\label{url} Climate data amounts very quickly to a lot of unused data. In a day, we can collect temperature, pressure, wind data all over the world with satellites, even hourly. We used a set of datasets we found on the NASA website, that gathered various means on climate variables over 22 years at every given latitude and longitude. Those datasets can de found here [\ref{dataset}]. 
 AS each variable (temperature, radiation, pressure, wind speed and humidity) was stored in a separate dataset, we first had to merge all of them in a final table presented below:
 
 \begin{figure}[H]
@@ -124,10 +123,10 @@ The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this
 
 	\subsection{Kernel PCA}
 
-Kernel Principal Component analysis is a non linear method for dimension reduction. Instead of directly maximizing the variance of $X$, we map it into a larger dimension space called the feature space, using a non linear function $\phi$. 
+Kernel Principal Component analysis is a non linear method for dimension reduction. Instead of directly maximizing the variance of $X$, we map it into a larger dimension space called the feature space, using a non linear function $\phi : \mathbb{R}^{d} \rightarrow \mathbb{R}^{N} $ where $N>d$. 
 	
-	Instead of directly mapping $X$ into the feature space, we use a kernel, that represents a similarity function between pairs. Let $K$ be this kernel, then 
-	\[ K(x_{i},x_{j}) = \phi(x_{î}) \phi(x_{j})^{T}\]
+	Instead of directly mapping $X$ into the feature space, we use a kernel, that represents a similarity function between pairs. Let $K: \mathbb{R}^{d} \times \mathbb{R}^{d} \rightarrow \mathbb{R} $ be this kernel, then 
+	\[ K(x_{i},x_{j}) = \phi(x_{î})^{T} \phi(x_{j})\]
 where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$ 
 	
 	This kernel will enable us to bypass the higher dimension calculation of the variance in the feature space. We only need to compute the pairwise values for $\phi$, but there is no need to explicitly define $\phi$.
@@ -175,7 +174,7 @@ where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$
 		We first implemented PCA and ran it with only two principal components, which yielded the following graph for the whole dataset. The associated eigenvectors were 
 		\begin{align*}
 			y_{1} &= \begin{bmatrix} 
-					-0.94\\
+					-0.94\\ 
 					 -0.31 \\
 					  0.11\\
 					   -0.04\\
@@ -197,12 +196,12 @@ where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$
 
 \begin{figure}[H]
 	\centering
-	\begin{minipage}[r]{.86\linewidth}
-      		\includegraphics[scale=0.4]{pca2.png} %gauche bas droite haut
+	\begin{minipage}[r]{.66\linewidth}
+      		\includegraphics[scale=0.5]{pca2.png} %gauche bas droite haut
         \end{minipage}
          \hfill%
-         \begin{minipage}[l]{.12\linewidth}
-        		\includegraphics[scale=0.1]{colors.png}
+         \begin{minipage}[l]{.22\linewidth}
+        		\includegraphics[scale=0.15]{colors.png}
     \end{minipage}
     \caption{PCA with two components}
 \end{figure}	
@@ -219,96 +218,90 @@ where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$
 
 We can see on the graph that even if there is a strong dispersion, equator values are located at higher temperatures. On the contrary, north and south pole values are located at lower temperatures. Green and red classes overlap as these to categories have similar climate conditions. 
 
-Although it is an understandable figure, this is not satisfying. We plot the eigenvalues to see their relative importance in the dimension reduction. 
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.6]{eigen.png}
-\end{center}
-\caption{PCA with two components}
-\end{figure}
+Although it is an understandable figure, this is not satisfying. 
 
 		\subsubsection{Three dimensions}
 		
-We attempted to run the PCA method with three principal components, 
-		
-		\subsubsection{Comparison of the dataset and its estimation by PCA}
-		
-		It is possible to built an estimated $ \hat{X} $ dataset from the projected data of PCA. We plotted the first column of the dataset, the temperature for $X $ and $ \hat{X} $ as a function of latitude and longitude. Even if the curve is reversed and the numerical values are not correct, the structure of the data is saved. 
+We attempted to run the PCA method with three principal components, it yielded similar results as linear PCA, but some areas with particular climate conditions stood out more strikingly. For example, deserts are located at the bottom of the peak on the third figure below, that maps the dry and hot areas. 
 		
 \begin{figure}[H]
 	\centering
 	\begin{minipage}[c]{.30\linewidth}
        		 \centering
-      		\includegraphics[scale=0.3]{temp1.png} %gauche bas droite haut
+      		\includegraphics[scale=0.25]{3Dpca1.png} %gauche bas droite haut
 		\centering
         \end{minipage}
          \hfill%
          \begin{minipage}[c]{.30\linewidth}
                   \centering
-        		\includegraphics[scale=0.3]{temp2.png}
+        		\includegraphics[scale=0.25]{3Dpca2.png}
         		\centering
     \end{minipage}
      \begin{minipage}[c]{.30\linewidth}
                   \centering
-        		\includegraphics[scale=0.3]{temp3.png}
+        		\includegraphics[scale=0.25]{3Dpca3.png}
         		\centering
     \end{minipage}
-    \caption{Temperature as a function of latitude and longitude in $X$ }
+    \caption{3D PCA  }
 \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\begin{minipage}[c]{.30\linewidth}
-       		 \centering
-      		\includegraphics[scale=0.3]{esttemp1.png} %gauche bas droite haut
-		\centering
-        \end{minipage}
-         \hfill%
-         \begin{minipage}[c]{.30\linewidth}
-                  \centering
-        		\includegraphics[scale=0.3]{esttemp2.png}
-        		\centering
-    \end{minipage}
-     \begin{minipage}[c]{.30\linewidth}
-                  \centering
-        		\includegraphics[scale=0.3]{esttemp3.png}
-        		\centering
-    \end{minipage}
-    \caption{Temperature as a function of latitude and longitude in $\hat{X}$ }
-\end{figure}
-
+		
 		
 			\subsubsection{Kernel PCA}
 	
 	Kernel PCA has a complexity of $ O(n^{3}) $ so we decided to run it on a subset of our dataset. Here is the two dimension result for all latitudes between longitudes -15 and +15. 
-	
-	
+
 \begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.5]{kpca_first.png}
-\end{center}
-\caption{Kernel PCA with two components and the RBF kernel}
+	\centering
+	\begin{minipage}[c]{.66\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.5]{kpca_first.png} %gauche bas droite haut
+		\centering
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.26\linewidth}
+                  \centering
+        		\includegraphics[scale=0.2]{colorslice.png}
+        		\centering
+		
+    \end{minipage}
+    \caption{Kernel PCA with two components and the RBF kernel}
 \end{figure}
 
-	The black dots are all dots along one longitude, here 15. We see however that there is a degenerescence: -15 and +15 longitude are projected on the same positions. When changing the gamma
+	The black dots are all dots along one longitude, here 15. We see however that there is a degenerescence: -15 and +15 longitude are projected on the same positions. When changing the $ \gamma $, some lines grow appart but most of them stay degenerated.
+	Another flow of this representation is the space that is taken by the equator area. When representing the temperature in this area, we can see it does not vary very much compared to other regions: the variables should be represented closer together, as it was the case for example in PCA. 
 	
-	Another noticable flaw is the peak on the graph when we would expect the dots of same longitude to form a circle. The 3D visualisation of the graphic enables us to understand that peak: as we can see on the figure below, the lines that define one longitude form a sort of infinity symbol, a twisted circle, that can't render smoothly in two dimensions. 
+	The peak present in the center of the figure is a consequence of the fact that data from each side of the peak even if they are close numerically are not close spatially: they are the data from both north and south pole. 
 	
 \begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.5]{3Dkpca.png}
-\end{center}
-\caption{3D Kernel PCA}
-\end{figure}
+	\centering
+	\begin{minipage}[c]{.30\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.3]{3Dkpca1.png} %gauche bas droite haut
+		\centering
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.30\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{3Dkpca2.png}
+        		\centering
+    \end{minipage}
+     \begin{minipage}[c]{.30\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{3Dkpca3.png}
+        		\centering
+    \end{minipage}
+    \caption{3D Kernel PCA}
+    \end{figure}	
+
 
 The dots representing the south and north poles are still closer together however, which might come from the smaller range of temperatures and climate conditions reached in these areas. 
 
-We tried to change the $ \gamma $ parameter, but it had no influence on the degenerescence. Changing the kernel function to a polynomial one however destroyed the degenerescence, but created a node on equatorial values as it can be observed just below. The purple and black lines represent the -15 and 15 longitudes: they are clearly different. 
+ Changing the kernel function to a polynomial one however destroyed the degenerescence, but created a node on equatorial values as it can be observed just below. The purple and black lines represent the -15 and 15 longitudes: they are clearly different. 
 
 \begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 0.5]{kpca_poly.png}
+	\includegraphics[scale = 0.4]{kpca_poly.png}
 \end{center}
 \caption{Kernel PCA with polynomial kernel}
 \end{figure}
@@ -354,7 +347,7 @@ It is interesting to see that from eight neighbours, error seems to stabilize ar
 
 \begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 0.8]{pcatime.png}
+	\includegraphics[scale = 0.5]{pcatime.png}
 \end{center}
 \caption{running time for PCA}
 \end{figure}
@@ -424,12 +417,57 @@ We also check how isomap computing time varies with the number of neighbor taken
 
 \begin{figure}[H]
  \begin{center}
-	%\includegraphics[scale = 0.8]{eigen.png} à remplacer par l'autre
+	\includegraphics[scale = 0.6]{eigen.png}
 \end{center}
 \caption{PCA with two components}
 \end{figure}
 
 We can see that with only two components, we obtain an explaned variance of ??, which is quite enough to interpret our dataset. PCA seems to be a relevant technic to analyse data, and in particular to establish classification.
+		
+We also reconstructed the dataset from its projection with PCA. It is indeed possible to build an estimated $ \hat{X} $ dataset from the projected data of PCA. We plotted the first column of the dataset, the temperature for $X $ and $ \hat{X} $ as a function of latitude and longitude. Even if the curve is reversed and the numerical values are not correct, the structure of the data is saved. 
+		
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[c]{.30\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.4]{temp1.png} %gauche bas droite haut
+		\centering
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.30\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{temp2.png}
+        		\centering
+    \end{minipage}
+     \begin{minipage}[c]{.30\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{temp3.png}
+        		\centering
+    \end{minipage}
+    \caption{Temperature as a function of latitude and longitude in $X$ }
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[c]{.30\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.3]{esttemp1.png} %gauche bas droite haut
+		\centering
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.30\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{esttemp2.png}
+        		\centering
+    \end{minipage}
+     \begin{minipage}[c]{.30\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{esttemp3.png}
+        		\centering
+    \end{minipage}
+    \caption{Temperature as a function of latitude and longitude in $\hat{X}$ }
+\end{figure}
+
 
 			\subsubsection{MDS}
 			
@@ -461,6 +499,11 @@ We have already talked about error reconstruction of isomap, a function already 
 		
 \section{Conclusion}
 \section{Bibliography}
+
+\bigskip
+\noindent
+\label{dataset} https://eosweb.larc.nasa.gov/cgi-bin/sse/global.cgi?email=skip@larc.nasa.gov $\uparrow $[\pageref{url}]
+
 
 
 \end{document}
