@@ -256,7 +256,6 @@ In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensio
 	We did not use the "`S curve dataset"' as mentioned above, but we may think that due to the round shape of earth, our dataset is quite similar to the S-curve and thus Isomap runs faster than MDS.
 	
 	
-	
 		\begin{tabular}{|c|c|c|c|c|}
 		 \hline    
 	  	Method & PCA & Kernel PCA & MDS & Isomap \\ 
@@ -276,6 +275,7 @@ In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensio
 
 
 We also check how isomap computing time varies with the number of neighbor taken into account. Figure 11 shows that isomap efficiency time increases with the number of neighbors. So isomap efficiency of computing time may be limited by the number of neighbors.
+
 \begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.8]{timeisoneigh.png}
