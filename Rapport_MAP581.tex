@@ -31,7 +31,6 @@
 \definecolor{bleu}{rgb}{0.5, 1.0, 1.0}
 \newcommand{\hlb}[1]{\sethlcolor{bleu}\hl{#1}}
 
-
 \begin{document}
 
 \maketitle
@@ -41,7 +40,7 @@
 \section{Introduction}
 
  Dimension reduction refers to the process of reducing the number of random variables under consideration. It is an efficient way to analyze a large dataset of high dimension. For instance, dimensionality reduction can be used
-for  \textbf{visualizing}  or  exploring  structure  in  data. It provides a \textbf{simple geometric interpretation} by mapping  in 2D or 3D an original dataset of dimension d > 3. A 2D or 3D mapping is thus much easy to interpret for us human. In terms of performance, having data of high dimensionality is problematic because it can mean \textbf{high computational cost} to compute. Finally, dimensional reduction is often used for classification. Data points are being clustered, it is a way to establish clusters of gene and of population for example.
+for  \textbf{visualizing}  or  exploring  structure  in  data. It provides a \textbf{simple geometric interpretation} by mapping  in 2D or 3D an original dataset of dimension $ d > 3$ . A 2D or 3D mapping is thus much easy to interpret for us human. In terms of performance, having data of high dimensionality is problematic because it can mean \textbf{high computational cost} to compute. Finally, dimensional reduction is often used for classification. Data points are being clustered, it is a way to establish clusters of gene and of population for example.
 
 In practice, dimension reduction is widely used for denoising  or  compressing  data, and embedding image processing like facial recognition.
 
@@ -116,7 +115,6 @@ Our project was two sided. First, we familiarized with various dimension reducti
 \[ \| X - MM^{T}X \|^{2}_{F} \]
 subject to $ M \in \mathcal{O}^{d \times r} $ where $ r<d $ and $ \mathcal{O}^{d \times r}  $ is the space of orthogonal matrix and we use the Froebenius norm.
 
-<<<<<<< HEAD
 The maximum of the previous function is reached by the covariance matrix of the dataset: the r greatest eigenvalues of $ XX^{T} = PDP^{T}$ yield the maximum $ M = P_{r} $ where the columns are the eigenvectors associated to the eigenvalues mentioned above. The largest eigenvalues point to the eigenvectors that contain the most information about the dataset. 
 
 The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this example, there are r principal components for the PCA. 
@@ -139,18 +137,18 @@ where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$
 	\subsection{Multidimensional scaling}
 	
 	Multidimensional scaling is a non-linear approach to reduce dimension of a dataset. The principle is quite different from PCA: given a matrix of distance or "`dissimilarity"', MDS aims at reconstructing a map preserving at best the distances between datas. In our example, the MDS algorithm aims to place each object in 2-dimensional space such that the between-object distances are preserved as well as possible.
-	Given a distance matrix D of dimension n*p (p=5 for us) , MDS attempts to find the datapoints $y_1$,... $y_t$ in dimension d<p (d=2 for us) that minimizes:
+	Given a distance matrix D of dimension $ n \times p $ (p=5 for us) , MDS attempts to find the datapoints $y_1$,... $y_t$ in dimension d<p (d=2 for us) that minimizes:
 	
 		 \[\sum\limits_{i=1}^{t}[\sum\limits_{j=1}^{t}d_{ij}^{(X)}-d_{ij}^{(Y)}]
 			\]
 		
-	with $d_{ij}^{(X)}$ the euclidean distance between pairwise i and j in the original  $n \times p$ matrix $D^{(X)}$ and $d_{ij}^{(Y)}$ the euclidean distance between pairwise i and j in the original  $n \times p$ matrix $D^{(X)}$  and in the computed n*d matrix $D^{(Y)}$.
+	with $d_{ij}^{(X)}$ the euclidean distance between pairwise i and j in the original  $n \times p$ matrix $D^{(X)}$ and $d_{ij}^{(Y)}$ the euclidean distance between pairwise i and j in the original  $n \times p$ matrix $D^{(X)}$  and in the computed $ n \times d $ matrix $D^{(Y)}$.
 	
 	A basic approach to understand MDS is to use the example of cities. The input is the distance matrix between cities on the left on figure ??. MDS enabales us to find coordonates of each city based on this distance matrix.
 	
 	\begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 0.6]{MDSexpli.png}
+	\includegraphics[scale = 0.4]{MDSexpli.png}
 \end{center}
 \caption{role of MDS  - interpretation}
 \end{figure}
@@ -168,7 +166,7 @@ where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$
 	
 	
 \section{Results}
-	\subsection{graphic interpretation}
+	\subsection{Graphic Interpretation}
 		\subsubsection{PCA}
 		
 		We first implemented PCA and ran it with only two principal components, which yielded the following graph for the whole dataset. The associated eigenvectors were 
@@ -300,10 +298,20 @@ The dots representing the south and north poles are still closer together howeve
  Changing the kernel function to a polynomial one however destroyed the degenerescence, but created a node on equatorial values as it can be observed just below. The purple and black lines represent the -15 and 15 longitudes: they are clearly different. 
 
 \begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.4]{kpca_poly.png}
-\end{center}
-\caption{Kernel PCA with polynomial kernel}
+	\centering
+	\begin{minipage}[c]{.66\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.5]{kpca_poly.png} %gauche bas droite haut
+		\centering
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.26\linewidth}
+                  \centering
+        		\includegraphics[scale=0.2]{colorslice.png}
+        		\centering
+		
+    \end{minipage}
+    \caption{Kernel PCA with two components and polynomial kernel}
 \end{figure}
 
 			\subsubsection{Multidimensional Scaling - MDS}
@@ -312,20 +320,20 @@ The dots representing the south and north poles are still closer together howeve
 	
 	\begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 1]{graphMDS.png}
+	\includegraphics[scale = 0.7]{graphMDS.png}
 \end{center}
-\caption{results of MDS in 2D}
+\caption{Results of MDS in 2D}
 \end{figure}
 	
-			\subsubsection{isomap}
+			\subsubsection{Isomap}
 	
 	As the main parameter of the method is the number of nearest neighbors taken into account, we present in figure  ?? the result of isomap for number of neighbour between 1 to and neighbors. 
 	
 	\begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 0.5]{graphiso.png}
+	\includegraphics[scale = 0.8]{graphiso.png}
 \end{center}
-\caption{results of isomap depending on the number of neighbors considered from 2 to 12}
+\caption{results of isomap depending on the number of neighbors considered from 2 to 8}
 \end{figure}
 
 It is obvious that the number of neighbours considered strongly influence the 2D distribution of our dataset. To know which graph is the most accurate, we refer to the 'reconstruction error'. We computed this reconsruction error with respect to the number of neighbours considered. The results are presented in figure ??
@@ -337,10 +345,9 @@ It is obvious that the number of neighbours considered strongly influence the 2D
 \caption{reconstruction error as a function of number of neighbours considered}
 \end{figure}
 
-It is interesting to see that from eight neighbours, error seems to stabilize around 2,5. Indeed, we can see with graphs of figure 8 that from eight neighbours, graphs look quite all the same. Those are the most 'accurate' representations.
+It is interesting to see that from eight neighbors, error seems to stabilize around 2,5. So the most 'accurate' representation should be with 8 neighbors.
 
-
-		\subsection{Time comparison}
+\subsection{Time comparison}
 	
 	We implemented manually PCA, but for the other methods we used the built in fonction of the scikit package on python. 
 	PCA's running time varies linearly with the number of rows as we can see on the graphic below 
@@ -371,8 +378,8 @@ Kernel PCA was slower, we did not compute its running time for all the dataset, 
     \end{minipage}
 \end{figure}
 
-	In figure 10, we present computing time for different methods as a function of the number of rows.
-	From this we can conclude that the quickest method is PCA. Then comes kernel PCA, isomap and MDS. It is quite surprising to see that isomap is quicker than MDS for the same number of rows. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. We found an explanation on the "`manifold guide"' of skicit.
+	In figure 10, we present computing time for different methods as a function of the sample size.
+	From this we can conclude that the quickest method is PCA. Then comes kernel PCA, isomap and MDS. It is quite surprising to see that isomap is quicker than MDS for the same number of rows. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. We found an explanation on the 'manifold guide' of skicit.
 	
 	\begin{quotation}
 \begin{quote}
@@ -395,7 +402,7 @@ In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensio
 	
 \begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 0.8]{isomdstime.png}
+	\includegraphics[scale = 0.8]{time.png}
 \end{center}
 \caption{computing time comparison}
 \end{figure}
@@ -422,7 +429,7 @@ We also check how isomap computing time varies with the number of neighbor taken
 \caption{PCA with two components}
 \end{figure}
 
-We can see that with only two components, we obtain an explaned variance of ??, which is quite enough to interpret our dataset. PCA seems to be a relevant technic to analyse data, and in particular to establish classification.
+We can see that with only two components, we obtain an explained variance of 94\%, which is quite enough to interpret our dataset. PCA seems to be a relevant technic to analyse data, and in particular to establish classification.
 		
 We also reconstructed the dataset from its projection with PCA. It is indeed possible to build an estimated $ \hat{X} $ dataset from the projected data of PCA. We plotted the first column of the dataset, the temperature for $X $ and $ \hat{X} $ as a function of latitude and longitude. Even if the curve is reversed and the numerical values are not correct, the structure of the data is saved. 
 		
@@ -487,7 +494,18 @@ We also reconstructed the dataset from its projection with PCA. It is indeed pos
 
 			\subsubsection{isomap}
 
-We have already talked about error reconstruction of isomap, a function already embedded in scikit. We also computed the error reconstruction as a function of the number of rows in figure ??. This error keeps increasing with the dataset size, so isomap accuracy seems to be limited by the size of the dataset.
+We have already talked about error reconstruction of isomap, a function already embedded in scikit. It may be interesting to see how reconstruction erro evolve with the number of dimension taken into account. On figure ?? we compare how reconstruction error evolve with dimension? We make dimension vary between 2 and 3.
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{isoerrorneighbourD.png}
+\end{center}
+\caption{reconstruction error as a function of the datasize}
+\end{figure}
+
+We can clearly see that error is slimmer in 3D than in 2D. It seems logic as in 3D we reduce less dimension than in 2D. But as the number of neighbors increases, both of 2D and 3D reconstruction error seem to stabilize around ?.
+
+ We also computed the error reconstruction as a function of the sample size in figure ??. This error keeps increasing with the dataset size, so isomap accuracy seems to be limited by the size of the dataset.
 
 \begin{figure}[H]
  \begin{center}
