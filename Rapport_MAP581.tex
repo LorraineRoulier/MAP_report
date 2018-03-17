@@ -377,8 +377,8 @@ Kernel PCA was slower, we did not compute its running time for all the dataset, 
     \end{minipage}
 \end{figure}
 
-	In figure 10, we present computing time for different methods as a function of the sample size.
-	From this we can conclude that the quickest method is PCA. Then comes kernel PCA, isomap and MDS. It is quite surprising to see that isomap is quicker than MDS for the same number of rows. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. We found an explanation on the 'manifold guide' of skicit.
+	In figure 10, we present computing time for the four different methods as a function of the sample size.
+	From this we can conclude that the quickest method is PCA. Then come isomap, kernel PCA and finally MDS. It is quite surprising to see that isomap is quicker than MDS for the same number of rows. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. We found an explanation on the 'manifold guide' of skicit.
 	
 	\begin{quotation}
 \begin{quote}
@@ -401,7 +401,7 @@ In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensio
 	
 \begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 0.8]{isomdstime.png}
+	\includegraphics[scale = 0.8]{time.png}
 \end{center}
 \caption{computing time comparison}
 \end{figure}
