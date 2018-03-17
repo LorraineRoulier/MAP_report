@@ -325,8 +325,8 @@ The dots representing the south and north poles are still closer together howeve
 			\subsubsection{Multidimensional Scaling - MDS}
 	
 	As MDS was extremeley low and seemed to use a lot of memory, we could not run the programm for more than 600 datapoints (ie 600 rows).Therefore, we used a new subset of longitudes between 0° and +5°, reducing the dataset size to 546 datapoints. 
-	Figure 6 shows the results of MDS. As we can see, datas from South pole and North pole are quite compact, that is to say that all points are near each other. There is not a wide range of temperature, pressure, radiation, humidity and wind speed in those regions. This is quite what we expected. 
-	On the contrary, regions like equator and north temperate show a wide range of climatic parameters as some points are quite far from each other. It would mean that there are more diverse climate in equator and north temperate. It also seems like south temperate shows less diversity of climate as all the points seem compact. This is not what we expected, as south and north temperate are supposed to have same characteristics. This could be explained by two reasons. \textbf{Either we are missing information because we have reduced too much the dimension, or south hemisphere is quite different because it has much more ocean than the north hemisphere.} To check the first possibility, we implemented MDS in 3D, here are the results on figure ??. As we can see, the yellow points (south temperate) are not as widely spread as the green (equator) or red (north temperate) one. So it seems like the second possibility explain why we have fewer variance of climatic parameters in south temperate.
+	Figure \ref{12} shows the results of MDS. As we can see, datas from South pole and North pole are quite compact, that is to say that all points are near each other. There is not a wide range of temperature, pressure, radiation, humidity and wind speed in those regions. This is quite what we expected. 
+	On the contrary, regions like equator and north temperate show a wide range of climatic parameters as some points are quite far from each other. It would mean that there are more diverse climate in equator and north temperate. It also seems like south temperate shows less diversity of climate as all the points seem compact. This is not what we expected, as south and north temperate are supposed to have same characteristics. This could be explained by two reasons. \textbf{Either we are missing information because we have reduced too much the dimension, or south hemisphere is quite different because it has much more ocean than the north hemisphere.} To check the first possibility, we implemented MDS in 3D, here are the results on figures \ref{13} and \ref{14}. As we can see, the yellow points (south temperate) are not as widely spread as the green (equator) or red (north temperate) one. So it seems like the second possibility explain why we have fewer variance of climatic parameters in south temperate.
 	
 	\begin{figure}[H]
  \begin{center}
@@ -340,6 +340,8 @@ The dots representing the south and north poles are still closer together howeve
 	\includegraphics[scale = 0.5]{mds3Da.png}
 \end{center}
 \caption{Results of MDS in 3D}
+\label{13}
+\label{12}
 \end{figure}
 
 \begin{figure}[H]
@@ -347,27 +349,30 @@ The dots representing the south and north poles are still closer together howeve
 	\includegraphics[scale = 0.5]{mds3Db.png}
 \end{center}
 \caption{Results of MDS in 3D}
+\label{14}
 \end{figure}
 
  
 			\subsubsection{Isomap}
 	
-	One of the key parameter of isomap  is the number of nearest neighbors taken into account. Therefore, we present in figure  ?? the result of isomap for number of neighbour between 1 to and neighbors. 
+	One of the key parameter of isomap  is the number of nearest neighbors taken into account. Therefore, we present in figure \ref{15} the result of isomap for a number of neighbors between 2 to 8. 
 	
 	\begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.8]{graphiso.png}
 \end{center}
 \caption{results of isomap depending on the number of neighbors considered from 2 to 8}
+\label{15}
 \end{figure}
 
-It is obvious that the number of neighbours considered strongly influence the 2D distribution of our dataset. To know which graph is the most accurate, we refer to the 'reconstruction error'. This reconstruction error is a function embedded in scikit. For the moment, we only need to know that it is an indicator of how much isomap mapping is accurate and respect original distance, it kind of computes difference between the final distance of two items in the isomap mappingl and the true distance between them. We computed this reconstruction error with respect to the number of neighbours considered. The results are presented in figure ??
+It is obvious that the number of neighbours considered strongly influence the 2D distribution of our dataset. To know which graph is the most accurate, we refer to the 'reconstruction error'. This reconstruction error is a function embedded in scikit. For the moment, we only need to know that it is an indicator of how much isomap mapping is accurate and respect original distance, it kind of computes difference between the final distance of two items in the isomap mappingl and the true distance between them. We computed this reconstruction error with respect to the number of neighbours considered. The results are presented in figure \ref{16}.
 
 \begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.8]{isoerrorneighbour.png}
 \end{center}
 \caption{reconstruction error as a function of number of neighbours considered}
+\label{16}
 \end{figure}
 
 It is interesting to see that from eight neighbors, error seems to stabilize around 2,5. So the most 'accurate' representation should be with 8 neighbors. If we interpret the graph with 8 neighbors, we can see that we can browse the entire planet from north pole to south pole, going through all zones in the order, \textbf{which is not the case in MDS}. So isomap better preserve the geometry of the dataset. It is interesting to see that pink points(ie south pole) are much more spread in isomap than MDS.
@@ -403,7 +408,7 @@ Kernel PCA was slower, we did not compute its running time for all the dataset, 
     \end{minipage}
 \end{figure}
 
-	In figure 10, we present computing time for the four different methods as a function of the sample size.
+	In figure \ref{20}, we present computing time for the four different methods as a function of the sample size.
 	From this we can conclude that the quickest method is PCA. Then come isomap, kernel PCA and finally MDS. It is quite surprising to see that isomap is quicker than MDS for the same number of rows. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. We found an explanation on the 'manifold guide' of skicit.
 	
 	\begin{quotation}
@@ -414,32 +419,24 @@ In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensio
 	
 	We did not use the 'S curve dataset' as mentioned above, but we may think that due to the round shape of earth, our dataset is quite similar to the S-curve and thus Isomap runs faster than MDS. For a fixed dimension d, the following table present the complexity of every method as it appeared to us.
 
-\bigskip
- \begin{center}
-		\begin{tabular}{|c|c|c|c|c|}
-		 \hline    
-	  	Method & PCA & Kernel PCA & MDS & Isomap \\ 
-		\hline
-		Complexity & $O(nr^{2})$ & $O(n^3)$ & $O(n^3)$  &  \\
-		\hline
-		  \end{tabular}
- \end{center}
 
 \begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.8]{time.png}
 \end{center}
 \caption{computing time comparison}
+\label{20}
 \end{figure}
 
 
-We also check how isomap computing time varies with the number of neighbor taken into account. Figure 11 shows that isomap efficiency time increases with the number of neighbors. So isomap efficiency of computing time may be limited by the number of neighbors.
+We also checked how isomap computing time varies with the number of neighbor taken into account. Figure \ref{21} shows that isomap efficiency time increases with the number of neighbors. So isomap efficiency of computing time may be limited by the number of neighbors.
 
 \begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.8]{timeisoneigh.png}
 \end{center}
 \caption{computing time for isomap as a function of the number of neighbors considered}
+\label{21}
 \end{figure}
 
 \subsection{Error and preserved information}
@@ -514,34 +511,61 @@ with $d_{ij}$ the original distance between pairwaise i and j and d(i,j) the com
  \begin{center}
 	\includegraphics[scale = 1]{compmdsiso.png}
 \end{center}
-\caption{stress as a function of sample size}
+\caption{error as a function of sample size}
+\label{25}
 \end{figure}
 
-As we can see, isomap is less efficient than MDS for a subset of size 200. AS the data set size increases, isomap error tends to lessen but is still much more important than MDS error. \textbf{In our example, it seems like MDS gives a much more accurate representation of our dataset.}
+As we can see on figure \ref{25}, isomap is less efficient than MDS for a subset of size 200. AS the data set size increases, isomap error tends to lessen but is still much more important than MDS error. \textbf{In our example, it seems like MDS gives a much more accurate representation of our dataset.}
 
-	Then, we intended to see how reconstruction error evolve with the number of dimension taken into account for both MDS and isomap. On figure ?? we compare how reconstruction error evolve with dimension. We make dimension vary between 2 and 3.
+	Then, we intended to see how reconstruction error evolve with the number of dimension taken into account for both MDS and isomap. On figure \ref{26} we compare how reconstruction error evolve with dimension. We make dimension vary between 2 and 3.
 
 \begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.8]{isoerrorsamplesizeD.png}
 \end{center}
 \caption{reconstruction error as a function of the sample size for ISOMAP}
+\label{26}
 \end{figure}
 
 As the sample size increases, error for 2D isomap keep increasing compare to error in 3D isomap. As expected, error for 2D isomap is bigger than for 3D because we reduce more the dimension.
 
-We did the same for MDS in 2D and 3D. 
+We did the same for MDS in 2D and 3D in figure \ref{27}. As we have seen above, stress in MDS does not increase with sample size but remains stable. Yet, 2D error is a bit more important for small sample size than 3D error. When the sample size increases, both 3D and 2D error tends to an equal small limit. 
 
-begin{figure}[H]
+\begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.8]{mdsD.png}
 \end{center}
 \caption{reconstruction error as a function of the sample size for MDS}
+\label{27}
 \end{figure}
 		
 \section{Conclusion}
 
 In this project, we have studied four different dimension reduction methods with a climate dataset. 
+
+\begin{figure}[H]
+ \begin{center}
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{|c|c|c|}
+		 \hline    
+	  	Methods& Time efficiency & Comments \\ 
+		\hline
+			PCA & quickest & lost information easily available  \\
+		\hline
+			Kernel PCA & 3rd quickest, slow & no way to measure accuracy found (no time) \\
+		\hline
+			MDS & very slow & more accurate than isomap, 
+			accuracy stays stable when sample size increases\\
+		\hline
+			isomap & quick & less accurate than isomap
+			accuracy decreases as sample size increases\\
+		  \end{tabular}
+			}
+\end{center}
+\caption{Our results  }
+\end{figure}
+
+We have seen that those dimension reduction were an efficient way to establish a classification of geographical zones of the earth based on meteorological characteristics. A next possible step would be for exemple to be able to identify from which zone on earth random climate datas were collected.
 
 For us, this project was a very first approach to dimension reduction. Therefore, we decided to focus on exclusively four methods to have time analyze them thoroughly. We may not have deeply studied the mathematical proof of every method, because we were more interested in understanding their founding concept, or to 'give them a sense'.
 

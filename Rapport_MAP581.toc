@@ -1,4 +1,4 @@
-\select@language {english}
+\babel@toc {english}{}
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}
 \contentsline {section}{\numberline {2}Dataset presentation}{3}{section.2}
 \contentsline {section}{\numberline {3}Methods}{4}{section.3}
@@ -17,5 +17,5 @@
 \contentsline {subsection}{\numberline {4.3}Error and preserved information}{18}{subsection.4.3}
 \contentsline {subsubsection}{\numberline {4.3.1}PCA}{18}{subsubsection.4.3.1}
 \contentsline {subsubsection}{\numberline {4.3.2}MDS and isomap}{20}{subsubsection.4.3.2}
-\contentsline {section}{\numberline {5}Conclusion}{22}{section.5}
-\contentsline {section}{\numberline {6}Bibliography}{22}{section.6}
+\contentsline {section}{\numberline {5}Conclusion}{23}{section.5}
+\contentsline {section}{\numberline {6}Bibliography}{24}{section.6}
