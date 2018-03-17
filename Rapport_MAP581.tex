@@ -40,22 +40,26 @@
 \section{Introduction}
 
  Dimension reduction refers to the process of reducing the number of random variables under consideration. It is an efficient way to analyze a large dataset of high dimension. For instance, dimensionality reduction can be used
-for  \textbf{visualizing}  or  exploring  structure  in  data. It provides a \textbf{simple geometric interpretation} by mapping  in 2D or 3D an original dataset of dimension $ d > 3$ . A 2D or 3D mapping is thus much easy to interpret for us human. In terms of performance, having data of high dimensionality is problematic because it can mean \textbf{high computational cost} to compute. Finally, dimensional reduction is often used for classification. Data points are being clustered, it is a way to establish clusters of gene and of population for example.
+for  \textbf{visualizing}  or  exploring  structure  in  data. It provides a \textbf{simple geometric interpretation} by mapping  in 2D or 3D an original dataset of dimension $ d > 3$ . A 2D or 3D mapping is thus much easy to interpret. In terms of performance, having data of high dimensionality is problematic because it can mean \textbf{high computational cost} to compute. Finally, dimensional reduction is often used for classification. Data samples are being clustered, it is a way to establish clusters of gene and of population for example. It is a current tool in machine learning. 
 
-In practice, dimension reduction is widely used for denoising  or  compressing  data, and embedding image processing like facial recognition.
+In practice, dimension reduction is widely used for denoising  or  compressing  data, and embedded image processing like facial recognition.
+
+\bigskip
+In this project, we explored various dimension reduction techniques. The main way to classify the different methods is to observe if they are linear or non-linear. The basic linear dimension method is a linear one, Principal Component Analysis (PCA). In order to familiarize ourselves with dimension reduction, we implemented this method manually. We explored PCA and its non-linear version, Kernel Principal Component Analysis. We also used Multidimensional scaling (MDS) which is a linear method and Isomap, a non-linear method. 
 
 
 \section{Dataset presentation}
-\label{url} Climate data amounts very quickly to a lot of unused data. In a day, we can collect temperature, pressure, wind data all over the world with satellites, even hourly. We used a set of datasets we found on the NASA website, that gathered various means on climate variables over 22 years at every given latitude and longitude. Those datasets can de found here [\ref{dataset}]. 
-AS each variable (temperature, radiation, pressure, wind speed and humidity) was stored in a separate dataset, we first had to merge all of them in a final table presented below:
+
+We applied the methods listed above on the dataset we describe here. It is a dataset that contains climate data associated with its position. Our goal is to show that the position on the globe is embedded in the climate data. 
+
+\label{url} Climate data amounts very quickly to a lot of unused data. In a day, we can collect temperature, pressure, wind data all over the world with satellites, even hourly. We used a set of datasets we found on the NASA website, that gathered various means on climate variables over 22 years at every given latitude and longitude. Those datasets can de found here [\ref{dataset}].
+As each variable (temperature, radiation, pressure, wind speed and humidity) was stored in a separate dataset, we first had to merge all of them in a final table presented below. We did not select every dataset given by the NASA because we considered that temperature related data for example were already very correlated and did not add much information. 
 
 \begin{figure}[H]
  \begin{center}
-	
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		 \hline    
 	  	Latitude & Longitude &Temperature & Pressure&  Relative Humidity& Wind Speed& Radiation\\ 
-		
 		& & °$C$ & $kPa$ & $ \%$ & $m/s$ & $kWh/m^{2}/day$ \\ 
 		\hline
 		  \end{tabular}
@@ -66,6 +70,8 @@ AS each variable (temperature, radiation, pressure, wind speed and humidity) was
 The latitude parameter varies from -90 to 89 and the longitude parameter varies from -180 (south pole)  to 179 (north pole). Depending on the running time of the method, we did not compute the dimension reduction with the 64800 lines, but with a subset. 
 The subset is often a slice of longitudes containing all latitudes, as we assumed that the critical parameter to differentiate climate data was the latitude. We will detail the subset considered in every method. 
 
+Since our goal was to see if the position of a location on earth was embedded in it's climate data, we did not use the first two columns of our dataset when computing the dimension reduction methods. 
+
 \begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 4]{latlon.jpg}
@@ -73,17 +79,20 @@ The subset is often a slice of longitudes containing all latitudes, as we assume
 \caption{An example of subset in grey}
 \end{figure}
 
-We classified the data according to the latitude, creating five classes listed in the table below. A more visual picture of our classification is given when we introduce the results of the different dimension reduction methods. 
+We classified the data according to the latitude, creating five classes listed in the table below. A more visual picture of our classification is given when we introduce the results of the different dimension reduction methods. The latitudes we chose are universally know parallels. The north temperate zone extends from the tropic of cancer to the arctic circle and the south temperate zone from the tropic of capricorne to the antarctic circle. 
+
 \begin{figure}[H]
  \begin{center}
 	
 	\begin{tabular}{|c|c|c|c|c|c|}
 		 \hline    
-	  	& North &Temperate north & Equator &  Temperate South & South\\ 
+	  	& North &Temperate North & Equator &  Temperate South & South\\ 
 		\hline
 		Latitudes & 90 to 66 & 66 to 23 & 23 to -23 & -23 to -66 & -66 to -90 \\
 		\hline
 		 & \tikz\draw[blue,fill=blue] (0,0) circle (.5ex); & \tikz\draw[red,fill=red] (0,0) circle (.5ex); & \tikz\draw[green,fill=green] (0,0) circle (.5ex); & \tikz\draw[yellow,fill=yellow] (0,0) circle (.5ex); & \tikz\draw[pink,fill=pink] (0,0) circle (.5ex); \\
+		\hline
+		\% of Earth surface & 4 & 26 & 40 & 26 & 4 \\
 		\hline
 		  \end{tabular}
 \end{center}
@@ -92,32 +101,33 @@ We classified the data according to the latitude, creating five classes listed i
 
 \section{Methods}
 
-Dimension reduction techniques can be divided in two classes, linear dimension reduction and non linear dimension reduction. However, in all methods, the main goal is to figure out a similarity function between vectors. Such a function will then enable to sort the dataset into classes of vectors with similar features, which would have been more intricate with the initial dataset. 
+In all dimension reduction techniques, the main goal is to figure out a similarity function between vectors. Such a function will then enable to sort the dataset into classes of vectors with similar features, which would have been more intricate with the initial dataset. 
 
 Our project was two sided. First, we familiarized with various dimension reduction techniques, then we attempted to show that the geographical position of a point on the planet - e.g. it's latitude and longitude - were embedded in the climate data one could gather on it. 
 
 	\subsection{Principal Component Analysis - PCA}
 	
-		Principal Component Analysis detects tendencies in the data by maximizing the variance of the dataset matrix. There is an easy approach to understand PCA with a 2D dataset. On Figure ??, we have plotted a 2D dataset. If we implement 2D-PCA, we will find two new axes that reflects at best the variances of datapoints. Those ares the green axes. PCA just 'rotates' the figure to find a more explicit 'point of view'. The yielded axes are a linear combination of the original axes. 
+		Principal Component Analysis detects tendencies in the data by maximizing the variance of the dataset matrix. There is an easy approach to understand PCA with a 2D dataset. On Figure \ref{4}, we can see the plot of a 2D-dataset. If we implement 2D-PCA, we will find two new axes that reflect at best the covariance of the samples. Those ares the green axes. PCA just rotates the figure to find a more explicit "point of view". The yielded axes are a linear combination of the original axes. 
 		
 		\begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.5]{PCAexpli.png}
 \end{center}
 \caption{role of PCA  - interpretation}
+\label{4}
 \end{figure}
 		
 		
-		From a mathematical point of view, PCA yields an orthonormal matrix that can be diagonalized. The largest eigenvalues point to the eigenvectors that contain the most information about the dataset. 
+		From a mathematical point of view, PCA yields an orthonormal matrix that can be diagonalized. The largest eigenvalues point to the eigenvectors that contain the most information about the dataset. The dataset can then be projected on a lower dimension using the right eigenvectors.
 		
 		Let $ X \in \mathbb{R}^{d \times n} $ be our dataset where d is the number of variables and n the sample size, PCA maximizes the following equation :
 %%
 \[ \| X - MM^{T}X \|^{2}_{F} \]
-subject to $ M \in \mathcal{O}^{d \times r} $ where $ r<d $ and $ \mathcal{O}^{d \times r}  $ is the space of orthogonal matrix and we use the Froebenius norm.
+subject to $ M \in \mathcal{O}^{d \times r} $ where $ r<d $ and $ \mathcal{O}^{d \times r}  $ is the space of orthonormal matrix and we use the Froebenius norm.
 
 The maximum of the previous function is reached by the covariance matrix of the dataset: the r greatest eigenvalues of $ XX^{T} = PDP^{T}$ yield the maximum $ M = P_{r} $ where the columns are the eigenvectors associated to the eigenvalues mentioned above. The largest eigenvalues point to the eigenvectors that contain the most information about the dataset. 
 
-The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this example, there are r principal components for the PCA. 
+The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this example, there are r principal components for the PCA. Each of the $ M_{ij} $ coefficients of the matrix can be interpreted as weights given to the variable they are associated to. This enables us to interpret which variable of the dataset gives more significant information about the data. 
 
 	\subsection{Kernel PCA}
 
@@ -125,43 +135,45 @@ Kernel Principal Component analysis is a non linear method for dimension reducti
 	
 	Instead of directly mapping $X$ into the feature space, we use a kernel, that represents a similarity function between pairs. Let $K: \mathbb{R}^{d} \times \mathbb{R}^{d} \rightarrow \mathbb{R} $ be this kernel, then 
 	\[ K(x_{i},x_{j}) = \phi(x_{î})^{T} \phi(x_{j})\]
-where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$ 
+where $(x_{i}, x_{j} ) \in \mathbb{R}^{d} \times \mathbb{R}^{d} $ are vectors of the dataset $X$ 
 	
 	This kernel will enable us to bypass the higher dimension calculation of the variance in the feature space. We only need to compute the pairwise values for $\phi$, but there is no need to explicitly define $\phi$.
 	
 	The downside of this method is that since we don't compute directly the eigenvectors and eigenvalues of $\phi$, the result is the projection of our dataset onto the eigenvectors. We thus don't have access to a simple interpretation of the principal components. 
 	
 	A classic kernel that is often used is the RBF function that is defined below: 
-	 \[ K(x_{i},x_{j}) = \e{- \gamma \| x_{i} - x_{j} \| }\]
+	 \[ K(x_{i},x_{j}) = e^{- \gamma \| x_{i} - x_{j} \| }\]
 	
 	\subsection{Multidimensional scaling}
 	
-	Multidimensional scaling is a non-linear approach to reduce dimension of a dataset. The principle is quite different from PCA: given a matrix of distance or "`dissimilarity"', MDS aims at reconstructing a map preserving at best the distances between datas. In our example, the MDS algorithm aims to place each object in 2-dimensional space such that the between-object distances are preserved as well as possible.
-	Given a distance matrix D of dimension $ n \times p $ (p=5 for us) , MDS attempts to find the datapoints $y_1$,... $y_t$ in dimension d<p (d=2 for us) that minimizes:
+	Multidimensional scaling is a linear approach to reduce dimension of a dataset. The principle is quite different from PCA: given a matrix of distance or "dissimilarity", MDS aims at reconstructing a map preserving at best the distances between datas. In our example, the MDS algorithm aims to place each object in a 2-dimensional space such that the between-object distances are preserved as well as possible.
+	Given a distance matrix D of dimension $ n \times p $ (p=5 for us) , MDS attempts to find the datapoints $y_1$,... $y_t$ in dimension $d<p $(d=2 for us) that minimizes:
 	
 		 \[\sum\limits_{i=1}^{t}[\sum\limits_{j=1}^{t}d_{ij}^{(X)}-d_{ij}^{(Y)}]
 			\]
 		
 	with $d_{ij}^{(X)}$ the euclidean distance between pairwise i and j in the original  $n \times p$ matrix $D^{(X)}$ and $d_{ij}^{(Y)}$ the euclidean distance between pairwise i and j in the original  $n \times p$ matrix $D^{(X)}$  and in the computed $ n \times d $ matrix $D^{(Y)}$.
 	
-	A basic approach to understand MDS is to use the example of cities. The input is the distance matrix between cities on the left on figure ??. MDS enabales us to find coordonates of each city based on this distance matrix.
+	A basic approach to understand MDS is to use the example of cities. The input is the distance matrix between cities on the left on figure \ref{5}. MDS enables us to find the coordinates of each city based on this distance matrix.
 	
 	\begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.4]{MDSexpli.png}
 \end{center}
 \caption{role of MDS  - interpretation}
+\label{5}
 \end{figure}
 
 	\subsection{Isomap}
 	
-	Isomap is a low dimensional embedding method similar to MDS. The difference is, distance is not computed with euclidean norm but with geodesic distance. As the earth shape is round, isomap seems more relevant than MDS. ON figure ??, we can see the difference between the geodisic distance (in red) used in isomap, and the eucliean distance used in MDS ( in blue).
+	Isomap is a low dimensional embedding method similar to MDS. The difference is that distance is not computed with euclidean norm but with geodesic distance. As the earth shape is round, isomap seems more relevant than MDS. On figure \ref{6}, we can see the difference between the geodisic distance (in red) used in isomap, and the eucliean distance used in MDS (in blue).
 	
 	\begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.6]{isoexpli.png}
 \end{center}
 \caption{geodisic and euclidean distance}
+\label{6}
 \end{figure}
 	
 	
@@ -169,26 +181,21 @@ where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$
 	\subsection{Graphic Interpretation}
 		\subsubsection{PCA}
 		
-		We first implemented PCA and ran it with only two principal components, which yielded the following graph for the whole dataset. The associated eigenvectors were 
-		\begin{align*}
-			y_{1} &= \begin{bmatrix} 
-					-0.94\\ 
-					 -0.31 \\
-					  0.11\\
-					   -0.04\\
-					     0.01
-				      \end{bmatrix}
-		\end{align*} 
-		and 
-		\begin{align*}
-			y_{2} &= \begin{bmatrix} 
-				      0.03\\
-				       -0.40\\
-				        -0.91 \\  
-				        0.04\\
-				         -0.05
-				      \end{bmatrix}
-		\end{align*} 
+		We first implemented PCA and ran it with only two principal components, which yielded the graph plotted in figure \ref{7} for the whole dataset. We wrote the eigenvectors $ y_{1} $ and $ y_{2}$ that were used horizontally to make it easier to understand their meaning. 
+		
+\begin{center}
+	\begin{tabular}{ccccc}
+		 \hline    
+		 Temperature & Pressure&  Relative Humidity& Wind Speed& Radiation\\ 
+		\hline
+		  \end{tabular}
+\bigskip
+		
+		$ y_{1} = [\,-0.94 \quad -0.31\quad 0.11 \quad -0.04 \quad 0.01\,] $
+
+\bigskip
+		$ y_{2} = [\,  0.03 \quad  -0.40 \quad -0.91 \quad 0.04 \quad -0.05\,] $
+\end{center}
 		
 		This enables us to understand the meaning of these vectors. $ y_{1} $ is mostly related to a decreasing temperature and pressure, and $ y_{2} $ represents decreasing humidity and pressure. 
 
@@ -202,6 +209,7 @@ where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$
         		\includegraphics[scale=0.15]{colors.png}
     \end{minipage}
     \caption{PCA with two components}
+    \label{7}
 \end{figure}	
 
  \begin{center}
@@ -388,18 +396,18 @@ In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensio
 	\end{quotation}
 	
 	We did not use the 'S curve dataset' as mentioned above, but we may think that due to the round shape of earth, our dataset is quite similar to the S-curve and thus Isomap runs faster than MDS. For a fixed dimension d, the following table present the complexity of every method as it appeared to us.
-	
-	
+
+\bigskip
+ \begin{center}
 		\begin{tabular}{|c|c|c|c|c|}
 		 \hline    
 	  	Method & PCA & Kernel PCA & MDS & Isomap \\ 
 		\hline
-		Complexity & $O(n)$ & $O(n^3)$ & $O(n^3)$  &  \\
+		Complexity & $O(nr^{2})$ & $O(n^3)$ & $O(n^3)$  &  \\
 		\hline
 		  \end{tabular}
-	
+ \end{center}
 
-	
 \begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.8]{time.png}
@@ -417,8 +425,8 @@ We also check how isomap computing time varies with the number of neighbor taken
 \caption{computing time for isomap as a function of the number of neighbors considered}
 \end{figure}
 
-		\subsection{Error and preserved information}
-			\subsubsection{PCA}
+\subsection{Error and preserved information}
+\subsubsection{PCA}
 
 	The main indicator of how much information has been preserved with PCA lies in eigenvalues. We plot the eigenvalues to see their relative importance in the dimension reduction.
 
@@ -516,12 +524,21 @@ We can clearly see that error is slimmer in 3D than in 2D. It seems logic as in 
 
 		
 \section{Conclusion}
-\section{Bibliography}
 
-\bigskip
+
+\section{Bibliography}
+\noindent
+Datasets
+
 \noindent
 \label{dataset} https://eosweb.larc.nasa.gov/cgi-bin/sse/global.cgi?email=skip@larc.nasa.gov $\uparrow $[\pageref{url}]
 
+\bigskip
+\noindent
+John P. CUNNINGHAM, Zoubin GHAHRAMANI, Linear Dimensionality Reduction: Survey, Insights, and Generalizations, , \textit{Journal of Machine Learning Research 16} (2015) 2859-2900
 
+\bigskip
+\noindent
+Alon ORLITSKY, SAJAMA, Supervised dimensionality reduction using mixture models, Proceedings of the 22nd international conference on Machine learning, p.768-775, August 07-11, 2005, Bonn, Germany  
 
 \end{document}
