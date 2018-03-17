@@ -1,15 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.6)  16 MAR 2018 19:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.3.6)  17 MAR 2018 18:19
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
- %&-line parsing enabled.
-**Rapport_MAP581.tex
-(./Rapport_MAP581.tex
-LaTeX2e <2016/03/31>
-Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
+**./Rapport_MAP581.tex
+(Rapport_MAP581.tex
+LaTeX2e <2017-04-15>
+Babel <3.17> and hyphenation patterns for 75 language(s) loaded.
+(C:\Users\flore\Desktop\LaTex\tex\latex\base\article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size12.clo
+(C:\Users\flore\Desktop\LaTex\tex\latex\base\size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -24,36 +21,36 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/inputenc.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\base\inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/latin1.def
+(C:\Users\flore\Desktop\LaTex\tex\latex\base\latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+(C:\Users\flore\Desktop\LaTex\tex\latex\base\fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1enc.def
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+(C:\Users\flore\Desktop\LaTex\tex\latex\base\t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\geometry\geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+(C:\Users\flore\Desktop\LaTex\tex\generic\oberdiek\ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+(C:\Users\flore\Desktop\LaTex\tex\generic\oberdiek\ifvtex.sty
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(C:\Users\flore\Desktop\LaTex\tex\generic\ifxetex\ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count87
@@ -68,8 +65,9 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen109
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks17
-)
-(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/lmodern.sty
+
+(C:\Users\flore\Desktop\LaTex\tex\latex\geometry\geometry.cfg))
+(C:\Users\flore\Desktop\LaTex\tex\latex\lm\lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -104,75 +102,93 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2016/04/23 3.9r The Babel package
+(C:\Users\flore\Desktop\LaTex\tex\generic\babel\babel.sty
+Package: babel 2018/01/24 3.17 The Babel package
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/babel-french/frenchb.ldf
-Language: frenchb 2016/05/14 v3.2c French support from the babel system
+(C:\Users\flore\Desktop\LaTex\tex\generic\babel\switch.def
+File: switch.def 2018/01/24 3.17 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\flore\Desktop\LaTex\tex\latex\arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\flore\Desktop\LaTex\tex\generic\babel-french\french.ldf
+Language: french 2018/02/04 v3.4b French support from the babel system
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2016/04/23 3.9r Babel common definitions
+(C:\Users\flore\Desktop\LaTex\tex\generic\babel\babel.def
+File: babel.def 2018/01/24 3.17 Babel common definitions
+
+(C:\Users\flore\Desktop\LaTex\tex\generic\babel\switch.def
+File: switch.def 2018/01/24 3.17 Babel switching mechanism
+)
 \babel@savecnt=\count90
 \U@D=\dimen111
+
+(C:\Users\flore\Desktop\LaTex\tex\generic\babel\txtbabel.def)
+\bbl@dirlevel=\count91
 )
 \l@acadian = a dialect from \language\l@french 
-\l@canadien = a dialect from \language\l@french 
-\FB@nonchar=\count91
-\FBcolonskip=\skip43
-\FBthinskip=\skip44
-Package babel Info: Making : an active character on input line 365.
-Package babel Info: Making ; an active character on input line 366.
-Package babel Info: Making ! an active character on input line 367.
-Package babel Info: Making ? an active character on input line 368.
-\FBguillskip=\skip45
-\FBguill@level=\count92
+\FB@nonchar=\count92
+Package babel Info: Making : an active character on input line 411.
+Package babel Info: Making ; an active character on input line 412.
+Package babel Info: Making ! an active character on input line 413.
+Package babel Info: Making ? an active character on input line 414.
+\FBguill@level=\count93
 \FB@everypar=\toks18
 \FB@Mht=\dimen112
-\std@mcc=\count93
-\dec@mcc=\count94
-\listindentFB=\skip46
-\labelwidthFB=\skip47
-\leftmarginFB=\skip48
+\mc@charclass=\count94
+\mc@charfam=\count95
+\mc@charslot=\count96
+\std@mcc=\count97
+\dec@mcc=\count98
+\c@FBcaption@count=\count99
+\listindentFB=\skip43
+\descindentFB=\skip44
+\labelwidthFB=\skip45
+\leftmarginFB=\skip46
 \parindentFFN=\dimen113
-\FBfnindent=\skip49
+\FBfnindent=\skip47
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/carlisle/scalefnt.sty)
-(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\carlisle\scalefnt.sty)
+(C:\Users\flore\Desktop\LaTex\tex\latex\url\url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.sty
-Package: csquotes 2016/01/31 v5.1g context-sensitive quotations (JAW)
+(C:\Users\flore\Desktop\LaTex\tex\latex\csquotes\csquotes.sty
+Package: csquotes 2018/02/11 v5.2c context-sensitive quotations (JAW)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count95
+(C:\Users\flore\Desktop\LaTex\tex\latex\etoolbox\etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count100
 )
-\csq@reset=\count96
-\csq@gtype=\count97
-\csq@glevel=\count98
-\csq@qlevel=\count99
-\csq@maxlvl=\count100
-\csq@tshold=\count101
+\csq@reset=\count101
+\csq@gtype=\count102
+\csq@glevel=\count103
+\csq@qlevel=\count104
+\csq@maxlvl=\count105
+\csq@tshold=\count106
 \csq@ltx@everypar=\toks19
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.def
-File: csquotes.def 2016/01/31 v5.1g csquotes generic definitions (JAW)
+(C:\Users\flore\Desktop\LaTex\tex\latex\csquotes\csquotes.def
+File: csquotes.def 2018/02/11 v5.2c csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.cfg
+(C:\Users\flore\Desktop\LaTex\tex\latex\csquotes\csquotes.cfg
 File: csquotes.cfg 
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2016/05/05 v6.83n Hypertext links for LaTeX
+(C:\Users\flore\Desktop\LaTex\tex\latex\hyperref\hyperref.sty
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(C:\Users\flore\Desktop\LaTex\tex\generic\oberdiek\hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+(C:\Users\flore\Desktop\LaTex\tex\generic\oberdiek\hobsub-generic.sty
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -189,7 +205,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -206,123 +222,121 @@ Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
 Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
 Package: xcolor-patch 2016/05/16 xcolor patch
 Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
-Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\oberdiek\auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\oberdiek\kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen114
-\Hy@linkcounter=\count102
-\Hy@pagecounter=\count103
+\Hy@linkcounter=\count107
+\Hy@pagecounter=\count108
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2016/05/05 v6.83n Hyperref: PDFDocEncoding definition (HO)
+(C:\Users\flore\Desktop\LaTex\tex\latex\hyperref\pd1enc.def
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count104
+\Hy@SavedSpaceFactor=\count109
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(C:\Users\flore\Desktop\LaTex\tex\latex\00miktex\hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `hyperfootnotes' set `false' on input line 4322.
-Package hyperref Info: Hyper figures OFF on input line 4446.
-Package hyperref Info: Link nesting OFF on input line 4451.
-Package hyperref Info: Hyper index ON on input line 4454.
-Package hyperref Info: Plain pages OFF on input line 4461.
-Package hyperref Info: Backreferencing OFF on input line 4466.
+Package hyperref Info: Option `hyperfootnotes' set `false' on input line 4383.
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4691.
-\c@Hy@tempcnt=\count105
-LaTeX Info: Redefining \url on input line 5044.
+Package hyperref Info: Bookmarks ON on input line 4762.
+\c@Hy@tempcnt=\count110
+LaTeX Info: Redefining \url on input line 5115.
 \XeTeXLinkMargin=\dimen115
-\Fld@menulength=\count106
+\Fld@menulength=\count111
 \Field@Width=\dimen116
 \Fld@charsize=\dimen117
-Package hyperref Info: Hyper figures OFF on input line 6298.
-Package hyperref Info: Link nesting OFF on input line 6303.
-Package hyperref Info: Hyper index ON on input line 6306.
-Package hyperref Info: backreferencing OFF on input line 6313.
-Package hyperref Info: Link coloring OFF on input line 6318.
-Package hyperref Info: Link coloring with OCG OFF on input line 6323.
-Package hyperref Info: PDF/A mode OFF on input line 6328.
-LaTeX Info: Redefining \ref on input line 6368.
-LaTeX Info: Redefining \pageref on input line 6372.
-\Hy@abspage=\count107
-\c@Item=\count108
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
+\Hy@abspage=\count112
+\c@Item=\count113
 )
+Package hyperref Info: Driver (autodetected): hpdftex.
 
-Package hyperref Message: Driver (autodetected): hpdftex.
+(C:\Users\flore\Desktop\LaTex\tex\latex\hyperref\hpdftex.def
+File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
+\Fld@listcount=\count114
+\c@bookmark@seq@number=\count115
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2016/05/05 v6.83n Hyperref driver for pdfTeX
-\Fld@listcount=\count109
-\c@bookmark@seq@number=\count110
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\oberdiek\rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip50
+\Hy@SectionHShift=\skip48
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Users\flore\Desktop\LaTex\tex\latex\graphics\graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+(C:\Users\flore\Desktop\LaTex\tex\latex\graphics\graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+(C:\Users\flore\Desktop\LaTex\tex\latex\graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 96.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count111
+(C:\Users\flore\Desktop\LaTex\tex\latex\graphics-def\pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen118
 \Gin@req@width=\dimen119
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/polytechnique/polytechnique.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\polytechnique\polytechnique.sty
 Package: polytechnique 2016/01/17 v1.3.4, standard scientific documents layout 
 for Ecole polytechnique (Palaiseau,France).
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\tools\calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count112
-\calc@Bcount=\count113
+\calc@Acount=\count116
+\calc@Bcount=\count117
 \calc@Adimen=\dimen120
 \calc@Bdimen=\dimen121
-\calc@Askip=\skip51
-\calc@Bskip=\skip52
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count114
-\calc@Cskip=\skip53
+\calc@Ccount=\count118
+\calc@Cskip=\skip51
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
+(C:\Users\flore\Desktop\LaTex\tex\latex\graphics\color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(C:\Users\flore\Desktop\LaTex\tex\latex\graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: pdftex.def on input line 144.
+Package color Info: Driver file: pdftex.def on input line 147.
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\base\ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/titlesec/titlesec.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\titlesec\titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box26
-\beforetitleunit=\skip54
-\aftertitleunit=\skip55
+\beforetitleunit=\skip52
+\aftertitleunit=\skip53
 \ttl@plus=\dimen122
 \ttl@minus=\dimen123
 \ttl@toksa=\toks20
@@ -330,68 +344,68 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \titlewidthlast=\dimen125
 \titlewidthfirst=\dimen126
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/titlesec/ttlps.def
+(C:\Users\flore\Desktop\LaTex\tex\latex\titlesec\ttlps.def
 File: ttlps.def 2016/03/15
 ))
-\margehaut=\skip56
-\hauteurentete=\skip57
-\separationentete=\skip58
-\margecote=\skip59
-\margecoteinterieur=\skip60
-\margecoteexterieur=\skip61
-\margebas=\skip62
-\separationpied=\skip63
-\hauteurlogohori=\skip64
-\separationtitre=\skip65
-\epaisseurtrait=\skip66
-\separationlignestitre=\skip67
-\separationtitrecorps=\skip68
-\hauteurlogopage=\skip69
-\separationentetelogo=\skip70
-\largeurfiletpiedcentre=\skip71
-\largeurlogovert=\skip72
-\hauteurlogovert=\skip73
-\largeurlogohori=\skip74
-\distancetitrelogo=\skip75
-\separationlogotrait=\skip76
-\largeurminipage=\skip77
-\distancetitrecorps=\skip78
-\largeurtitreentete=\skip79
-\decalageverticalentete=\skip80
+\margehaut=\skip54
+\hauteurentete=\skip55
+\separationentete=\skip56
+\margecote=\skip57
+\margecoteinterieur=\skip58
+\margecoteexterieur=\skip59
+\margebas=\skip60
+\separationpied=\skip61
+\hauteurlogohori=\skip62
+\separationtitre=\skip63
+\epaisseurtrait=\skip64
+\separationlignestitre=\skip65
+\separationtitrecorps=\skip66
+\hauteurlogopage=\skip67
+\separationentetelogo=\skip68
+\largeurfiletpiedcentre=\skip69
+\largeurlogovert=\skip70
+\hauteurlogovert=\skip71
+\largeurlogohori=\skip72
+\distancetitrelogo=\skip73
+\separationlogotrait=\skip74
+\largeurminipage=\skip75
+\distancetitrecorps=\skip76
+\largeurtitreentete=\skip77
+\decalageverticalentete=\skip78
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/float/float.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count115
+\c@float@type=\count119
 \float@exts=\toks21
 \float@box=\box27
 \@float@everytoks=\toks22
 \@floatcapt=\box28
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/enumerate.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\tools\enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks23
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/enumitem/enumitem.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\enumitem\enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip81
+\labelindent=\skip79
 \enit@outerparindent=\dimen127
 \enit@toks=\toks24
 \enit@inbox=\box29
-\enitdp@description=\count116
+\enitdp@description=\count120
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/soul/soul.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\soul\soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@word=\toks25
 \SOUL@lasttoken=\toks26
 \SOUL@cmds=\toks27
 \SOUL@buffer=\toks28
 \SOUL@token=\toks29
-\SOUL@spaceskip=\skip82
+\SOUL@spaceskip=\skip80
 \SOUL@ttwidth=\dimen128
 \SOUL@uldp=\dimen129
 \SOUL@ulht=\dimen130
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks30
 \symAMSa=\mathgroup4
@@ -399,50 +413,50 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/03/10 v2.15b AMS math features
-\@mathmargin=\skip83
+(C:\Users\flore\Desktop\LaTex\tex\latex\amsmath\amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip81
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks31
 \ex@=\dimen131
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen132
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count117
-LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count118
-\leftroot@=\count119
-LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count120
-\DOTSCASE@=\count121
-LaTeX Info: Redefining \ldots on input line 394.
-LaTeX Info: Redefining \dots on input line 397.
-LaTeX Info: Redefining \cdots on input line 518.
+\inf@bad=\count121
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count122
+\leftroot@=\count123
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count124
+\DOTSCASE@=\count125
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
 \Mathstrutbox@=\box30
 \strutbox@=\box31
 \big@size=\dimen133
-LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
-\macc@depth=\count122
-\c@MaxMatrixCols=\count123
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count126
+\c@MaxMatrixCols=\count127
 \dotsspace@=\muskip11
-\c@parentequation=\count124
-\dspbrk@lvl=\count125
+\c@parentequation=\count128
+\dspbrk@lvl=\count129
 \tag@help=\toks32
-\row@=\count126
-\column@=\count127
-\maxfields@=\count128
+\row@=\count130
+\column@=\count131
+\maxfields@=\count132
 \andhelp@=\toks33
 \eqnshift@=\dimen134
 \alignsep@=\dimen135
@@ -451,42 +465,43 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \totwidth@=\dimen138
 \lineht@=\dimen139
 \@envbody=\toks34
-\multlinegap=\skip84
-\multlinetaggap=\skip85
+\multlinegap=\skip82
+\multlinetaggap=\skip83
 \mathdisplay@stack=\toks35
-LaTeX Info: Redefining \[ on input line 2739.
-LaTeX Info: Redefining \] on input line 2740.
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
-x
+(C:\Users\flore\Desktop\LaTex\tex\latex\pgf\frontendlayer\tikz.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\pgf\basiclayer\pgf.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\pgf\utilities\pgfrcs.sty
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\utilities\pgfutil-common.tex
 \pgfutil@everybye=\toks36
 \pgfutil@tempdima=\dimen140
 \pgfutil@tempdimb=\dimen141
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
-sts.tex))
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\utilities\pgfutil-common-lists.te
+x)) (C:\Users\flore\Desktop\LaTex\tex\generic\pgf\utilities\pgfutil-latex.def
 \pgfutil@abb=\box32
-(/usr/local/texlive/2016/texmf-dist/tex/latex/ms/everyshi.sty
+
+(C:\Users\flore\Desktop\LaTex\tex\latex\ms\everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\utilities\pgfrcs.code.tex
 Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
 ))
 Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
-(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+
+(C:\Users\flore\Desktop\LaTex\tex\latex\pgf\basiclayer\pgfcore.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\pgf\systemlayer\pgfsys.sty
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\systemlayer\pgfsys.code.tex
 Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\utilities\pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks37
 \pgfkeys@temptoks=\toks38
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
-ode.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\utilities\pgfkeysfiltered.code.te
+x
 \pgfkeys@tmptoks=\toks39
 ))
 \pgf@x=\dimen142
@@ -499,40 +514,37 @@ ode.tex
 \pgf@yc=\dimen149
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count129
-\c@pgf@countb=\count130
-\c@pgf@countc=\count131
-\c@pgf@countd=\count132
+\c@pgf@counta=\count133
+\c@pgf@countb=\count134
+\c@pgf@countc=\count135
+\c@pgf@countd=\count136
 \t@pgf@toka=\toks40
 \t@pgf@tokb=\toks41
 \t@pgf@tokc=\toks42
-
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+ (C:\Users\flore\Desktop\LaTex\tex\generic\pgf\systemlayer\pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
-ef
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
-df.def
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
-code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.t
+ex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count133
-\pgfsyssoftpath@bigbuffer@items=\count134
+\pgfsyssoftpath@smallbuffer@items=\count137
+\pgfsyssoftpath@bigbuffer@items=\count138
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
-code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\systemlayer\pgfsysprotocol.code.t
+ex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
-)) (/usr/local/texlive/2016/texmf-dist/tex/latex/xcolor/xcolor.sty
+)) (C:\Users\flore\Desktop\LaTex\tex\latex\xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(C:\Users\flore\Desktop\LaTex\tex\latex\graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -547,42 +559,41 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcore.code.tex
 Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmath.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathcalc.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathutil.code.tex)
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathparser.code.tex
 \pgfmath@dimen=\dimen150
-\pgfmath@count=\count135
+\pgfmath@count=\count139
 \pgfmath@box=\box33
 \pgfmath@toks=\toks43
 \pgfmath@stack@operand=\toks44
 \pgfmath@stack@operation=\toks45
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
-tex
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
-.code.tex)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
-nometric.code.tex)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
-m.code.tex)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
-rison.code.tex)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathfunctions.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathfunctions.basic.code.
+tex)
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathfunctions.trigonometr
+ic.code.tex)
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathfunctions.random.code
+.tex)
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathfunctions.comparison.
 code.tex)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
-.code.tex)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
-code.tex)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
-erarithmetics.code.tex)))
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count136
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathfunctions.base.code.t
+ex)
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathfunctions.round.code.
+tex)
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathfunctions.misc.code.t
+ex)
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathfunctions.integerarit
+hmetics.code.tex)))
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count140
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
-de.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@picminx=\dimen151
 \pgf@picmaxx=\dimen152
@@ -599,123 +610,112 @@ File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@zx=\dimen163
 \pgf@zy=\dimen164
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
-ruct.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcorepathconstruct.c
+ode.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
 \pgf@path@lastx=\dimen165
 \pgf@path@lasty=\dimen166
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
-.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcorepathusage.code.
+tex
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
 \pgf@shorten@end@additional=\dimen167
 \pgf@shorten@start@additional=\dimen168
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
-de.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box34
 \pgf@hbox=\box35
 \pgf@layerbox@main=\box36
-\pgf@picture@serial@count=\count137
+\pgf@picture@serial@count=\count141
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
-ate.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcoregraphicstate.co
+de.tex
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
 \pgflinewidth=\dimen169
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
-ations.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcoretransformations
+.code.tex
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
 \pgf@pt@x=\dimen170
 \pgf@pt@y=\dimen171
 \pgf@pt@temp=\dimen172
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
-e.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
-ode.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcoreobjects.code.te
+x
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
-ssing.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcorepathprocessing.
+code.tex
 File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
-de.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 \pgfarrowsep=\dimen173
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
-e.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen174
-\pgf@sys@shading@range@num=\count138
-)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
-e.tex
+\pgf@sys@shading@range@num=\count142
+) (C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcoreimage.code.te
+x
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
-code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcoreexternal.code.t
+ex
 File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
 \pgfexternal@startupbox=\box37
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
-de.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
-ncy.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcoretransparency.co
+de.tex
 File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
-code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\basiclayer\pgfcorepatterns.code.t
+ex
 File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
-e.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
 \pgfnodeparttextbox=\box38
-)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
-tex
+) (C:\Users\flore\Desktop\LaTex\tex\generic\pgf\modules\pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--0-65.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\pgf\compatibility\pgfcomp-version-0-65.
+sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen175
 \pgf@nodesepend=\dimen176
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--1-18.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\pgf\compatibility\pgfcomp-version-1-18.
+sty
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
-))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+)) (C:\Users\flore\Desktop\LaTex\tex\latex\pgf\utilities\pgffor.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\pgf\utilities\pgfkeys.sty
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\utilities\pgfkeys.code.tex))
+(C:\Users\flore\Desktop\LaTex\tex\latex\pgf\math\pgfmath.sty
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmath.code.tex))
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\utilities\pgffor.code.tex
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\math\pgfmath.code.tex)
 \pgffor@iter=\dimen177
 \pgffor@skip=\dimen178
 \pgffor@stack=\toks46
 \pgffor@toks=\toks47
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
-e.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
 Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
-dlers.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\libraries\pgflibraryplothandlers.
+code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count139
+\pgf@plot@mark@count=\count143
 \pgfplotmarksize=\dimen179
 )
 \tikz@lastx=\dimen180
@@ -728,29 +728,28 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box40
 \tikz@tempbox=\box41
 \tikz@tempbox@bg=\box42
-\tikztreelevel=\count140
-\tikznumberofchildren=\count141
-\tikznumberofcurrentchild=\count142
-\tikz@fig@count=\count143
+\tikztreelevel=\count144
+\tikznumberofchildren=\count145
+\tikznumberofcurrentchild=\count146
+\tikz@fig@count=\count147
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
-e.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count144
-\pgfmatrixcurrentcolumn=\count145
-\pgf@matrix@numberofcolumns=\count146
+\pgfmatrixcurrentrow=\count148
+\pgfmatrixcurrentcolumn=\count149
+\pgf@matrix@numberofcolumns=\count150
 )
-\tikz@expandcount=\count147
+\tikz@expandcount=\count151
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarytopaths.code.tex
+(C:\Users\flore\Desktop\LaTex\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+librarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'french'.
- (./Rapport_MAP581.aux)
+ (Rapport_MAP581.aux)
 \openout1 = `Rapport_MAP581.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
@@ -769,7 +768,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
 LaTeX Font Info:    ... okay on input line 34.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 34.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmr.fd
+(C:\Users\flore\Desktop\LaTex\tex\latex\lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry* driver: auto-detecting
@@ -811,94 +810,89 @@ LaTeX Info: Redefining \dots on input line 34.
 LaTeX Info: Redefining \up on input line 34.
 \AtBeginShipoutBox=\box43
 Package hyperref Info: Link coloring OFF on input line 34.
-(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+(C:\Users\flore\Desktop\LaTex\tex\latex\hyperref\nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(C:\Users\flore\Desktop\LaTex\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count148
+\c@section@level=\count152
 )
 LaTeX Info: Redefining \ref on input line 34.
 LaTeX Info: Redefining \pageref on input line 34.
 LaTeX Info: Redefining \nameref on input line 34.
 
-(./Rapport_MAP581.out) (./Rapport_MAP581.out)
+(Rapport_MAP581.out) (Rapport_MAP581.out)
 \@outlinefile=\write4
 \openout4 = `Rapport_MAP581.out'.
 
 
-(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(C:\Users\flore\Desktop\LaTex\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count149
+\scratchcounter=\count153
 \scratchdimen=\dimen186
 \scratchbox=\box44
-\nofMPsegments=\count150
-\nofMParguments=\count151
+\nofMPsegments=\count154
+\nofMParguments=\count155
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count152
+\MPscratchCnt=\count156
 \MPscratchDim=\dimen187
-\MPnumerator=\count153
-\makeMPintoPDFobject=\count154
+\MPnumerator=\count157
+\makeMPintoPDFobject=\count158
 \everyMPtoPDFconversion=\toks49
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (C:\Users\flore\Desktop\LaTex\tex\latex\oberdiek\epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+(C:\Users\flore\Desktop\LaTex\tex\latex\oberdiek\grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
+)
 ABD: EveryShipout initializing macros
-<polytechnique-armes.pdf, id=91, 195.21231pt x 257.65057pt>
+<polytechnique-armes.pdf, id=90, 195.21231pt x 257.65057pt>
 File: polytechnique-armes.pdf Graphic file (type pdf)
-
 <use polytechnique-armes.pdf>
-Package pdftex.def Info: polytechnique-armes.pdf used on input line 36.
+Package pdftex.def Info: polytechnique-armes.pdf  used on input line 36.
 (pdftex.def)             Requested size: 268.93454pt x 354.92172pt.
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 36.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmss.fd
+(C:\Users\flore\Desktop\LaTex\tex\latex\lm\t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 Package xcolor Warning: Incompatible color definition on input line 36.
 
 LaTeX Info: Redefining \\ on input line 36.
-<polytechnique-filetcourtbleu.pdf, id=92, 28.40442pt x 2.16678pt>
+<polytechnique-filetcourtbleu.pdf, id=91, 28.40442pt x 2.16678pt>
 File: polytechnique-filetcourtbleu.pdf Graphic file (type pdf)
-
 <use polytechnique-filetcourtbleu.pdf>
-Package pdftex.def Info: polytechnique-filetcourtbleu.pdf used on input line 36
-.
+Package pdftex.def Info: polytechnique-filetcourtbleu.pdf  used on input line 3
+6.
 (pdftex.def)             Requested size: 28.40433pt x 2.16676pt.
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 36.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ot1lmr.fd
+(C:\Users\flore\Desktop\LaTex\tex\latex\lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 36.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omllmm.fd
+(C:\Users\flore\Desktop\LaTex\tex\latex\lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 36.
 
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omslmsy.fd
+(C:\Users\flore\Desktop\LaTex\tex\latex\lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMX+lmex on input line 36.
 
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/lm/omxlmex.fd
+(C:\Users\flore\Desktop\LaTex\tex\latex\lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -909,27 +903,26 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 36.
 LaTeX Font Info:    Try loading font information for U+msa on input line 36.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+(C:\Users\flore\Desktop\LaTex\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 36.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+(C:\Users\flore\Desktop\LaTex\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<polytechnique-logovert.pdf, id=93, 196.53926pt x 267.24042pt>
+<polytechnique-logovert.pdf, id=92, 196.53926pt x 267.24042pt>
 File: polytechnique-logovert.pdf Graphic file (type pdf)
-
 <use polytechnique-logovert.pdf>
-Package pdftex.def Info: polytechnique-logovert.pdf used on input line 36.
+Package pdftex.def Info: polytechnique-logovert.pdf  used on input line 36.
 (pdftex.def)             Requested size: 85.4339pt x 116.1684pt.
  [1
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </usr/lo
-cal/texlive/2016/texmf-dist/tex/latex/polytechnique/polytechnique-armes.pdf> </
-usr/local/texlive/2016/texmf-dist/tex/latex/polytechnique/polytechnique-filetco
-urtbleu.pdf> </usr/local/texlive/2016/texmf-dist/tex/latex/polytechnique/polyte
-chnique-logovert.pdf>] (./Rapport_MAP581.toc
+{C:/Users/flore/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/fl
+ore/Desktop/LaTex/tex/latex/polytechnique/resources/polytechnique-armes.pdf> <C
+:/Users/flore/Desktop/LaTex/tex/latex/polytechnique/resources/polytechnique-fil
+etcourtbleu.pdf> <C:/Users/flore/Desktop/LaTex/tex/latex/polytechnique/resource
+s/polytechnique-logovert.pdf>] (Rapport_MAP581.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -942,38 +935,34 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 Package xcolor Warning: Incompatible color definition on input line 38.
 
-<polytechnique-logohori.pdf, id=180, 195.52248pt x 85.3575pt>
+<polytechnique-logohori.pdf, id=179, 195.52248pt x 85.3575pt>
 File: polytechnique-logohori.pdf Graphic file (type pdf)
-
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 38.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 38.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
-
 
 Package xcolor Warning: Incompatible color definition on input line 38.
 
 [2
 
- </usr/local/texlive/2016/texmf-dist/tex/latex/polytechnique/polytechnique-logo
-hori.pdf>]
+ <C:/Users/flore/Desktop/LaTex/tex/latex/polytechnique/resources/polytechnique-
+logohori.pdf>]
 Overfull \hbox (33.5951pt too wide) in paragraph at lines 55--62
  [] 
  []
 
-<latlon.jpg, id=212, 26.54324pt x 30.28342pt>
+<latlon.jpg, id=211, 26.54324pt x 30.28342pt>
 File: latlon.jpg Graphic file (type jpg)
- <use latlon.jpg>
-Package pdftex.def Info: latlon.jpg used on input line 71.
+<use latlon.jpg>
+Package pdftex.def Info: latlon.jpg  used on input line 71.
 (pdftex.def)             Requested size: 106.1726pt x 121.1333pt.
-
 
 Package xcolor Warning: Incompatible color definition on input line 75.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 75.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 75.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
-
 
 Package xcolor Warning: Incompatible color definition on input line 75.
 
@@ -983,10 +972,11 @@ has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.75 
-     ] <PCAexpli.png, id=223, 546.54187pt x 408.77719pt>
+     ]
+<PCAexpli.png, id=221, 546.54187pt x 408.77719pt>
 File: PCAexpli.png Graphic file (type png)
- <use PCAexpli.png>
-Package pdftex.def Info: PCAexpli.png used on input line 105.
+<use PCAexpli.png>
+Package pdftex.def Info: PCAexpli.png  used on input line 105.
 (pdftex.def)             Requested size: 273.27026pt x 204.38809pt.
 
 
@@ -994,9 +984,8 @@ Package xcolor Warning: Incompatible color definition on input line 109.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 109.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 109.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
-
 
 Package xcolor Warning: Incompatible color definition on input line 109.
 
@@ -1005,14 +994,14 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.109 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-3}) has been already used, duplicate ignored
+l.109 		
+        pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.109 
-       <./latlon.jpg>]
+l.109 		
+         <./latlon.jpg>]
 
 LaTeX Warning: Command \^ invalid in math mode on input line 127.
 
@@ -1021,9 +1010,8 @@ Package xcolor Warning: Incompatible color definition on input line 131.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 131.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 131.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
-
 
 Package xcolor Warning: Incompatible color definition on input line 131.
 
@@ -1032,12 +1020,12 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.131 
-       <./PCAexpli.png>] <MDSexpli.png, id=240, 922.94812pt x 325.96782pt>
+l.131 	
+        <./PCAexpli.png>]
+<MDSexpli.png, id=238, 922.94812pt x 325.96782pt>
 File: MDSexpli.png Graphic file (type png)
-
 <use MDSexpli.png>
-Package pdftex.def Info: MDSexpli.png used on input line 151.
+Package pdftex.def Info: MDSexpli.png  used on input line 151.
 (pdftex.def)             Requested size: 369.1727pt x 130.38481pt.
 
 
@@ -1045,9 +1033,8 @@ Package xcolor Warning: Incompatible color definition on input line 159.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 159.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 159.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
-
 
 Package xcolor Warning: Incompatible color definition on input line 159.
 
@@ -1056,551 +1043,549 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.159 
-       <./MDSexpli.png>] <isoexpli.png, id=248, 388.45125pt x 304.88907pt>
+l.159 	
+        <./MDSexpli.png>]
+<isoexpli.png, id=246, 388.45125pt x 304.88907pt>
 File: isoexpli.png Graphic file (type png)
-
 <use isoexpli.png>
-Package pdftex.def Info: isoexpli.png used on input line 162.
+Package pdftex.def Info: isoexpli.png  used on input line 162.
 (pdftex.def)             Requested size: 233.07254pt x 182.93484pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 194.
+Package xcolor Warning: Incompatible color definition on input line 197.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 194.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 197.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
-
-Package xcolor Warning: Incompatible color definition on input line 194.
+Package xcolor Warning: Incompatible color definition on input line 197.
 
 [7pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.194 
-       <./isoexpli.png>] <pca2.png, id=256, 722.7pt x 722.7pt>
+l.197 		\end{align*}
+                     <./isoexpli.png>]
+<pca2.png, id=254, 722.7pt x 722.7pt>
 File: pca2.png Graphic file (type png)
- <use pca2.png>
-Package pdftex.def Info: pca2.png used on input line 198.
+<use pca2.png>
+Package pdftex.def Info: pca2.png  used on input line 204.
 (pdftex.def)             Requested size: 361.3491pt x 361.3491pt.
 
-Overfull \hbox (42.1074pt too wide) in paragraph at lines 198--199
+Overfull \hbox (42.1074pt too wide) in paragraph at lines 204--205
 [][] 
  []
 
-<colors.png, id=257, 637.582pt x 901.769pt>
+<colors.png, id=255, 637.582pt x 901.769pt>
 File: colors.png Graphic file (type png)
- <use colors.png>
-Package pdftex.def Info: colors.png used on input line 202.
+<use colors.png>
+Package pdftex.def Info: colors.png  used on input line 208.
 (pdftex.def)             Requested size: 95.63316pt x 135.2595pt.
 
-<3Dpca1.png, id=258, 575.14874pt x 585.18625pt>
-File: 3Dpca1.png Graphic file (type png)
- <use 3Dpca1.png>
-Package pdftex.def Info: 3Dpca1.png used on input line 229.
-(pdftex.def)             Requested size: 143.78683pt x 146.2962pt.
-
-<3Dpca2.png, id=259, 561.09625pt x 570.13pt>
-File: 3Dpca2.png Graphic file (type png)
- <use 3Dpca2.png>
-Package pdftex.def Info: 3Dpca2.png used on input line 235.
-(pdftex.def)             Requested size: 140.27371pt x 142.53215pt.
-
-<3Dpca3.png, id=260, 574.145pt x 595.22375pt>
-File: 3Dpca3.png Graphic file (type png)
- <use 3Dpca3.png>
-Package pdftex.def Info: 3Dpca3.png used on input line 240.
-(pdftex.def)             Requested size: 143.53589pt x 148.80557pt.
-
-
-Package xcolor Warning: Incompatible color definition on input line 244.
+Package xcolor Warning: Incompatible color definition on input line 230.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 244.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 230.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
-
-Package xcolor Warning: Incompatible color definition on input line 244.
+Package xcolor Warning: Incompatible color definition on input line 230.
 
 [8pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.244 \end{figure}
-                   <./pca2.png> <./colors.png>]
-<kpca_first.png, id=268, 722.7pt x 578.16pt>
+l.230 		
+         <./pca2.png> <./colors.png>]
+<3Dpca1.png, id=263, 575.14874pt x 585.18625pt>
+File: 3Dpca1.png Graphic file (type png)
+<use 3Dpca1.png>
+Package pdftex.def Info: 3Dpca1.png  used on input line 235.
+(pdftex.def)             Requested size: 143.78683pt x 146.2962pt.
+<3Dpca2.png, id=264, 561.09625pt x 570.13pt>
+File: 3Dpca2.png Graphic file (type png)
+<use 3Dpca2.png>
+Package pdftex.def Info: 3Dpca2.png  used on input line 241.
+(pdftex.def)             Requested size: 140.27371pt x 142.53215pt.
+<3Dpca3.png, id=265, 574.145pt x 595.22375pt>
+File: 3Dpca3.png Graphic file (type png)
+<use 3Dpca3.png>
+Package pdftex.def Info: 3Dpca3.png  used on input line 246.
+(pdftex.def)             Requested size: 143.53589pt x 148.80557pt.
+<kpca_first.png, id=266, 722.7pt x 578.16pt>
 File: kpca_first.png Graphic file (type png)
- <use kpca_first.png>
-Package pdftex.def Info: kpca_first.png used on input line 256.
+<use kpca_first.png>
+Package pdftex.def Info: kpca_first.png  used on input line 262.
 (pdftex.def)             Requested size: 361.3491pt x 289.07928pt.
 
-Overfull \hbox (42.1074pt too wide) in paragraph at lines 256--258
+Overfull \hbox (42.1074pt too wide) in paragraph at lines 262--264
  [][] 
  []
 
-<colorslice.png, id=269, 637.582pt x 901.769pt>
+<colorslice.png, id=267, 637.582pt x 901.769pt>
 File: colorslice.png Graphic file (type png)
- <use colorslice.png>
-Package pdftex.def Info: colorslice.png used on input line 262.
+<use colorslice.png>
+Package pdftex.def Info: colorslice.png  used on input line 268.
 (pdftex.def)             Requested size: 127.51413pt x 180.3506pt.
 
-Overfull \hbox (1.75562pt too wide) in paragraph at lines 262--264
+Overfull \hbox (1.75562pt too wide) in paragraph at lines 268--270
  [][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 271.
+Package xcolor Warning: Incompatible color definition on input line 274.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 271.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 274.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
-
-Package xcolor Warning: Incompatible color definition on input line 271.
+Package xcolor Warning: Incompatible color definition on input line 274.
 
 [9pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.271 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-9}) has been already used, duplicate ignored
+l.274 
+       <./3Dpca1.png> <./3Dpca2.png> <./3Dpca3.png>]
+<3Dkpca1.png, id=276, 553.06625pt x 574.145pt>
+File: 3Dkpca1.png Graphic file (type png)
+<use 3Dkpca1.png>
+Package pdftex.def Info: 3Dkpca1.png  used on input line 284.
+(pdftex.def)             Requested size: 165.92114pt x 172.24483pt.
+
+Overfull \hbox (20.81061pt too wide) in paragraph at lines 284--286
+ [][] 
+ []
+
+<3Dkpca2.png, id=277, 556.0775pt x 591.20876pt>
+File: 3Dkpca2.png Graphic file (type png)
+<use 3Dkpca2.png>
+Package pdftex.def Info: 3Dkpca2.png  used on input line 290.
+(pdftex.def)             Requested size: 166.82454pt x 177.36398pt.
+
+Overfull \hbox (21.714pt too wide) in paragraph at lines 290--292
+ [][] 
+ []
+
+<3Dkpca3.png, id=278, 416.55624pt x 520.94624pt>
+File: 3Dkpca3.png Graphic file (type png)
+<use 3Dkpca3.png>
+Package pdftex.def Info: 3Dkpca3.png  used on input line 295.
+(pdftex.def)             Requested size: 124.96783pt x 156.28508pt.
+
+Package xcolor Warning: Incompatible color definition on input line 300.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 300.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+Package xcolor Warning: Incompatible color definition on input line 300.
+
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.271 
-       <./3Dpca1.png> <./3Dpca2.png> <./3Dpca3.png> <./kpca_first.png> <./color
-slice.png>] <3Dkpca1.png, id=281, 553.06625pt x 574.145pt>
-File: 3Dkpca1.png Graphic file (type png)
- <use 3Dkpca1.png>
-Package pdftex.def Info: 3Dkpca1.png used on input line 278.
-(pdftex.def)             Requested size: 165.92114pt x 172.24483pt.
-
-Overfull \hbox (20.81061pt too wide) in paragraph at lines 278--280
- [][] 
- []
-
-<3Dkpca2.png, id=282, 556.0775pt x 591.20876pt>
-File: 3Dkpca2.png Graphic file (type png)
- <use 3Dkpca2.png>
-Package pdftex.def Info: 3Dkpca2.png used on input line 284.
-(pdftex.def)             Requested size: 166.82454pt x 177.36398pt.
-
-Overfull \hbox (21.714pt too wide) in paragraph at lines 284--286
- [][] 
- []
-
-<3Dkpca3.png, id=283, 416.55624pt x 520.94624pt>
-File: 3Dkpca3.png Graphic file (type png)
- <use 3Dkpca3.png>
-Package pdftex.def Info: 3Dkpca3.png used on input line 289.
-(pdftex.def)             Requested size: 124.96783pt x 156.28508pt.
-
-<kpca_poly.png, id=284, 722.7pt x 578.16pt>
+l.300 
+       <./kpca_first.png> <./colorslice.png>]
+<kpca_poly.png, id=286, 722.7pt x 578.16pt>
 File: kpca_poly.png Graphic file (type png)
- <use kpca_poly.png>
-Package pdftex.def Info: kpca_poly.png used on input line 304.
+<use kpca_poly.png>
+Package pdftex.def Info: kpca_poly.png  used on input line 310.
 (pdftex.def)             Requested size: 361.3491pt x 289.07928pt.
 
-Overfull \hbox (42.1074pt too wide) in paragraph at lines 304--306
+Overfull \hbox (42.1074pt too wide) in paragraph at lines 310--312
  [][] 
  []
 
 File: colorslice.png Graphic file (type png)
 <use colorslice.png>
-Package pdftex.def Info: colorslice.png used on input line 310.
+Package pdftex.def Info: colorslice.png  used on input line 316.
 (pdftex.def)             Requested size: 127.51413pt x 180.3506pt.
 
-Overfull \hbox (1.75562pt too wide) in paragraph at lines 310--312
+Overfull \hbox (1.75562pt too wide) in paragraph at lines 316--318
  [][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 316.
+Package xcolor Warning: Incompatible color definition on input line 328.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 316.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 328.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
+Package xcolor Warning: Incompatible color definition on input line 328.
 
-Package xcolor Warning: Incompatible color definition on input line 316.
-
-[10pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.316 
-       <./3Dkpca1.png> <./3Dkpca2.png> <./3Dkpca3.png>]
-<graphMDS.png, id=293, 433.62pt x 289.08pt>
+l.328 	
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.328 	
+        <./3Dkpca1.png> <./3Dkpca2.png> <./3Dkpca3.png> <./kpca_poly.png>]
+<graphMDS.png, id=297, 433.62pt x 289.08pt>
 File: graphMDS.png Graphic file (type png)
- <use graphMDS.png>
-Package pdftex.def Info: graphMDS.png used on input line 323.
+<use graphMDS.png>
+Package pdftex.def Info: graphMDS.png  used on input line 331.
 (pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
+<mds3Da.png, id=298, 818.30719pt x 271.0125pt>
+File: mds3Da.png Graphic file (type png)
+<use mds3Da.png>
+Package pdftex.def Info: mds3Da.png  used on input line 338.
+(pdftex.def)             Requested size: 409.15259pt x 135.5059pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 327.
-
-File: polytechnique-logohori.pdf Graphic file (type pdf)
-<use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 327.
-(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
-
-
-Package xcolor Warning: Incompatible color definition on input line 327.
-
-[11pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
-) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.327 
-       <./kpca_poly.png>] <graphiso.png, id=300, 433.62pt x 433.62pt>
-File: graphiso.png Graphic file (type png)
-
-<use graphiso.png>
-Package pdftex.def Info: graphiso.png used on input line 334.
-(pdftex.def)             Requested size: 346.89647pt x 346.89647pt.
-
-
-Package xcolor Warning: Incompatible color definition on input line 338.
+Package xcolor Warning: Incompatible color definition on input line 342.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 338.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 342.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
-
-Package xcolor Warning: Incompatible color definition on input line 338.
+Package xcolor Warning: Incompatible color definition on input line 342.
 
 [12pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.338 
-       <./graphMDS.png>] <isoerrorneighbour.png, id=307, 433.62pt x 289.08pt>
-File: isoerrorneighbour.png Graphic file (type png)
+l.342 
+       <./graphMDS.png>]
+<mds3Db.png, id=305, 834.11626pt x 278.54062pt>
+File: mds3Db.png Graphic file (type png)
+<use mds3Db.png>
+Package pdftex.def Info: mds3Db.png  used on input line 345.
+(pdftex.def)             Requested size: 417.05711pt x 139.26996pt.
+<graphiso.png, id=306, 433.62pt x 433.62pt>
+File: graphiso.png Graphic file (type png)
+<use graphiso.png>
+Package pdftex.def Info: graphiso.png  used on input line 357.
+(pdftex.def)             Requested size: 346.89647pt x 346.89647pt.
 
-<use isoerrorneighbour.png>
-Package pdftex.def Info: isoerrorneighbour.png used on input line 343.
-(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
 
-
-Package xcolor Warning: Incompatible color definition on input line 347.
+Package xcolor Warning: Incompatible color definition on input line 361.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 347.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 361.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
-
-Package xcolor Warning: Incompatible color definition on input line 347.
+Package xcolor Warning: Incompatible color definition on input line 361.
 
 [13pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.347 
-       <./graphiso.png>] <pcatime.png, id=315, 462.528pt x 346.896pt>
-File: pcatime.png Graphic file (type png)
+l.361 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+14}) has been already used, duplicate ignored
 
-<use pcatime.png>
-Package pdftex.def Info: pcatime.png used on input line 357.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.361 
+       <./mds3Da.png> <./mds3Db.png>]
+<isoerrorneighbour.png, id=316, 433.62pt x 289.08pt>
+File: isoerrorneighbour.png Graphic file (type png)
+<use isoerrorneighbour.png>
+Package pdftex.def Info: isoerrorneighbour.png  used on input line 366.
+(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 363.
+Package xcolor Warning: Incompatible color definition on input line 370.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 363.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 370.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
+Package xcolor Warning: Incompatible color definition on input line 370.
 
-Package xcolor Warning: Incompatible color definition on input line 363.
-
-[14pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
+[14pdfTeX warning (ext4): destination with the same identifier (name{figure.15}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.363 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-15}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.363 
-       <./isoerrorneighbour.png> <./pcatime.png>]
-<kpcatime.png, id=324, 361.35pt x 361.35pt>
-File: kpcatime.png Graphic file (type png)
- <use kpcatime.png>
-Package pdftex.def Info: kpcatime.png used on input line 368.
-(pdftex.def)             Requested size: 180.67456pt x 180.67456pt.
-
-<kpcatimpe.png, id=325, 361.35pt x 361.35pt>
-File: kpcatimpe.png Graphic file (type png)
- <use kpcatimpe.png>
-Package pdftex.def Info: kpcatimpe.png used on input line 375.
-(pdftex.def)             Requested size: 180.67456pt x 180.67456pt.
-
-<time.png, id=326, 433.62pt x 289.08pt>
-File: time.png Graphic file (type png)
- <use time.png>
-Package pdftex.def Info: time.png used on input line 405.
-(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
+l.370 
+       <./graphiso.png>]
+<pcatime.png, id=323, 462.528pt x 346.896pt>
+File: pcatime.png Graphic file (type png)
+<use pcatime.png>
+Package pdftex.def Info: pcatime.png  used on input line 380.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 409.
+Package xcolor Warning: Incompatible color definition on input line 384.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 409.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 384.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
-
-Package xcolor Warning: Incompatible color definition on input line 409.
+Package xcolor Warning: Incompatible color definition on input line 384.
 
 [15pdfTeX warning (ext4): destination with the same identifier (name{figure.16}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.409 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-17}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.409 
-       <./kpcatime.png> <./kpcatimpe.png>]
-<timeisoneigh.png, id=335, 433.62pt x 289.08pt>
-File: timeisoneigh.png Graphic file (type png)
- <use timeisoneigh.png>
-Package pdftex.def Info: timeisoneigh.png used on input line 415.
-(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
-
-<eigen.png, id=336, 361.35pt x 361.35pt>
-File: eigen.png Graphic file (type png)
- <use eigen.png>
-Package pdftex.def Info: eigen.png used on input line 427.
-(pdftex.def)             Requested size: 216.81168pt x 216.81168pt.
+l.384 
+       <./isoerrorneighbour.png>]
+<kpcatime.png, id=330, 361.35pt x 361.35pt>
+File: kpcatime.png Graphic file (type png)
+<use kpcatime.png>
+Package pdftex.def Info: kpcatime.png  used on input line 391.
+(pdftex.def)             Requested size: 180.67456pt x 180.67456pt.
+<kpcatimpe.png, id=331, 361.35pt x 361.35pt>
+File: kpcatimpe.png Graphic file (type png)
+<use kpcatimpe.png>
+Package pdftex.def Info: kpcatimpe.png  used on input line 398.
+(pdftex.def)             Requested size: 180.67456pt x 180.67456pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 430.
+Package xcolor Warning: Incompatible color definition on input line 410.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 430.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 410.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
+Package xcolor Warning: Incompatible color definition on input line 410.
 
-Package xcolor Warning: Incompatible color definition on input line 430.
-
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.18}
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.17}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.430 \end{figure}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{figure.19}) has been already used, duplicate ignored
+l.410 	\end{quote}
+                  		pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.430 \end{figure}
-                   <./time.png> <./timeisoneigh.png>]
-<temp1.png, id=345, 578.16pt x 578.16pt>
-File: temp1.png Graphic file (type png)
- <use temp1.png>
-Package pdftex.def Info: temp1.png used on input line 440.
-(pdftex.def)             Requested size: 231.2599pt x 231.2599pt.
+l.410 	\end{quote}
+                  		pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.19}) has been already used, duplicate ignored
 
-Overfull \hbox (86.14937pt too wide) in paragraph at lines 440--442
- [][] 
- []
-
-<temp2.png, id=346, 546.04pt x 533.995pt>
-File: temp2.png Graphic file (type png)
- <use temp2.png>
-Package pdftex.def Info: temp2.png used on input line 446.
-(pdftex.def)             Requested size: 163.81326pt x 160.19974pt.
-
-Overfull \hbox (18.70273pt too wide) in paragraph at lines 446--448
- [][] 
- []
-
-<temp3.png, id=347, 608.2725pt x 597.23125pt>
-File: temp3.png Graphic file (type png)
- <use temp3.png>
-Package pdftex.def Info: temp3.png used on input line 451.
-(pdftex.def)             Requested size: 182.48315pt x 179.17075pt.
-
-Overfull \hbox (37.37262pt too wide) in paragraph at lines 451--453
- [][] 
- []
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.410 	\end{quote}
+                  		 <./pcatime.png> <./kpcatime.png> <./kpcatimpe.png>]
+<time.png, id=342, 433.62pt x 289.08pt>
+File: time.png Graphic file (type png)
+<use time.png>
+Package pdftex.def Info: time.png  used on input line 428.
+(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
+<timeisoneigh.png, id=343, 433.62pt x 289.08pt>
+File: timeisoneigh.png Graphic file (type png)
+<use timeisoneigh.png>
+Package pdftex.def Info: timeisoneigh.png  used on input line 438.
+(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 456.
+Package xcolor Warning: Incompatible color definition on input line 442.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 456.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 442.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
-
-Package xcolor Warning: Incompatible color definition on input line 456.
+Package xcolor Warning: Incompatible color definition on input line 442.
 
 [17pdfTeX warning (ext4): destination with the same identifier (name{figure.20}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.456 
-       <./eigen.png>] <esttemp1.png, id=354, 585.18625pt x 573.14125pt>
-File: esttemp1.png Graphic file (type png)
-
-<use esttemp1.png>
-Package pdftex.def Info: esttemp1.png used on input line 461.
-(pdftex.def)             Requested size: 175.55722pt x 171.9437pt.
-
-Overfull \hbox (30.44669pt too wide) in paragraph at lines 461--463
- [][] 
- []
-
-<esttemp2.png, id=355, 507.8975pt x 553.06625pt>
-File: esttemp2.png Graphic file (type png)
- <use esttemp2.png>
-Package pdftex.def Info: esttemp2.png used on input line 467.
-(pdftex.def)             Requested size: 152.37042pt x 165.92114pt.
-
-Overfull \hbox (7.25989pt too wide) in paragraph at lines 467--469
- [][] 
- []
-
-<esttemp3.png, id=356, 569.12625pt x 592.2125pt>
-File: esttemp3.png Graphic file (type png)
- <use esttemp3.png>
-Package pdftex.def Info: esttemp3.png used on input line 472.
-(pdftex.def)             Requested size: 170.73918pt x 177.66512pt.
-
-Overfull \hbox (25.62865pt too wide) in paragraph at lines 472--474
- [][] 
- []
-
-<stressMDSnblines.png, id=357, 433.62pt x 289.08pt>
-File: stressMDSnblines.png Graphic file (type png)
- <use stressMDSnblines.png>
-Package pdftex.def Info: stressMDSnblines.png used on input line 490.
-(pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
+l.442 
+       <./time.png>]
+<eigen.png, id=350, 361.35pt x 361.35pt>
+File: eigen.png Graphic file (type png)
+<use eigen.png>
+Package pdftex.def Info: eigen.png  used on input line 450.
+(pdftex.def)             Requested size: 216.81168pt x 216.81168pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 493.
+Package xcolor Warning: Incompatible color definition on input line 454.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 493.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 454.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
-
-Package xcolor Warning: Incompatible color definition on input line 493.
+Package xcolor Warning: Incompatible color definition on input line 454.
 
 [18pdfTeX warning (ext4): destination with the same identifier (name{figure.21}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.493 \end{figure}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{figure.22}) has been already used, duplicate ignored
+l.454 
+       <./timeisoneigh.png>]
+<temp1.png, id=357, 578.16pt x 578.16pt>
+File: temp1.png Graphic file (type png)
+<use temp1.png>
+Package pdftex.def Info: temp1.png  used on input line 463.
+(pdftex.def)             Requested size: 231.2599pt x 231.2599pt.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.493 \end{figure}
-                   <./temp1.png> <./temp2.png> <./temp3.png> <./esttemp1.png> <
-./esttemp2.png> <./esttemp3.png>]
-<isoerrorneighbourD.png, id=370, 433.62pt x 289.08pt>
-File: isoerrorneighbourD.png Graphic file (type png)
+Overfull \hbox (86.14937pt too wide) in paragraph at lines 463--465
+ [][] 
+ []
 
-<use isoerrorneighbourD.png>
-Package pdftex.def Info: isoerrorneighbourD.png used on input line 501.
-(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
+<temp2.png, id=358, 546.04pt x 533.995pt>
+File: temp2.png Graphic file (type png)
+<use temp2.png>
+Package pdftex.def Info: temp2.png  used on input line 469.
+(pdftex.def)             Requested size: 163.81326pt x 160.19974pt.
+
+Overfull \hbox (18.70273pt too wide) in paragraph at lines 469--471
+ [][] 
+ []
+
+<temp3.png, id=359, 608.2725pt x 597.23125pt>
+File: temp3.png Graphic file (type png)
+<use temp3.png>
+Package pdftex.def Info: temp3.png  used on input line 474.
+(pdftex.def)             Requested size: 182.48315pt x 179.17075pt.
+
+Overfull \hbox (37.37262pt too wide) in paragraph at lines 474--476
+ [][] 
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 505.
+Package xcolor Warning: Incompatible color definition on input line 479.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 505.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 479.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
+Package xcolor Warning: Incompatible color definition on input line 479.
 
-Package xcolor Warning: Incompatible color definition on input line 505.
-
-[19pdfTeX warning (ext4): destination with the same identifier (name{figure.23}
+[19pdfTeX warning (ext4): destination with the same identifier (name{figure.22}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.505 
-       <./stressMDSnblines.png>]
-<isoerrorsize.png, id=378, 433.62pt x 289.08pt>
-File: isoerrorsize.png Graphic file (type png)
- <use isoerrorsize.png>
-Package pdftex.def Info: isoerrorsize.png used on input line 512.
-(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
+l.479 
+       <./eigen.png>]
+<esttemp1.png, id=367, 585.18625pt x 573.14125pt>
+File: esttemp1.png Graphic file (type png)
+<use esttemp1.png>
+Package pdftex.def Info: esttemp1.png  used on input line 484.
+(pdftex.def)             Requested size: 175.55722pt x 171.9437pt.
+
+Overfull \hbox (30.44669pt too wide) in paragraph at lines 484--486
+ [][] 
+ []
+
+<esttemp2.png, id=368, 507.8975pt x 553.06625pt>
+File: esttemp2.png Graphic file (type png)
+<use esttemp2.png>
+Package pdftex.def Info: esttemp2.png  used on input line 490.
+(pdftex.def)             Requested size: 152.37042pt x 165.92114pt.
+
+Overfull \hbox (7.25989pt too wide) in paragraph at lines 490--492
+ [][] 
+ []
+
+<esttemp3.png, id=369, 569.12625pt x 592.2125pt>
+File: esttemp3.png Graphic file (type png)
+<use esttemp3.png>
+Package pdftex.def Info: esttemp3.png  used on input line 495.
+(pdftex.def)             Requested size: 170.73918pt x 177.66512pt.
+
+Overfull \hbox (25.62865pt too wide) in paragraph at lines 495--497
+ [][] 
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 516.
+Package xcolor Warning: Incompatible color definition on input line 510.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 516.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 510.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
+Package xcolor Warning: Incompatible color definition on input line 510.
 
-Package xcolor Warning: Incompatible color definition on input line 516.
-
-[20pdfTeX warning (ext4): destination with the same identifier (name{figure.24}
+[20pdfTeX warning (ext4): destination with the same identifier (name{figure.23}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.516 
-       <./isoerrorneighbourD.png>]
+l.510 		
+        pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.24}) has been already used, duplicate ignored
 
-Package xcolor Warning: Incompatible color definition on input line 527.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.510 		
+         <./temp1.png> <./temp2.png> <./temp3.png> <./esttemp1.png> <./esttemp2
+.png> <./esttemp3.png>]
+<compmdsiso.png, id=382, 433.62pt x 289.08pt>
+File: compmdsiso.png Graphic file (type png)
+<use compmdsiso.png>
+Package pdftex.def Info: compmdsiso.png  used on input line 513.
+(pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
+<isoerrorsamplesizeD.png, id=383, 433.62pt x 289.08pt>
+File: isoerrorsamplesizeD.png Graphic file (type png)
+<use isoerrorsamplesizeD.png>
+Package pdftex.def Info: isoerrorsamplesizeD.png  used on input line 524.
+(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 528.
 
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 <use polytechnique-logohori.pdf>
-Package pdftex.def Info: polytechnique-logohori.pdf used on input line 527.
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 528.
 (pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
 
-
-Package xcolor Warning: Incompatible color definition on input line 527.
+Package xcolor Warning: Incompatible color definition on input line 528.
 
 [21pdfTeX warning (ext4): destination with the same identifier (name{figure.25}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.527 \end{document}
-                     <./isoerrorsize.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 527.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 527.
- (./Rapport_MAP581.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 527.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 527.
+l.528 
+       <./compmdsiso.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 542.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf  used on input line 542.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+Package xcolor Warning: Incompatible color definition on input line 542.
+
+[22pdfTeX warning (ext4): destination with the same identifier (name{figure.26}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.542 \end{document}
+                     <./isoerrorsamplesizeD.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 542.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 542.
+ (Rapport_MAP581.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 542.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 542.
 
 
 Package rerunfilecheck Warning: File `Rapport_MAP581.out' has changed.
@@ -1608,37 +1593,38 @@ Package rerunfilecheck Warning: File `Rapport_MAP581.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `Rapport_MAP581.out':
-(rerunfilecheck)             Before: DFC7BFE8562F6742B3CF206570C14805;1324
-(rerunfilecheck)             After:  91823D17D78B537042015CA9FD664F50;1324.
+(rerunfilecheck)             Before: 13B29375BD878FEB37EE8A059B74A896;1345
+(rerunfilecheck)             After:  D5362EF88F891FE6144CED8C19642FAA;1289.
  ) 
 Here is how much of TeX's memory you used:
- 19566 strings out of 493014
- 353368 string characters out of 6133352
- 439780 words of memory out of 5000000
- 22635 multiletter control sequences out of 15000+600000
- 63019 words of font info for 56 fonts, out of 8000000 for 9000
+ 19713 strings out of 493303
+ 354380 string characters out of 3138453
+ 442248 words of memory out of 3000000
+ 22778 multiletter control sequences out of 15000+200000
+ 63019 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,14n,54p,856b,632s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/lo
-cal/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
-e/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2016/tex
-mf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2016/texmf-dist/fonts/
-enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/l
-m/lmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmcsc10.
-pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2016/te
-xmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2016/texmf-dist/fo
-nts/type1/public/lm/lmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
-ublic/lm/lmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lms
-s17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Rapport_MAP581.pdf (21 pages, 3601320 bytes).
+ 55i,14n,54p,1036b,632s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{subsubsection.4.3.3} has been referenced but does
+ not exist, replaced by a fixed one
+
+{C:/Users/flore/Desktop/LaTex/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/flore/
+Desktop/LaTex/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/flore/Desktop/LaTex/fo
+nts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/flore/Desktop/LaTex/fonts/enc/dvips/lm
+/lm-rm.enc}{C:/Users/flore/Desktop/LaTex/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users
+/flore/Desktop/LaTex/fonts/type1/public/lm/lmbx12.pfb><C:/Users/flore/Desktop/L
+aTex/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/flore/Desktop/LaTex/fonts/type
+1/public/lm/lmex10.pfb><C:/Users/flore/Desktop/LaTex/fonts/type1/public/lm/lmmi
+12.pfb><C:/Users/flore/Desktop/LaTex/fonts/type1/public/lm/lmmi8.pfb><C:/Users/
+flore/Desktop/LaTex/fonts/type1/public/lm/lmr12.pfb><C:/Users/flore/Desktop/LaT
+ex/fonts/type1/public/lm/lmr17.pfb><C:/Users/flore/Desktop/LaTex/fonts/type1/pu
+blic/lm/lmr8.pfb><C:/Users/flore/Desktop/LaTex/fonts/type1/public/lm/lmss17.pfb
+><C:/Users/flore/Desktop/LaTex/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/flo
+re/Desktop/LaTex/fonts/type1/public/lm/lmsy10.pfb><C:/Users/flore/Desktop/LaTex
+/fonts/type1/public/lm/lmsy8.pfb><C:/Users/flore/Desktop/LaTex/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb>
+Output written on Rapport_MAP581.pdf (22 pages, 3903168 bytes).
 PDF statistics:
- 458 PDF objects out of 1000 (max. 8388607)
- 295 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
- 366 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 461 PDF objects out of 1000 (max. 8388607)
+ 70 named destinations out of 1000 (max. 500000)
+ 371 words of extra memory for PDF output out of 10000 (max. 10000000)
 

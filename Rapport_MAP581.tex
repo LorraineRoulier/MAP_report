@@ -164,7 +164,7 @@ where $x_{i}$ and $x_{j}$ are vectors of the dataset $X$
 \caption{geodisic and euclidean distance}
 \end{figure}
 	
-	
+
 \section{Results}
 	\subsection{Graphic Interpretation}
 		\subsubsection{PCA}
@@ -316,7 +316,9 @@ The dots representing the south and north poles are still closer together howeve
 
 			\subsubsection{Multidimensional Scaling - MDS}
 	
-	As MDS was extremeley low and seemed to use a lot of memory, we could not run the programm for more than 600 datapoints (ie 600 rows).Therefore, we used a new subset of longitudes between 0° and +5°, reducind the datasize to 546 datapoints. Figure 6 shows the results of MDS. 
+	As MDS was extremeley low and seemed to use a lot of memory, we could not run the programm for more than 600 datapoints (ie 600 rows).Therefore, we used a new subset of longitudes between 0° and +5°, reducing the dataset size to 546 datapoints. 
+	Figure 6 shows the results of MDS. As we can see, datas from South pole and North pole are quite compact, that is to say that all points are near each other. There is not a wide range of temperature, pressure, radiation, humidity and wind speed in those regions. This is quite what we expected. 
+	On the contrary, regions like equator and north temperate show a wide range of climatic parameters as some points are quite far from each other. It would mean that there are more diverse climate in equator and north temperate. It also seems like south temperate shows less diversity of climate as all the points seem compact. This is not what we expected, as south and north temperate are supposed to have same characteristics. This could be explained by two reasons. \textbf{Either we are missing information because we have reduced too much the dimension, or south hemisphere is quite different because it has much more ocean than the north hemisphere.} To check the first possibility, we implemented MDS in 3D, here are the results on figure ??. As we can see, the yellow points (south temperate) are not as widely spread as the green (equator) or red (north temperate) one. So it seems like the second possibility explain why we have fewer variance of climatic parameters in south temperate.
 	
 	\begin{figure}[H]
  \begin{center}
@@ -324,10 +326,25 @@ The dots representing the south and north poles are still closer together howeve
 \end{center}
 \caption{Results of MDS in 2D}
 \end{figure}
-	
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.5]{mds3Da.png}
+\end{center}
+\caption{Results of MDS in 3D}
+\end{figure}
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.5]{mds3Db.png}
+\end{center}
+\caption{Results of MDS in 3D}
+\end{figure}
+
+ 
 			\subsubsection{Isomap}
 	
-	As the main parameter of the method is the number of nearest neighbors taken into account, we present in figure  ?? the result of isomap for number of neighbour between 1 to and neighbors. 
+	One of the key parameter of isomap  is the number of nearest neighbors taken into account. Therefore, we present in figure  ?? the result of isomap for number of neighbour between 1 to and neighbors. 
 	
 	\begin{figure}[H]
  \begin{center}
@@ -336,7 +353,7 @@ The dots representing the south and north poles are still closer together howeve
 \caption{results of isomap depending on the number of neighbors considered from 2 to 8}
 \end{figure}
 
-It is obvious that the number of neighbours considered strongly influence the 2D distribution of our dataset. To know which graph is the most accurate, we refer to the 'reconstruction error'. We computed this reconsruction error with respect to the number of neighbours considered. The results are presented in figure ??
+It is obvious that the number of neighbours considered strongly influence the 2D distribution of our dataset. To know which graph is the most accurate, we refer to the 'reconstruction error'. This reconstruction error is a function embedded in scikit. For the moment, we only need to know that it is an indicator of how much isomap mapping is accurate and respect original distance, it kind of computes difference between the final distance of two items in the isomap mappingl and the true distance between them. We computed this reconstruction error with respect to the number of neighbours considered. The results are presented in figure ??
 
 \begin{figure}[H]
  \begin{center}
@@ -345,12 +362,12 @@ It is obvious that the number of neighbours considered strongly influence the 2D
 \caption{reconstruction error as a function of number of neighbours considered}
 \end{figure}
 
-It is interesting to see that from eight neighbors, error seems to stabilize around 2,5. So the most 'accurate' representation should be with 8 neighbors.
+It is interesting to see that from eight neighbors, error seems to stabilize around 2,5. So the most 'accurate' representation should be with 8 neighbors. If we interpret the graph with 8 neighbors, we can see that we can browse the entire planet from north pole to south pole, going through all zones in the order, \textbf{which is not the case in MDS}. So isomap better preserve the geometry of the dataset. It is interesting to see that pink points(ie south pole) are much more spread in isomap than MDS.
 
 \subsection{Time comparison}
 	
 	We implemented manually PCA, but for the other methods we used the built in fonction of the scikit package on python. 
-	PCA's running time varies linearly with the number of rows as we can see on the graphic below 
+	PCA's running time varies linearly with the dataset size as we can see on the graphic below 
 
 \begin{figure}[H]
  \begin{center}
@@ -476,44 +493,36 @@ We also reconstructed the dataset from its projection with PCA. It is indeed pos
 \end{figure}
 
 
-			\subsubsection{MDS}
+			\subsubsection{MDS and isomap}
 			
-			One indicator to estimate of the reconstruction is accurate is the 'stress'. It is roughly the square difference between the final distance of two items in the MDS model and the true distance between them. The exact formula is: 
+			As isomap and MDS function with the same principle, we decided to compare their estimated error. For MDS, we ued an indicator called stress. It is roughly the square difference between the final distance of two items in the MDS model and the true distance between them. The exact formula is: 
 		
 			\[ s = \sqrt{\frac{\sum (d_{ij}-d(i,j))}{\sum d_{ij}}}
 		\]
 		
-		The aim of MDS is to minimize this stress. Figure 7 presents the value of stress depending on the number of lines. We can see it is relatively low (<0,002) with our dataset.
+with $d_{ij}$ the original distance between pairwaise i and j and d(i,j) the computed distance. The aim of MDS is to minimize this stress.  For isomap, there is an indicator called error reconstruction already embedded in scikit. We will not detail its formula here as it is quite heavy and complicated. All we need to know is that it can be compared to the notion of stress as in MDS in the sense that it computes the difference between the final distance of two items in the MDS model and the true distance between them.
 		
 	\begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 1]{stressMDSnblines.png}
+	\includegraphics[scale = 1]{compmdsiso.png}
 \end{center}
 \caption{stress as a function of sample size}
 \end{figure}
 
-			\subsubsection{isomap}
+As we can see, isomap is less efficient than MDS for a subset of size 200. AS the data set size increases, isomap error tends to lessen but is still much more important than MDS error. \textbf{In our example, it seems like MDS gives a much more accurate representation of our dataset.}
 
-We have already talked about error reconstruction of isomap, a function already embedded in scikit. It may be interesting to see how reconstruction erro evolve with the number of dimension taken into account. On figure ?? we compare how reconstruction error evolve with dimension? We make dimension vary between 2 and 3.
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.8]{isoerrorneighbourD.png}
-\end{center}
-\caption{reconstruction error as a function of the datasize}
-\end{figure}
-
-We can clearly see that error is slimmer in 3D than in 2D. It seems logic as in 3D we reduce less dimension than in 2D. But as the number of neighbors increases, both of 2D and 3D reconstruction error seem to stabilize around ?.
-
- We also computed the error reconstruction as a function of the sample size in figure ??. This error keeps increasing with the dataset size, so isomap accuracy seems to be limited by the size of the dataset.
+	Then, we intended to see how reconstruction error evolve with the number of dimension taken into account for both MDS and isomap. On figure ?? we compare how reconstruction error evolve with dimension. We make dimension vary between 2 and 3.
 
 \begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 0.8]{isoerrorsize.png}
+	\includegraphics[scale = 0.8]{isoerrorsamplesizeD.png}
 \end{center}
-\caption{reconstruction error as a function of the datasize}
+\caption{reconstruction error as a function of the sample size for ISOMAP}
 \end{figure}
 
+As the sample size increases, error for 2D isomap keep increasing compare to error in 3D isomap. As expected, error for 2D isomap is bigger than for 3D because we reduce more the dimension.
+
+We did the same for MDS in 2D and 3D. 
 		
 \section{Conclusion}
 \section{Bibliography}
