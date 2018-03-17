@@ -97,6 +97,7 @@ We classified the data according to the latitude, creating five classes listed i
 		  \end{tabular}
 \end{center}
 \caption{Our classification  }
+\label{3}
 \end{figure}
 
 \section{Methods}
@@ -275,7 +276,7 @@ We attempted to run the PCA method with three principal components, it yielded s
 \end{figure}
 
 	The black dots are all dots along one longitude, here 15. We see however that there is a degenerescence: -15 and +15 longitude are projected on the same positions. When changing the $ \gamma $, some lines grow appart but most of them stay degenerated.
-	Another flow of this representation is the space that is taken by the equator area. When representing the temperature in this area, we can see it does not vary very much compared to other regions: the variables should be represented closer together, as it was the case for example in PCA. 
+	
 	
 	The peak present in the center of the figure is a consequence of the fact that data from each side of the peak even if they are close numerically are not close spatially: they are the data from both north and south pole. 
 	
@@ -321,6 +322,8 @@ The dots representing the south and north poles are still closer together howeve
     \end{minipage}
     \caption{Kernel PCA with two components and polynomial kernel}
 \end{figure}
+
+However, a flaw of this representation is the space that is taken by the equator area. When representing the temperature in this area, we can see it does not vary very much compared to other regions, however, other variables especially humidity vary a lot as this area gathers tropical and desert areas. Moreover, we saw in table \ref{3} that the equator area contained 40\% of the earth's surface: it makes sense that it should be mapped onto a larger area than the other classes. 
 
 			\subsubsection{Multidimensional Scaling - MDS}
 	
