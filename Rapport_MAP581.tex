@@ -131,7 +131,7 @@ The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this
 
 	\subsection{Kernel PCA}
 
-Kernel Principal Component analysis is a non linear method for dimension reduction. Instead of directly maximizing the variance of $X$, we map it into a larger dimension space called the feature space, using a non linear function $\phi : \mathbb{R}^{d} \rightarrow \mathbb{R}^{N} $ where $N>d$. 
+	Kernel Principal Component analysis is a non linear method for dimension reduction. Instead of directly maximizing the variance of $X$, we map it into a larger dimension space called the feature space, using a non linear function $\phi : \mathbb{R}^{d} \rightarrow \mathbb{R}^{N} $ where $N>d$. 
 	
 	Instead of directly mapping $X$ into the feature space, we use a kernel, that represents a similarity function between pairs. Let $K: \mathbb{R}^{d} \times \mathbb{R}^{d} \rightarrow \mathbb{R} $ be this kernel, then 
 	\[ K(x_{i},x_{j}) = \phi(x_{î})^{T} \phi(x_{j})\]
@@ -146,19 +146,20 @@ where $(x_{i}, x_{j} ) \in \mathbb{R}^{d} \times \mathbb{R}^{d} $ are vectors of
 	
 	\subsection{Multidimensional scaling}
 	
-	Multidimensional scaling is a linear approach to reduce dimension of a dataset. The principle is quite different from PCA: given a matrix of distance or "dissimilarity", MDS aims at reconstructing a map preserving at best the distances between datas. In our example, the MDS algorithm aims to place each object in a 2-dimensional space such that the between-object distances are preserved as well as possible.
-	Given a distance matrix D of dimension $ n \times p $ (p=5 for us) , MDS attempts to find the datapoints $y_1$,... $y_t$ in dimension $d<p $(d=2 for us) that minimizes:
+		Multidimensional scaling is a linear approach to reduce dimension of a dataset. The principle is different from PCA: given a matrix of distance or "dissimilarity", MDS aims at reconstructing a map preserving at best the distances between datapoints. In our example, the MDS algorithm aims to place each object in a 2-dimensional space such that the between-object distances are preserved as well as possible.
+		
+	Given a distance matrix D of dimension $ d \times d $ (d=5 for us) , MDS attempts to find the datapoints $y_1$,... $y_n$ in dimension $r<d $(r=2 for us) that minimizes:
 	
-		 \[\sum\limits_{i=1}^{t}[\sum\limits_{j=1}^{t}d_{ij}^{(X)}-d_{ij}^{(Y)}]
+		 \[\sum\limits_{i=1}^{n}[\sum\limits_{j=1}^{n}d_{ij}^{(X)}-d_{ij}^{(Y)}]
 			\]
 		
-	with $d_{ij}^{(X)}$ the euclidean distance between pairwise i and j in the original  $n \times p$ matrix $D^{(X)}$ and $d_{ij}^{(Y)}$ the euclidean distance between pairwise i and j in the original  $n \times p$ matrix $D^{(X)}$  and in the computed $ n \times d $ matrix $D^{(Y)}$.
+	with $d_{ij}^{(X)}=\|x_i-x_j\|^{2}$ the Euclidean distance between pairwise i and j in the original  $d \times d$ matrix $D^{(X)}$ and $d_{ij}^{(Y)==\|y_i-y_j\|^{2}}$ the Euclidean distance between pairwise i and j in the computed $ r \times r $ matrix $D^{(Y)}$. The new vectors $v_1$,... $v_r$ created in reduced dimension r should be linear combination of the original vectors $v_1$,... $v_d$, which is why MDS is a linear method. In our example, original vectors $v_1$,... $v_5$ are temperature, radiation, pressure, wind speed and humidity.
 	
 	A basic approach to understand MDS is to use the example of cities. The input is the distance matrix between cities on the left on figure \ref{5}. MDS enables us to find the coordinates of each city based on this distance matrix.
 	
 	\begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 0.4]{MDSexpli.png}
+	\includegraphics[scale = 0.6]{MDSexpli.png}
 \end{center}
 \caption{role of MDS  - interpretation}
 \label{5}
@@ -166,19 +167,26 @@ where $(x_{i}, x_{j} ) \in \mathbb{R}^{d} \times \mathbb{R}^{d} $ are vectors of
 
 	\subsection{Isomap}
 	
-	Isomap is a low dimensional embedding method similar to MDS. The difference is that distance is not computed with euclidean norm but with geodesic distance. As the earth shape is round, isomap seems more relevant than MDS. On figure \ref{6}, we can see the difference between the geodisic distance (in red) used in isomap, and the eucliean distance used in MDS (in blue).
+	Isomap is a low dimensional embedding method similar to MDS. The difference is that distance is not computed with Euclidean norm but with geodesic distance. For this, we consider that each point in our dataset has a finite number x of 'nearest neighbors', that is to say the  x nearest points computed with the Euclidean distance. To go from point A to point C in our dataset, one can only 'jump' from one of the nearest neighbor of point A (let's call him B), then one of the nearest neighbor of point B ... Until we reach point C. The geodesic distance is the sum of the distance browsed from nearest neighbor to nearest neighbor between point A and C.
+	As the earth shape is round, isomap seems intuitively more relevant than MDS. On figure \ref{6}, we can see the difference between the geodesic distance (in red) used in isomap, and the Euclidean distance used in MDS (in blue).
 	
 	\begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.6]{isoexpli.png}
 \end{center}
-\caption{geodisic and euclidean distance}
+\caption{geodesic and Euclidean distance}
 \label{6}
 \end{figure}
 	
 
 \section{Results}
+
+For each method, we aimed at reducing the 5D dataset into a 2D or 3D dataset so that we could plot it and interpret it. We analyzed how the five geographical zones were distributed across the map and how much information was preserved. Then, we compare the running time.
+ 
 	\subsection{Graphic Interpretation}
+	
+	Graphic interpretation was the key analysis of this dimension reduction project. We plotted the results for each method in 2D or 3D to analyze climate variance and climate similarity across the earth. We also used graphic interpretation to check how accurate the method was at representing the dataset.  
+	
 		\subsubsection{PCA}
 		
 		We first implemented PCA and ran it with only two principal components, which yielded the graph plotted in figure \ref{7} for the whole dataset. We wrote the eigenvectors $ y_{1} $ and $ y_{2}$ that were used horizontally to make it easier to understand their meaning. 
@@ -324,15 +332,19 @@ The dots representing the south and north poles are still closer together howeve
 
 			\subsubsection{Multidimensional Scaling - MDS}
 	
-	As MDS was extremeley low and seemed to use a lot of memory, we could not run the programm for more than 600 datapoints (ie 600 rows).Therefore, we used a new subset of longitudes between 0° and +5°, reducing the dataset size to 546 datapoints. 
-	Figure \ref{12} shows the results of MDS. As we can see, datas from South pole and North pole are quite compact, that is to say that all points are near each other. There is not a wide range of temperature, pressure, radiation, humidity and wind speed in those regions. This is quite what we expected. 
-	On the contrary, regions like equator and north temperate show a wide range of climatic parameters as some points are quite far from each other. It would mean that there are more diverse climate in equator and north temperate. It also seems like south temperate shows less diversity of climate as all the points seem compact. This is not what we expected, as south and north temperate are supposed to have same characteristics. This could be explained by two reasons. \textbf{Either we are missing information because we have reduced too much the dimension, or south hemisphere is quite different because it has much more ocean than the north hemisphere.} To check the first possibility, we implemented MDS in 3D, here are the results on figures \ref{13} and \ref{14}. As we can see, the yellow points (south temperate) are not as widely spread as the green (equator) or red (north temperate) one. So it seems like the second possibility explain why we have fewer variance of climatic parameters in south temperate.
+	As MDS was extremely slow and seemed to use a lot of memory, we could not run the program for more than 600 datapoints (i.e. 600 rows).Therefore, we used a new subset of longitudes between 0° and +5°, reducing the dataset size to 546 datapoints. 
+	Figure \ref{12} shows the results of MDS. As we can see, observations from South pole and North pole are quite compact, that is to say that all points are near each other. There is not a wide range of temperature, pressure, radiation, humidity and wind speed in those regions. This is quite what we expected. 
+	
+	On the contrary, regions like equator and north temperate show a wide range of climate diversity as some points are quite far from each other. It would mean that there are more diverse climate in equator and north temperate. It also seems like south temperate shows less diversity of climate as all the points seem compact. This is not what we expected, as south and north temperate are supposed to have same characteristics. This could be explained by two reasons. \textbf{Either we are missing information because we have reduced too much the dimension, or south hemisphere is quite different because it has much more ocean than the north hemisphere.} To check the first possibility, we implemented MDS in 3D. The results are shown on figures \ref{13} and \ref{14}. As we can see, the yellow points (south temperate) are not as widely spread as the green (equator) or red (north temperate) one. So it seems like the second possibility explain why we have fewer variance of climatic parameters in south temperate.
+	
+	It is worth mentioning that in MDS, South temperate observations are overlapping with observations from North pole and North temperate. This is not what we expected. It seems like MDS is not very adapted to represent the dataset.  This is why we decided to try with isomap. Indeed, as isomap uses the geodesic distance, much adapted to the round shape of earth, we are expecting more accurate results.
 	
 	\begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.7]{graphMDS.png}
 \end{center}
 \caption{Results of MDS in 2D}
+\label{12}
 \end{figure}
 
 \begin{figure}[H]
@@ -341,7 +353,6 @@ The dots representing the south and north poles are still closer together howeve
 \end{center}
 \caption{Results of MDS in 3D}
 \label{13}
-\label{12}
 \end{figure}
 
 \begin{figure}[H]
@@ -352,10 +363,26 @@ The dots representing the south and north poles are still closer together howeve
 \label{14}
 \end{figure}
 
+To check how accurate MDS is, we used an indicator called stress. It is roughly the square difference between the final distance of two items in the MDS model and the true distance between them. The exact formula is: 
+
+  \[ \sqrt{\frac{\sum\limits_{ij}^{n} d_{ij}^{(X)}-d_{ij}^{(Y)}}{\sum d_{ij}^{(X)}}}
+			\]
+		
+	with $d_{ij}^{(X)}=\|x_i-x_j\|^{2}$ the Euclidean distance between pairwise i and j in the original  $d \times d$ matrix $D^{(X)}$ and $d_{ij}^{(Y)}=\|y_i-y_j\|^{2}$ the Euclidean distance between pairwise i and j in the computed $ r \times r $ matrix $D^{(Y)}$.
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{mdsD.png}
+\end{center}
+\caption{reconstruction error as a function of the sample size for MDS}
+\label{27}
+\end{figure}
+
+As expected, stress is higher in 2D than 3D, because we reduce more dimension (or we suppress a degree of freedom and put more constraint). But this difference gets negligible when sample size increases.
  
 			\subsubsection{Isomap}
 	
-	One of the key parameter of isomap  is the number of nearest neighbors taken into account. Therefore, we present in figure \ref{15} the result of isomap for a number of neighbors between 2 to 8. 
+	As we have mentioned before, Isomap does not compute the Euclidean distance but a geodesic distance. For this, we consider that each point in our dataset has a finite number x of 'nearest neighbors', that is to say the  x nearest points computed with the Euclidean distance. To go from point A to point C in our dataset, one can only 'jump' from one of the nearest neighbor of point A (let's call him B), then one of the nearest neighbor of point B ... Until we reach point C. So the number of nearest neighbor is a key parameter that can completely reshape our final results. For example, if we set a number of nearest neighbor equal to our data set size n, the geodesic distance will be ... the Euclidean norm, and MDS and Isomap would yield the same results. Therefore, we present in figure \ref{15} the result of isomap for a number of neighbors between 2 to 8. 
 	
 	\begin{figure}[H]
  \begin{center}
@@ -365,7 +392,7 @@ The dots representing the south and north poles are still closer together howeve
 \label{15}
 \end{figure}
 
-It is obvious that the number of neighbours considered strongly influence the 2D distribution of our dataset. To know which graph is the most accurate, we refer to the 'reconstruction error'. This reconstruction error is a function embedded in scikit. For the moment, we only need to know that it is an indicator of how much isomap mapping is accurate and respect original distance, it kind of computes difference between the final distance of two items in the isomap mappingl and the true distance between them. We computed this reconstruction error with respect to the number of neighbours considered. The results are presented in figure \ref{16}.
+It is obvious that the number of neighbours considered strongly influence the 2D distribution of our dataset. To know which graph is the most accurate, we refer to the 'reconstruction error'. This reconstruction error is a function embedded in Scikit-Learn. For the moment, we only need to know that it is an indicator of how much isomap mapping is accurate and respect original distance, it kind of computes difference between the final distance of two items in the isomap mapping and the true distance between them. We computed this reconstruction error with respect to the number of neighbours considered. The results are presented in figure \ref{16}.
 
 \begin{figure}[H]
  \begin{center}
@@ -375,7 +402,18 @@ It is obvious that the number of neighbours considered strongly influence the 2D
 \label{16}
 \end{figure}
 
-It is interesting to see that from eight neighbors, error seems to stabilize around 2,5. So the most 'accurate' representation should be with 8 neighbors. If we interpret the graph with 8 neighbors, we can see that we can browse the entire planet from north pole to south pole, going through all zones in the order, \textbf{which is not the case in MDS}. So isomap better preserve the geometry of the dataset. It is interesting to see that pink points(ie south pole) are much more spread in isomap than MDS.
+It is interesting to see that from eight neighbors, error seems to stabilize around 2.5. So the most 'accurate' representation should be with 8 neighbors. Indeed, representation  for 6 and 8  neighbors seemed to be the most accurate, because we can browse the entire planet from north pole to south pole, going through all zones in the order, \textbf{which is not the case in MDS}. S\textbf{o isomap better preserve the geometry of the dataset. This is what we expected: geodesic distance is more adapted to the earth due to the round shape of earth.}  It is interesting to see that pink points(i.e. south pole) are much more spread in isomap than MDS.
+
+We also checked how error reconstruction evolves with reduced dimension r (=2 or 3). Results are shown on figure \ref{18}. As the sample size increases, error for 2D isomap keep increasing compare to error in 3D isomap. As expected, error for 2D isomap is bigger than for 3D because we reduce more the dimension.
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{isoerrorsamplesizeD.png}
+\end{center}
+\caption{reconstruction error as a function of the sample size for ISOMAP}
+\label{18}
+\end{figure}
+
 
 \subsection{Time comparison}
 	
@@ -408,16 +446,16 @@ Kernel PCA was slower, we did not compute its running time for all the dataset, 
     \end{minipage}
 \end{figure}
 
-	In figure \ref{20}, we present computing time for the four different methods as a function of the sample size.
-	From this we can conclude that the quickest method is PCA. Then come isomap, kernel PCA and finally MDS. It is quite surprising to see that isomap is quicker than MDS for the same number of rows. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. We found an explanation on the 'manifold guide' of skicit.
+	In figure \ref{22}, we present computing time for the four different methods as a function of the sample size.
+	From this we can conclude that the quickest method is PCA. Then come isomap, kernel PCA and finally MDS. It is quite surprising to see that isomap is quicker than MDS for the same sample size. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. We found an explanation on the 'manifold guide' of Scikit-Learn:
 	
 	\begin{quotation}
 \begin{quote}
-In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensional Scaling on the S-Curve dataset [...]. In the third stage of algorithm, the implementation uses Partial Eigen Value decomposition instead of MDS which is the version proposed by the researchers	
+"`In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensional Scaling on the S-Curve dataset [...]. In the third stage of algorithm, the implementation uses Partial Eigen Value decomposition instead of MDS which is the version proposed by the researchers."'	
 	\end{quote}		
 	\end{quotation}
 	
-	We did not use the 'S curve dataset' as mentioned above, but we may think that due to the round shape of earth, our dataset is quite similar to the S-curve and thus Isomap runs faster than MDS. For a fixed dimension d, the following table present the complexity of every method as it appeared to us.
+	We did not use the 'S curve dataset' as mentioned above, but we may think that due to the round shape of earth, our dataset is quite similar to the S-curve and thus Isomap runs faster than MDS. For a fixed dimension d (=5 here), the following graph presents the complexity of every method.
 
 
 \begin{figure}[H]
@@ -425,18 +463,18 @@ In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensio
 	\includegraphics[scale = 0.8]{time.png}
 \end{center}
 \caption{computing time comparison}
-\label{20}
+\label{22}
 \end{figure}
 
 
-We also checked how isomap computing time varies with the number of neighbor taken into account. Figure \ref{21} shows that isomap efficiency time increases with the number of neighbors. So isomap efficiency of computing time may be limited by the number of neighbors.
+We also checked how computing time of isomap varies with the number of neighbor taken into account. Figure \ref{23} shows that running time for isomap increases with the number of neighbors. So running time of isomap may be limited by the number of neighbors.
 
 \begin{figure}[H]
  \begin{center}
 	\includegraphics[scale = 0.8]{timeisoneigh.png}
 \end{center}
 \caption{computing time for isomap as a function of the number of neighbors considered}
-\label{21}
+\label{23}
 \end{figure}
 
 \subsection{Error and preserved information}
@@ -498,76 +536,18 @@ We also reconstructed the dataset from its projection with PCA. It is indeed pos
 \end{figure}
 
 
-			\subsubsection{MDS and isomap}
-			
-			As isomap and MDS function with the same principle, we decided to compare their estimated error. For MDS, we ued an indicator called stress. It is roughly the square difference between the final distance of two items in the MDS model and the true distance between them. The exact formula is: 
 		
-			\[ s = \sqrt{\frac{\sum (d_{ij}-d(i,j))}{\sum d_{ij}}}
-		\]
-		
-with $d_{ij}$ the original distance between pairwaise i and j and d(i,j) the computed distance. The aim of MDS is to minimize this stress.  For isomap, there is an indicator called error reconstruction already embedded in scikit. We will not detail its formula here as it is quite heavy and complicated. All we need to know is that it can be compared to the notion of stress as in MDS in the sense that it computes the difference between the final distance of two items in the MDS model and the true distance between them.
-		
-	\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 1]{compmdsiso.png}
-\end{center}
-\caption{error as a function of sample size}
-\label{25}
-\end{figure}
-
-As we can see on figure \ref{25}, isomap is less efficient than MDS for a subset of size 200. AS the data set size increases, isomap error tends to lessen but is still much more important than MDS error. \textbf{In our example, it seems like MDS gives a much more accurate representation of our dataset.}
-
-	Then, we intended to see how reconstruction error evolve with the number of dimension taken into account for both MDS and isomap. On figure \ref{26} we compare how reconstruction error evolve with dimension. We make dimension vary between 2 and 3.
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.8]{isoerrorsamplesizeD.png}
-\end{center}
-\caption{reconstruction error as a function of the sample size for ISOMAP}
-\label{26}
-\end{figure}
-
-As the sample size increases, error for 2D isomap keep increasing compare to error in 3D isomap. As expected, error for 2D isomap is bigger than for 3D because we reduce more the dimension.
-
-We did the same for MDS in 2D and 3D in figure \ref{27}. As we have seen above, stress in MDS does not increase with sample size but remains stable. Yet, 2D error is a bit more important for small sample size than 3D error. When the sample size increases, both 3D and 2D error tends to an equal small limit. 
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.8]{mdsD.png}
-\end{center}
-\caption{reconstruction error as a function of the sample size for MDS}
-\label{27}
-\end{figure}
 		
 \section{Conclusion}
 
-In this project, we have studied four different dimension reduction methods with a climate dataset. 
+In this project, we have studied four different dimension reduction methods with a climate dataset.
 
-\begin{figure}[H]
- \begin{center}
-	\resizebox{\textwidth}{!}{
-	\begin{tabular}{|c|c|c|}
-		 \hline    
-	  	Methods& Time efficiency & Comments \\ 
-		\hline
-			PCA & quickest & lost information easily available  \\
-		\hline
-			Kernel PCA & 3rd quickest, slow & no way to measure accuracy found (no time) \\
-		\hline
-			MDS & very slow & more accurate than isomap, 
-			accuracy stays stable when sample size increases\\
-		\hline
-			isomap & quick & less accurate than isomap
-			accuracy decreases as sample size increases\\
-		  \end{tabular}
-			}
-\end{center}
-\caption{Our results  }
-\end{figure}
+Isomap appears to us as the most adapted method to represent our dataset. That is due to the fact that geodesic distance is much more adapted to the round shape of the earth. Plus, its running time is very satisfying as it is the second fastest method behind PCA.
+PCA has the advantage to be fast but fails to represent the dataset. There is a lot of overlapping with this method.
+MDS and Kernel PCA yields similar results that do not respect the geometry of the earth. Plus, they are slow.
 
-We have seen that those dimension reduction were an efficient way to establish a classification of geographical zones of the earth based on meteorological characteristics. A next possible step would be for exemple to be able to identify from which zone on earth random climate datas were collected.
+We have seen that those dimension reduction were an efficient way to establish a classification of geographical zones of the earth based on meteorological characteristics. A next possible step would be for example to be able to identify from which zone on earth random climate datas were collected.
 
-For us, this project was a very first approach to dimension reduction. Therefore, we decided to focus on exclusively four methods to have time analyze them thoroughly. We may not have deeply studied the mathematical proof of every method, because we were more interested in understanding their founding concept, or to 'give them a sense'.
 
 
 \section{Bibliography}
