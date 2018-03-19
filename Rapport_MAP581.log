@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.6)  17 MAR 2018 20:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.6)  19 MAR 2018 14:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -756,8 +756,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-
-No file Rapport_MAP581.aux.
+ (./Rapport_MAP581.aux)
 \openout1 = `Rapport_MAP581.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
@@ -775,6 +774,7 @@ LaTeX Font Info:    ... okay on input line 34.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
 LaTeX Font Info:    ... okay on input line 34.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 34.
+
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -935,17 +935,20 @@ Package pdftex.def Info: polytechnique-logovert.pdf used on input line 36.
 cal/texlive/2016/texmf-dist/tex/latex/polytechnique/polytechnique-armes.pdf> </
 usr/local/texlive/2016/texmf-dist/tex/latex/polytechnique/polytechnique-filetco
 urtbleu.pdf> </usr/local/texlive/2016/texmf-dist/tex/latex/polytechnique/polyte
-chnique-logovert.pdf>]
-
-Package hyperref Warning: old toc file detected, not used; run LaTeX again.
-
+chnique-logovert.pdf>] (./Rapport_MAP581.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 5.
+)
 \tf@toc=\write5
 \openout5 = `Rapport_MAP581.toc'.
 
 
+
 Package xcolor Warning: Incompatible color definition on input line 38.
 
-<polytechnique-logohori.pdf, id=155, 195.52248pt x 85.3575pt>
+<polytechnique-logohori.pdf, id=175, 195.52248pt x 85.3575pt>
 File: polytechnique-logohori.pdf Graphic file (type pdf)
 
 <use polytechnique-logohori.pdf>
@@ -959,15 +962,6 @@ Package xcolor Warning: Incompatible color definition on input line 38.
 
  </usr/local/texlive/2016/texmf-dist/tex/latex/polytechnique/polytechnique-logo
 hori.pdf>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 43.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 43.
-
-
-LaTeX Warning: Reference `dataset' on page 3 undefined on input line 55.
-
-
 Overfull \hbox (33.5951pt too wide) in paragraph at lines 60--66
  [] 
  []
@@ -989,14 +983,11 @@ has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.72 
-     ] <latlon.jpg, id=195, 26.54324pt x 30.28342pt>
+     ] <latlon.jpg, id=218, 26.54324pt x 30.28342pt>
 File: latlon.jpg Graphic file (type jpg)
  <use latlon.jpg>
 Package pdftex.def Info: latlon.jpg used on input line 77.
 (pdftex.def)             Requested size: 106.1726pt x 121.1333pt.
-
-
-LaTeX Warning: Reference `4' on page 4 undefined on input line 111.
 
 
 Package xcolor Warning: Incompatible color definition on input line 112.
@@ -1021,7 +1012,7 @@ l.112
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.112 
-       <./latlon.jpg>] <PCAexpli.png, id=202, 546.54187pt x 408.77719pt>
+       <./latlon.jpg>] <PCAexpli.png, id=226, 546.54187pt x 408.77719pt>
 File: PCAexpli.png Graphic file (type png)
 
 <use PCAexpli.png>
@@ -1049,10 +1040,7 @@ l.136
 
 LaTeX Warning: Command \^ invalid in math mode on input line 138.
 
-
-LaTeX Warning: Reference `5' on page 6 undefined on input line 158.
-
-<MDSexpli.png, id=213, 922.94812pt x 325.96782pt>
+<MDSexpli.png, id=238, 922.94812pt x 325.96782pt>
 File: MDSexpli.png Graphic file (type png)
  <use MDSexpli.png>
 Package pdftex.def Info: MDSexpli.png used on input line 162.
@@ -1069,6 +1057,653 @@ Package pdftex.def Info: polytechnique-logohori.pdf used on input line 167.
 
 Package xcolor Warning: Incompatible color definition on input line 167.
 
-[6]
+[6] <isoexpli.png, id=247, 388.45125pt x 304.88907pt>
+File: isoexpli.png Graphic file (type png)
+ <use isoexpli.png>
+Package pdftex.def Info: isoexpli.png used on input line 174.
+(pdftex.def)             Requested size: 233.07254pt x 182.93484pt.
 
-LaTeX Warning: Reference `6' on page 7 undefi
+
+Package xcolor Warning: Incompatible color definition on input line 186.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 186.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 186.
+
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.186 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.186 
+       <./MDSexpli.png> <./isoexpli.png>]
+<pca2.png, id=257, 722.7pt x 722.7pt>
+File: pca2.png Graphic file (type png)
+ <use pca2.png>
+Package pdftex.def Info: pca2.png used on input line 206.
+(pdftex.def)             Requested size: 361.3491pt x 361.3491pt.
+
+Overfull \hbox (42.1074pt too wide) in paragraph at lines 206--207
+[][] 
+ []
+
+<colors.png, id=258, 637.582pt x 901.769pt>
+File: colors.png Graphic file (type png)
+ <use colors.png>
+Package pdftex.def Info: colors.png used on input line 210.
+(pdftex.def)             Requested size: 95.63316pt x 135.2595pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 224.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 224.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 224.
+
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.224 \end{center}
+                   <./pca2.png> <./colors.png>]
+<3Dpca1.png, id=266, 575.14874pt x 585.18625pt>
+File: 3Dpca1.png Graphic file (type png)
+ <use 3Dpca1.png>
+Package pdftex.def Info: 3Dpca1.png used on input line 238.
+(pdftex.def)             Requested size: 143.78683pt x 146.2962pt.
+
+<3Dpca2.png, id=267, 561.09625pt x 570.13pt>
+File: 3Dpca2.png Graphic file (type png)
+ <use 3Dpca2.png>
+Package pdftex.def Info: 3Dpca2.png used on input line 244.
+(pdftex.def)             Requested size: 140.27371pt x 142.53215pt.
+
+<3Dpca3.png, id=268, 574.145pt x 595.22375pt>
+File: 3Dpca3.png Graphic file (type png)
+ <use 3Dpca3.png>
+Package pdftex.def Info: 3Dpca3.png used on input line 249.
+(pdftex.def)             Requested size: 143.53589pt x 148.80557pt.
+
+<kpca_first.png, id=269, 722.7pt x 578.16pt>
+File: kpca_first.png Graphic file (type png)
+ <use kpca_first.png>
+Package pdftex.def Info: kpca_first.png used on input line 265.
+(pdftex.def)             Requested size: 361.3491pt x 289.07928pt.
+
+Overfull \hbox (42.1074pt too wide) in paragraph at lines 265--267
+ [][] 
+ []
+
+<colorslice.png, id=270, 637.582pt x 901.769pt>
+File: colorslice.png Graphic file (type png)
+ <use colorslice.png>
+Package pdftex.def Info: colorslice.png used on input line 271.
+(pdftex.def)             Requested size: 127.51413pt x 180.3506pt.
+
+Overfull \hbox (1.75562pt too wide) in paragraph at lines 271--273
+ [][] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 277.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 277.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 277.
+
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.277 
+       <./3Dpca1.png> <./3Dpca2.png> <./3Dpca3.png>]
+<3Dkpca1.png, id=279, 553.06625pt x 574.145pt>
+File: 3Dkpca1.png Graphic file (type png)
+ <use 3Dkpca1.png>
+Package pdftex.def Info: 3Dkpca1.png used on input line 287.
+(pdftex.def)             Requested size: 165.92114pt x 172.24483pt.
+
+Overfull \hbox (20.81061pt too wide) in paragraph at lines 287--289
+ [][] 
+ []
+
+<3Dkpca2.png, id=280, 556.0775pt x 591.20876pt>
+File: 3Dkpca2.png Graphic file (type png)
+ <use 3Dkpca2.png>
+Package pdftex.def Info: 3Dkpca2.png used on input line 293.
+(pdftex.def)             Requested size: 166.82454pt x 177.36398pt.
+
+Overfull \hbox (21.714pt too wide) in paragraph at lines 293--295
+ [][] 
+ []
+
+<3Dkpca3.png, id=281, 416.55624pt x 520.94624pt>
+File: 3Dkpca3.png Graphic file (type png)
+ <use 3Dkpca3.png>
+Package pdftex.def Info: 3Dkpca3.png used on input line 298.
+(pdftex.def)             Requested size: 124.96783pt x 156.28508pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 306.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 306.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 306.
+
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.306 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.306 
+       <./kpca_first.png> <./colorslice.png> <./3Dkpca1.png> <./3Dkpca2.png> <.
+/3Dkpca3.png>] <kpca_poly.png, id=293, 722.7pt x 578.16pt>
+File: kpca_poly.png Graphic file (type png)
+ <use kpca_poly.png>
+Package pdftex.def Info: kpca_poly.png used on input line 313.
+(pdftex.def)             Requested size: 361.3491pt x 289.07928pt.
+
+Overfull \hbox (42.1074pt too wide) in paragraph at lines 313--315
+ [][] 
+ []
+
+File: colorslice.png Graphic file (type png)
+<use colorslice.png>
+Package pdftex.def Info: colorslice.png used on input line 319.
+(pdftex.def)             Requested size: 127.51413pt x 180.3506pt.
+
+Overfull \hbox (1.75562pt too wide) in paragraph at lines 319--321
+ [][] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 333.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 333.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 333.
+
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.333 
+       <./kpca_poly.png>] <graphMDS.png, id=305, 433.62pt x 289.08pt>
+File: graphMDS.png Graphic file (type png)
+
+<use graphMDS.png>
+Package pdftex.def Info: graphMDS.png used on input line 336.
+(pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
+ <mds3Da.png, id=306, 818.30719pt x 271.0125pt>
+File: mds3Da.png Graphic file (type png)
+
+<use mds3Da.png>
+Package pdftex.def Info: mds3Da.png used on input line 343.
+(pdftex.def)             Requested size: 409.15259pt x 135.5059pt.
+ <mds3Db.png, id=307, 834.11626pt x 278.54062pt>
+File: mds3Db.png Graphic file (type png)
+
+<use mds3Db.png>
+Package pdftex.def Info: mds3Db.png used on input line 352.
+(pdftex.def)             Requested size: 417.05711pt x 139.26996pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 357.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 357.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 357.
+
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.357 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+13}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.357 
+       <./graphMDS.png> <./mds3Da.png>]
+<graphiso.png, id=317, 433.62pt x 433.62pt>
+File: graphiso.png Graphic file (type png)
+ <use graphiso.png>
+Package pdftex.def Info: graphiso.png used on input line 365.
+(pdftex.def)             Requested size: 346.89647pt x 346.89647pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 370.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 370.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 370.
+
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.370 
+       <./mds3Db.png>] <isoerrorneighbour.png, id=326, 433.62pt x 289.08pt>
+File: isoerrorneighbour.png Graphic file (type png)
+
+<use isoerrorneighbour.png>
+Package pdftex.def Info: isoerrorneighbour.png used on input line 375.
+(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 380.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 380.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 380.
+
+[14pdfTeX warning (ext4): destination with the same identifier (name{figure.15}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.380 
+       <./graphiso.png>] <pcatime.png, id=333, 462.528pt x 346.896pt>
+File: pcatime.png Graphic file (type png)
+
+<use pcatime.png>
+Package pdftex.def Info: pcatime.png used on input line 390.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 394.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 394.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 394.
+
+[15pdfTeX warning (ext4): destination with the same identifier (name{figure.16}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.394 
+       <./isoerrorneighbour.png>] <kpcatime.png, id=339, 361.35pt x 361.35pt>
+File: kpcatime.png Graphic file (type png)
+
+<use kpcatime.png>
+Package pdftex.def Info: kpcatime.png used on input line 401.
+(pdftex.def)             Requested size: 180.67456pt x 180.67456pt.
+ <kpcatimpe.png, id=340, 361.35pt x 361.35pt>
+File: kpcatimpe.png Graphic file (type png)
+
+<use kpcatimpe.png>
+Package pdftex.def Info: kpcatimpe.png used on input line 408.
+(pdftex.def)             Requested size: 180.67456pt x 180.67456pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 420.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 420.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 420.
+
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.17}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.420 	\end{quote}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{figure.18}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.420 	\end{quote}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{figure.19}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.420 	\end{quote}
+                   <./pcatime.png> <./kpcatime.png> <./kpcatimpe.png>]
+<time.png, id=353, 433.62pt x 289.08pt>
+File: time.png Graphic file (type png)
+ <use time.png>
+Package pdftex.def Info: time.png used on input line 428.
+(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
+
+<timeisoneigh.png, id=355, 433.62pt x 289.08pt>
+File: timeisoneigh.png Graphic file (type png)
+ <use timeisoneigh.png>
+Package pdftex.def Info: timeisoneigh.png used on input line 439.
+(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 444.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 444.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 444.
+
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.20}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.444 
+       <./time.png>] <eigen.png, id=362, 361.35pt x 361.35pt>
+File: eigen.png Graphic file (type png)
+ <use eigen.png>
+Package pdftex.def Info: eigen.png used on input line 452.
+(pdftex.def)             Requested size: 216.81168pt x 216.81168pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 456.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 456.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 456.
+
+[18pdfTeX warning (ext4): destination with the same identifier (name{figure.21}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.456 
+       <./timeisoneigh.png>] <temp1.png, id=368, 578.16pt x 578.16pt>
+File: temp1.png Graphic file (type png)
+
+<use temp1.png>
+Package pdftex.def Info: temp1.png used on input line 465.
+(pdftex.def)             Requested size: 231.2599pt x 231.2599pt.
+
+Overfull \hbox (86.14937pt too wide) in paragraph at lines 465--467
+ [][] 
+ []
+
+<temp2.png, id=369, 546.04pt x 533.995pt>
+File: temp2.png Graphic file (type png)
+ <use temp2.png>
+Package pdftex.def Info: temp2.png used on input line 471.
+(pdftex.def)             Requested size: 163.81326pt x 160.19974pt.
+
+Overfull \hbox (18.70273pt too wide) in paragraph at lines 471--473
+ [][] 
+ []
+
+<temp3.png, id=370, 608.2725pt x 597.23125pt>
+File: temp3.png Graphic file (type png)
+ <use temp3.png>
+Package pdftex.def Info: temp3.png used on input line 476.
+(pdftex.def)             Requested size: 182.48315pt x 179.17075pt.
+
+Overfull \hbox (37.37262pt too wide) in paragraph at lines 476--478
+ [][] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 481.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 481.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 481.
+
+[19pdfTeX warning (ext4): destination with the same identifier (name{figure.22}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.481 
+       <./eigen.png>] <esttemp1.png, id=378, 585.18625pt x 573.14125pt>
+File: esttemp1.png Graphic file (type png)
+
+<use esttemp1.png>
+Package pdftex.def Info: esttemp1.png used on input line 486.
+(pdftex.def)             Requested size: 175.55722pt x 171.9437pt.
+
+Overfull \hbox (30.44669pt too wide) in paragraph at lines 486--488
+ [][] 
+ []
+
+<esttemp2.png, id=379, 507.8975pt x 553.06625pt>
+File: esttemp2.png Graphic file (type png)
+ <use esttemp2.png>
+Package pdftex.def Info: esttemp2.png used on input line 492.
+(pdftex.def)             Requested size: 152.37042pt x 165.92114pt.
+
+Overfull \hbox (7.25989pt too wide) in paragraph at lines 492--494
+ [][] 
+ []
+
+<esttemp3.png, id=380, 569.12625pt x 592.2125pt>
+File: esttemp3.png Graphic file (type png)
+ <use esttemp3.png>
+Package pdftex.def Info: esttemp3.png used on input line 497.
+(pdftex.def)             Requested size: 170.73918pt x 177.66512pt.
+
+Overfull \hbox (25.62865pt too wide) in paragraph at lines 497--499
+ [][] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 512.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 512.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 512.
+
+[20pdfTeX warning (ext4): destination with the same identifier (name{figure.23}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.512 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+24}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.512 
+       <./temp1.png> <./temp2.png> <./temp3.png> <./esttemp1.png> <./esttemp2.p
+ng> <./esttemp3.png>] <compmdsiso.png, id=394, 433.62pt x 289.08pt>
+File: compmdsiso.png Graphic file (type png)
+
+<use compmdsiso.png>
+Package pdftex.def Info: compmdsiso.png used on input line 515.
+(pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
+ <isoerrorsamplesizeD.png, id=397, 433.62pt x 289.08pt>
+File: isoerrorsamplesizeD.png Graphic file (type png)
+
+<use isoerrorsamplesizeD.png>
+Package pdftex.def Info: isoerrorsamplesizeD.png used on input line 527.
+(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 532.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 532.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 532.
+
+[21pdfTeX warning (ext4): destination with the same identifier (name{figure.25}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.532 
+       <./compmdsiso.png>] <mdsD.png, id=406, 433.62pt x 289.08pt>
+File: mdsD.png Graphic file (type png)
+
+<use mdsD.png>
+Package pdftex.def Info: mdsD.png used on input line 539.
+(pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 544.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 544.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 544.
+
+[22pdfTeX warning (ext4): destination with the same identifier (name{figure.26}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.544 
+       <./isoerrorsamplesizeD.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 580.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 580.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 580.
+
+[23pdfTeX warning (ext4): destination with the same identifier (name{figure.27}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.580 \noindent
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{figure.28}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.580 \noindent
+                <./mdsD.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 595.
+
+File: polytechnique-logohori.pdf Graphic file (type pdf)
+<use polytechnique-logohori.pdf>
+Package pdftex.def Info: polytechnique-logohori.pdf used on input line 595.
+(pdftex.def)             Requested size: 97.76396pt x 42.67912pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 595.
+
+[24]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 595.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 595.
+ (./Rapport_MAP581.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 595.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 595.
+Package rerunfilecheck Info: File `Rapport_MAP581.out' has not changed.
+(rerunfilecheck)             Checksum: B218034B90788B89D000A08518687692;1269.
+ ) 
+Here is how much of TeX's memory you used:
+ 19607 strings out of 493014
+ 353847 string characters out of 6133352
+ 442320 words of memory out of 5000000
+ 22664 multiletter control sequences out of 15000+600000
+ 67281 words of font info for 57 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 55i,10n,54p,1056b,632s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
+texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/20
+16/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2016/texmf-d
+ist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2016/texmf-dist/fonts/
+enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/l
+m/lmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmcsc10.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2016/te
+xmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/lm/lmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
+ublic/lm/lmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lm
+r8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri12.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Rapport_MAP581.pdf (24 pages, 3914368 bytes).
+PDF statistics:
+ 499 PDF objects out of 1000 (max. 8388607)
+ 326 compressed objects within 4 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 368 words of extra memory for PDF output out of 10000 (max. 10000000)
+
