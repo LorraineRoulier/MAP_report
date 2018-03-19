@@ -40,24 +40,25 @@
 \section{Introduction}
 
  Dimension reduction [\ref{survey}] refers to the process of reducing the number of random variables under consideration. It is an efficient way to analyze a large dataset of high dimension. For instance, dimensionality reduction can be used
-for  \textbf{visualizing}  or  exploring  structure  in  data. It provides a \textbf{simple geometric interpretation} by mapping  in 2D or 3D an original dataset of dimension $ d > 3$ . A 2D or 3D mapping is thus much easy to interpret. In terms of performance, having data of high dimensionality is problematic because it can mean \textbf{high computational cost} to compute. Finally, dimensional reduction is often used for classification. Data samples are being clustered, it is a way to establish clusters of gene and of population for example. It is a current tool in machine learning. 
+for  \textbf{visualizing}  or  exploring  structure  in  data. It provides a \textbf{simple geometric interpretation} by mapping  in 2D or 3D an original dataset of dimension $ d > 3$. A 2D or 3D mapping is thus much easy to interpret. In terms of performance, having data of high dimensionality is problematic because it can mean \textbf{high computational cost} to compute. Finally, dimensional reduction is often used for classification. Data samples are being clustered, it is a way to establish clusters of gene and of population for example. It is a current tool in machine learning. 
 
 In practice, dimension reduction is widely used for denoising  or  compressing  data, and embedded image processing like facial recognition.
 
 \bigskip
-In this project, we explored various dimension reduction techniques. The main way to classify the different methods is to observe if they are linear or non-linear. The basic linear dimension method is a linear one, Principal Component Analysis (PCA). In order to familiarize ourselves with dimension reduction, we implemented this method manually. We explored PCA and its non-linear version, Kernel Principal Component Analysis. We also used Multidimensional scaling (MDS) which is a linear method and Isomap, a non-linear method. 
+In this project, we explored various dimension reduction techniques. The main way to classify the different methods is to observe if they are linear or non-linear. The basic dimension reduction method is a linear one, Principal Component Analysis (PCA). In order to familiarize ourselves with dimension reduction, we implemented this method manually. We explored PCA and its non-linear version, Kernel Principal Component Analysis. We also used Multidimensional scaling (MDS) which is a linear method and Isomap, a non-linear method. 
 
 
 \section{Dataset presentation}
 
 We applied the methods listed above on the dataset we describe here. It is a dataset that contains climate data associated with its position. Our goal is to show that the position on the globe is embedded in the climate data. 
 
-\label{url} Climate data amounts very quickly to a lot of unused data. In a day, we can collect temperature, pressure, wind data all over the world with satellites, even hourly. We used a set of datasets we found on the NASA website, that gathered various means on climate variables over 22 years at every given latitude and longitude. Those datasets can de found here [\ref{dataset}].
+\label{url} Climate data amounts very quickly to a lot of unused data. In a day, we can collect temperature, pressure, wind data all over the world with satellites, even hourly. We used a set of datasets from the NASA website, that gathered various means on climate variables over 22 years at every given latitude and longitude. [\ref{dataset}].
+
 As each variable (temperature, radiation, pressure, wind speed and humidity) was stored in a separate dataset, we first had to merge all of them in a final table presented below. We did not select every dataset given by the NASA because we considered that temperature related data for example were already very correlated and did not add much information. 
 
 \begin{figure}[H]
  \begin{center}
-	\begin{tabular}{|c|c|c|c|c|c|c|}
+	\begin{tabular}{|@{}c|@{}c|@{}c|@{}c|@{}c|@{}c|@{}c|}
 		 \hline    
 	  	Latitude & Longitude &Temperature & Pressure&  Relative Humidity& Wind Speed& Radiation\\ 
 		& & °$C$ & $kPa$ & $ \%$ & $m/s$ & $kWh/m^{2}/day$ \\ 
@@ -67,7 +68,7 @@ As each variable (temperature, radiation, pressure, wind speed and humidity) was
 \caption{Variables of our dataset}
 \end{figure}
 
-The latitude parameter varies from -90 to 89 and the longitude parameter varies from -180 (south pole)  to 179 (north pole). Depending on the running time of the method, we did not compute the dimension reduction with the 64800 samples, but with a subset. 
+The latitude parameter varies from -90 to 89 and the longitude parameter varies from -180 (south pole)  to 179 (north pole). This amounts to a total of 64800 samples. Depending on the running time of the method, we did not compute the dimension reduction with the 64800 samples, but with a subset. 
 The subset is often a slice of longitudes containing all latitudes, as we assumed that the critical parameter to differentiate climate data was the latitude. We will detail the subset considered in every method. 
 
 Since our goal was to see if the position of a location on earth was embedded in it's climate data, we did not use the first two columns of our dataset when computing the dimension reduction methods. 
@@ -102,13 +103,13 @@ We classified the data according to the latitude, creating five classes listed i
 
 \section{Methods}
 
-In all dimension reduction techniques, the main goal is to figure out a similarity function between vectors. Such a function will then enable to sort the dataset into classes of vectors with similar features, which would have been more intricate with the initial dataset. 
+In all dimension reduction techniques, the goal is to preserve the local geometry of the data while reducing its dimension. 
 
 Our project was two sided. First, we familiarized with various dimension reduction techniques, then we attempted to show that the geographical position of a point on the planet - e.g. it's latitude and longitude - were embedded in the climate data one could gather on it. 
 
 	\subsection{Principal Component Analysis - PCA}
 	
-		Principal Component Analysis detects tendencies in the data by maximizing the variance of the dataset matrix. There is an easy approach to understand PCA with a 2D dataset. On Figure \ref{4}, we can see the plot of a 2D-dataset. If we implement 2D-PCA, we will find two new axes that reflect at best the covariance of the samples. Those ares the green axes. PCA just rotates the figure to find a more explicit "point of view". The yielded axes are a linear combination of the original axes. 
+		Principal Component Analysis detects tendencies in the data by maximizing the variance of the dataset matrix. There is an easy approach to understand PCA with a 2D dataset. On Figure \ref{4}, we can see the plot of a 2D-dataset. If we implement 2D-PCA, we will find two new axes that reflect at best the covariance of the samples. Those are the green axes. PCA just rotates the figure to find a more explicit "point of view". The yielded axes are a linear combination of the original axes. 
 		
 		\begin{figure}[H]
  \begin{center}
@@ -118,15 +119,13 @@ Our project was two sided. First, we familiarized with various dimension reducti
 \label{4}
 \end{figure}
 		
-		
-		From a mathematical point of view, PCA yields an orthonormal matrix that can be diagonalized. The largest eigenvalues point to the eigenvectors that contain the most information about the dataset. The dataset can then be projected on a lower dimension using the right eigenvectors.
-		
-		Let $ X \in \mathbb{R}^{d \times n} $ be our dataset where d is the number of variables and n the sample size, PCA maximizes the following equation :
+		From a mathematical point of view, let $ X \in \mathbb{R}^{d \times n} $ be our dataset where d is the number of variables (d = 5) and n the sample size (n = 64000), PCA minimizes the objective function :
 %%
-\[ \| X - MM^{T}X \|^{2}_{F} \]
-subject to $ M \in \mathcal{O}^{d \times r} $ where $ r<d $ and $ \mathcal{O}^{d \times r}  $ is the space of orthonormal matrix and we use the Froebenius norm.
+\[ \| X - MM^{T}X \|^{2}_{F}  ,\]
+subject to $ M \in \mathcal{O}^{d \times r} $ where $ r<d $ and $ \mathcal{O}^{d \times r}  $ is the space of orthonormal matrix,  $ M^{T} $ is the transpose of M and $ \| . \|^{2}_{F} $ is the Froebenius norm.
 
-The maximum of the previous function is reached by the covariance matrix of the dataset: the r greatest eigenvalues of $ XX^{T} = PDP^{T}$ yield the maximum $ M = P_{r} $ where the columns are the eigenvectors associated to the eigenvalues mentioned above. The largest eigenvalues point to the eigenvectors that contain the most information about the dataset. 
+\bigskip
+The minimum of the previous function can be computed from the covariance matrix of the dataset: the r greatest eigenvalues of $ XX^{T} = PDP^{T}$ (where $ D = diag(\lambda_{i}) $) yield the minimum $ M = P_{r} $. The eigenvectors that contain the most information about the dataset correspond to the largest eigenvalues. 
 
 The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this example, there are r principal components for the PCA. Each of the $ M_{ij} $ coefficients of the matrix can be interpreted as weights given to the variable they are associated to. This enables us to interpret which variable of the dataset gives more significant information about the data. 
 
@@ -135,32 +134,37 @@ The new dataset is thus $ Y = P_{r}^{T}X $ of dimensions $ r \times n $. In this
 	Kernel Principal Component analysis is a non linear method for dimension reduction. Instead of directly maximizing the variance of $X$, we map it into a larger dimension space called the feature space, using a non linear function $\phi : \mathbb{R}^{d} \rightarrow \mathbb{R}^{N} $ where $N>d$. 
 	
 	Instead of directly mapping $X$ into the feature space, we use a kernel, that represents a similarity function between pairs. Let $K: \mathbb{R}^{d} \times \mathbb{R}^{d} \rightarrow \mathbb{R} $ be this kernel, then 
-	\[ K(x_{i},x_{j}) = \phi(x_{î})^{T} \phi(x_{j})\]
-where $(x_{i}, x_{j} ) \in \mathbb{R}^{d} \times \mathbb{R}^{d} $ are vectors of the dataset $X$ 
+	\[ K(x_{i},x_{j}) = \phi(x_{i})^{T} \phi(x_{j}),\]
+where $(x_{i}, x_{j} ) \in \mathbb{R}^{d} \times \mathbb{R}^{d} $ are vectors of the dataset $X$.
 	
 	This kernel will enable us to bypass the higher dimension calculation of the variance in the feature space. We only need to compute the pairwise values for $\phi$, but there is no need to explicitly define $\phi$.
 	
 	The downside of this method is that since we don't compute directly the eigenvectors and eigenvalues of $\phi$, the result is the projection of our dataset onto the eigenvectors. We thus don't have access to a simple interpretation of the principal components. 
 	
 	A classic kernel that is often used is the RBF function that is defined below: 
-	 \[ K(x_{i},x_{j}) = e^{- \gamma \| x_{i} - x_{j} \| }\]
+	 \[ K(x_{i},x_{j}) = e^{- \gamma \| x_{i} - x_{j} \|_{2} }.\]
+	 
+	 We used the RBF kernel and the polynomial kernel in this project. The polynomial kernel is defined as follows: 
+	  \[ K(x_{i},x_{j}) = (\gamma x_{i}^{T}x_{j}  + c)^{D},\]
+	  where c is constant, and D is the degree. 
+
 	
 	\subsection{Multidimensional scaling}
 	
 		Multidimensional scaling is a linear approach to reduce dimension of a dataset. The principle is different from PCA: given a matrix of distance or "dissimilarity", MDS aims at reconstructing a map preserving at best the distances between datapoints. In our example, the MDS algorithm aims to place each object in a 2-dimensional space such that the between-object distances are preserved as well as possible.
 		
-	Given a distance matrix D of dimension $ d \times d $ (d=5 for us) , MDS attempts to find the datapoints $y_1$,... $y_n$ in dimension $r<d $(r=2 for us) that minimizes:
+	Given a distance matrix D of dimension $ d \times d $ (d=5 for us) , MDS attempts to find the samples $y_1$,... $y_n$ in dimension $r<d $(r=2 for us) that minimize:
 	
 		 \[\sum\limits_{i=1}^{n}[\sum\limits_{j=1}^{n}d_{ij}^{(X)}-d_{ij}^{(Y)}]
 			\]
 		
-	with $d_{ij}^{(X)}=\|x_i-x_j\|^{2}$ the Euclidean distance between pairwise i and j in the original  $d \times d$ matrix $D^{(X)}$ and $d_{ij}^{(Y)==\|y_i-y_j\|^{2}}$ the Euclidean distance between pairwise i and j in the computed $ r \times r $ matrix $D^{(Y)}$. The new vectors $v_1$,... $v_r$ created in reduced dimension r should be linear combination of the original vectors $v_1$,... $v_d$, which is why MDS is a linear method. In our example, original vectors $v_1$,... $v_5$ are temperature, radiation, pressure, wind speed and humidity.
+	with $d_{ij}^{(X)}=\|x_i-x_j\|^{2}$ the Euclidean distance between pairwise i and j in the original  $d \times d$ matrix $D^{(X)}$ and $d_{ij}^{(Y)==\|y_i-y_j\|^{2}}$ the Euclidean distance between pairwise i and j in the computed $ r \times r $ matrix $D^{(Y)}$. The new vectors $v'_1$,... $v'_r$ created in reduced dimension r should be a linear combination of the original vectors $v_1$,... $v_d$, which is why MDS is a linear method. In our example, original vectors $v_1$,... $v_5$ are temperature, radiation, pressure, wind speed and humidity.
 	
 	A basic approach to understand MDS is to use the example of cities. The input is the distance matrix between cities on the left on figure \ref{5}. MDS enables us to find the coordinates of each city based on this distance matrix.
 	
 	\begin{figure}[H]
  \begin{center}
-	\includegraphics[scale = 0.6]{MDSexpli.png}
+	\includegraphics[scale = 0.5]{MDSexpli.png}
 \end{center}
 \caption{role of MDS  - interpretation}
 \label{5}
@@ -182,31 +186,28 @@ where $(x_{i}, x_{j} ) \in \mathbb{R}^{d} \times \mathbb{R}^{d} $ are vectors of
 
 \section{Results}
 
-For each method, we aimed at reducing the 5D dataset into a 2D or 3D dataset so that we could plot it and interpret it. We analyzed how the five geographical zones were distributed across the map and how much information was preserved. Then, we compare the running time.
+For each method, we aimed at reducing the 5D dataset into a 2D or 3D dataset so that we could plot it and interpret it. We analyzed how the five geographical zones were distributed across the map and how much information was preserved. Then, we compared the running time.
  
 	\subsection{Graphic Interpretation}
 	
-	Graphic interpretation was the key analysis of this dimension reduction project. We plotted the results for each method in 2D or 3D to analyze climate variance and climate similarity across the earth. We also used graphic interpretation to check how accurate the method was at representing the dataset.  
+	Graphic interpretation was the key analysis of this dimension reduction project. We plotted the results for each method in 2D or 3D to analyze climate variance and climate similarity across the earth. We also used graphic interpretation to check how accurate the method was for representing the dataset.  
 	
 		\subsubsection{PCA}
 		
-		We first implemented PCA and ran it with only two principal components, which yielded the graph plotted in figure \ref{7} for the whole dataset. We wrote the eigenvectors $ y_{1} $ and $ y_{2}$ that were used horizontally to make it easier to understand their meaning. 
+		We first implemented PCA and ran it with only two principal components, which yielded the graph plotted in figure \ref{7} for the whole dataset. We wrote the eigenvectors $ y_{1} $ and $ y_{2}$ that were used in the following table.
 		
 \begin{center}
-	\begin{tabular}{ccccc}
+	\begin{tabular}{ccccccc}
 		 \hline    
-		 Temperature & Pressure&  Relative Humidity& Wind Speed& Radiation\\ 
+		& Temperature & Pressure&  Relative Humidity& Wind Speed& Radiation&\\ 
 		\hline
+		$ y_{1} = [\, $ &-0.94 & -0.31 & 0.11 & -0.04 & 0.01 &$ \,] $ \\
+		$ y_{2} = [\, $ & 0.03 &  -0.40 & -0.91 & 0.04 & -0.05 &$ \,] $ \\
 		  \end{tabular}
-\bigskip
-		
-		$ y_{1} = [\,-0.94 \quad -0.31\quad 0.11 \quad -0.04 \quad 0.01\,] $
 
-\bigskip
-		$ y_{2} = [\,  0.03 \quad  -0.40 \quad -0.91 \quad 0.04 \quad -0.05\,] $
 \end{center}
 		
-		This enables us to understand the meaning of these vectors. $ y_{1} $ is mostly related to a decreasing temperature and pressure, and $ y_{2} $ represents decreasing humidity and pressure. 
+		This enables us to understand the meaning of these vectors. $ y_{1} $ is mostly related to a decreasing temperature and pressure, and $ y_{2} $ represents decreasing humidity and pressure. On figure \ref{7}, the regions of higher temperature are on the left of the plot, where the values on the abscisse are negative, because high positive temperatures are applied the coefficient -0.94. 
 
 \begin{figure}[H]
 	\centering
@@ -217,7 +218,7 @@ For each method, we aimed at reducing the 5D dataset into a 2D or 3D dataset so 
          \begin{minipage}[l]{.22\linewidth}
         		\includegraphics[scale=0.15]{colors.png}
     \end{minipage}
-    \caption{PCA with two components}
+    \caption{PCA with two components (r=2)}
     \label{7}
 \end{figure}	
 
@@ -231,13 +232,12 @@ For each method, we aimed at reducing the 5D dataset into a 2D or 3D dataset so 
 		  \end{tabular}
 \end{center}
 
-We can see on the graph that even if there is a strong dispersion, equator values are located at higher temperatures. On the contrary, north and south pole values are located at lower temperatures. Green and red classes overlap as these to categories have similar climate conditions. 
+We can see on figure \ref{7} that even if there is a strong dispersion for their humidity and pressure, equator values are located at higher temperatures. On the contrary, north and south pole values are located at lower temperatures and humidity. Yellow and red classes overlap as these to categories have similar climate conditions. 
 
-Although it is an understandable figure, this is not satisfying. 
-
-		\subsubsection{Three dimensions}
+Although it is an understandable figure, this is not satisfying. First, because of the large dispersion of every region, especially the north temperate zone (in red), second because the different climate areas overlap. We attempt to plot the data in 3D (r=3) in order to find out if the climate areas form better clusters that way.
+\bigskip
 		
-We attempted to run the PCA method with three principal components, it yielded similar results as linear PCA, but some areas with particular climate conditions stood out more strikingly. For example, deserts are located at the bottom of the peak on the third figure below, that maps the dry and hot areas. 
+The result of 3D PCA is not very different from the 2D result: climate zones are still overlapping. However, some areas with particular climate conditions stand out more strikingly. For example, deserts are located at the bottom of the peak on the third plot of figure \ref{8}, that maps the dry and hot areas. 
 		
 \begin{figure}[H]
 	\centering
@@ -258,232 +258,12 @@ We attempted to run the PCA method with three principal components, it yielded s
         		\centering
     \end{minipage}
     \caption{3D PCA  }
+    \label{8}
 \end{figure}
 
-		
-		
-			\subsubsection{Kernel PCA}
-	
-	Kernel PCA has a complexity of $ O(n^{3}) $ so we decided to run it on a subset of our dataset. Here is the two dimension result for all latitudes between longitudes -15 and +15. 
+The main indicator of how much information has been preserved with PCA lies in eigenvalues. We plot the eigenvalues to see their relative importance in the dimension reduction, using the following formula: 
 
-\begin{figure}[H]
-	\centering
-	\begin{minipage}[c]{.66\linewidth}
-       		 \centering
-      		\includegraphics[scale=0.5]{kpca_first.png} %gauche bas droite haut
-		\centering
-        \end{minipage}
-         \hfill%
-         \begin{minipage}[c]{.26\linewidth}
-                  \centering
-        		\includegraphics[scale=0.2]{colorslice.png}
-        		\centering
-		
-    \end{minipage}
-    \caption{Kernel PCA with two components and the RBF kernel}
-\end{figure}
-
-	The black dots are all dots along one longitude, here 15. We see however that there is a degenerescence: -15 and +15 longitude are projected on the same positions. When changing the $ \gamma $, some lines grow appart but most of them stay degenerated.
-	
-	
-	The peak present in the center of the figure is a consequence of the fact that data from each side of the peak even if they are close numerically are not close spatially: they are the data from both north and south pole. 
-	
-\begin{figure}[H]
-	\centering
-	\begin{minipage}[c]{.30\linewidth}
-       		 \centering
-      		\includegraphics[scale=0.3]{3Dkpca1.png} %gauche bas droite haut
-		\centering
-        \end{minipage}
-         \hfill%
-         \begin{minipage}[c]{.30\linewidth}
-                  \centering
-        		\includegraphics[scale=0.3]{3Dkpca2.png}
-        		\centering
-    \end{minipage}
-     \begin{minipage}[c]{.30\linewidth}
-                  \centering
-        		\includegraphics[scale=0.3]{3Dkpca3.png}
-        		\centering
-    \end{minipage}
-    \caption{3D Kernel PCA}
-    \end{figure}	
-
-
-The dots representing the south and north poles are still closer together however, which might come from the smaller range of temperatures and climate conditions reached in these areas. 
-
- Changing the kernel function to a polynomial one however destroyed the degenerescence, but created a node on equatorial values as it can be observed just below. The purple and black lines represent the -15 and 15 longitudes: they are clearly different. 
-
-\begin{figure}[H]
-	\centering
-	\begin{minipage}[c]{.66\linewidth}
-       		 \centering
-      		\includegraphics[scale=0.5]{kpca_poly.png} %gauche bas droite haut
-		\centering
-        \end{minipage}
-         \hfill%
-         \begin{minipage}[c]{.26\linewidth}
-                  \centering
-        		\includegraphics[scale=0.2]{colorslice.png}
-        		\centering
-		
-    \end{minipage}
-    \caption{Kernel PCA with two components and polynomial kernel}
-\end{figure}
-
-However, a flaw of this representation is the space that is taken by the equator area. When representing the temperature in this area, we can see it does not vary very much compared to other regions, however, other variables especially humidity vary a lot as this area gathers tropical and desert areas. Moreover, we saw in table \ref{3} that the equator area contained 40\% of the earth's surface: it makes sense that it should be mapped onto a larger area than the other classes. 
-
-			\subsubsection{Multidimensional Scaling - MDS}
-	
-	As MDS was extremely slow and seemed to use a lot of memory, we could not run the program for more than 600 datapoints (i.e. 600 rows).Therefore, we used a new subset of longitudes between 0° and +5°, reducing the dataset size to 546 datapoints. 
-	Figure \ref{12} shows the results of MDS. As we can see, observations from South pole and North pole are quite compact, that is to say that all points are near each other. There is not a wide range of temperature, pressure, radiation, humidity and wind speed in those regions. This is quite what we expected. 
-	
-	On the contrary, regions like equator and north temperate show a wide range of climate diversity as some points are quite far from each other. It would mean that there are more diverse climate in equator and north temperate. It also seems like south temperate shows less diversity of climate as all the points seem compact. This is not what we expected, as south and north temperate are supposed to have same characteristics. This could be explained by two reasons. \textbf{Either we are missing information because we have reduced too much the dimension, or south hemisphere is quite different because it has much more ocean than the north hemisphere.} To check the first possibility, we implemented MDS in 3D. The results are shown on figures \ref{13} and \ref{14}. As we can see, the yellow points (south temperate) are not as widely spread as the green (equator) or red (north temperate) one. So it seems like the second possibility explain why we have fewer variance of climatic parameters in south temperate.
-	
-	It is worth mentioning that in MDS, South temperate observations are overlapping with observations from North pole and North temperate. This is not what we expected. It seems like MDS is not very adapted to represent the dataset.  This is why we decided to try with isomap. Indeed, as isomap uses the geodesic distance, much adapted to the round shape of earth, we are expecting more accurate results.
-	
-	\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.7]{graphMDS.png}
-\end{center}
-\caption{Results of MDS in 2D}
-\label{12}
-\end{figure}
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.5]{mds3Da.png}
-\end{center}
-\caption{Results of MDS in 3D}
-\label{13}
-\end{figure}
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.5]{mds3Db.png}
-\end{center}
-\caption{Results of MDS in 3D}
-\label{14}
-\end{figure}
-
-To check how accurate MDS is, we used an indicator called stress. It is roughly the square difference between the final distance of two items in the MDS model and the true distance between them. The exact formula is: 
-
-  \[ \sqrt{\frac{\sum\limits_{ij}^{n} d_{ij}^{(X)}-d_{ij}^{(Y)}}{\sum d_{ij}^{(X)}}}
-			\]
-		
-	with $d_{ij}^{(X)}=\|x_i-x_j\|^{2}$ the Euclidean distance between pairwise i and j in the original  $d \times d$ matrix $D^{(X)}$ and $d_{ij}^{(Y)}=\|y_i-y_j\|^{2}$ the Euclidean distance between pairwise i and j in the computed $ r \times r $ matrix $D^{(Y)}$.
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.8]{mdsD.png}
-\end{center}
-\caption{reconstruction error as a function of the sample size for MDS}
-\label{27}
-\end{figure}
-
-As expected, stress is higher in 2D than 3D, because we reduce more dimension (or we suppress a degree of freedom and put more constraint). But this difference gets negligible when sample size increases.
- 
-			\subsubsection{Isomap}
-	
-	As we have mentioned before, Isomap does not compute the Euclidean distance but a geodesic distance. For this, we consider that each point in our dataset has a finite number x of 'nearest neighbors', that is to say the  x nearest points computed with the Euclidean distance. To go from point A to point C in our dataset, one can only 'jump' from one of the nearest neighbor of point A (let's call him B), then one of the nearest neighbor of point B ... Until we reach point C. So the number of nearest neighbor is a key parameter that can completely reshape our final results. For example, if we set a number of nearest neighbor equal to our data set size n, the geodesic distance will be ... the Euclidean norm, and MDS and Isomap would yield the same results. Therefore, we present in figure \ref{15} the result of isomap for a number of neighbors between 2 to 8. 
-	
-	\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.8]{graphiso.png}
-\end{center}
-\caption{results of isomap depending on the number of neighbors considered from 2 to 8}
-\label{15}
-\end{figure}
-
-It is obvious that the number of neighbours considered strongly influence the 2D distribution of our dataset. To know which graph is the most accurate, we refer to the 'reconstruction error'. This reconstruction error is a function embedded in Scikit-Learn. For the moment, we only need to know that it is an indicator of how much isomap mapping is accurate and respect original distance, it kind of computes difference between the final distance of two items in the isomap mapping and the true distance between them. We computed this reconstruction error with respect to the number of neighbours considered. The results are presented in figure \ref{16}.
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.8]{isoerrorneighbour.png}
-\end{center}
-\caption{reconstruction error as a function of number of neighbours considered}
-\label{16}
-\end{figure}
-
-It is interesting to see that from eight neighbors, error seems to stabilize around 2.5. So the most 'accurate' representation should be with 8 neighbors. Indeed, representation  for 6 and 8  neighbors seemed to be the most accurate, because we can browse the entire planet from north pole to south pole, going through all zones in the order, \textbf{which is not the case in MDS}. S\textbf{o isomap better preserve the geometry of the dataset. This is what we expected: geodesic distance is more adapted to the earth due to the round shape of earth.}  It is interesting to see that pink points(i.e. south pole) are much more spread in isomap than MDS.
-
-We also checked how error reconstruction evolves with reduced dimension r (=2 or 3). Results are shown on figure \ref{18}. As the sample size increases, error for 2D isomap keep increasing compare to error in 3D isomap. As expected, error for 2D isomap is bigger than for 3D because we reduce more the dimension.
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.8]{isoerrorsamplesizeD.png}
-\end{center}
-\caption{reconstruction error as a function of the sample size for ISOMAP}
-\label{18}
-\end{figure}
-
-
-\subsection{Time comparison}
-	
-	We implemented manually PCA, but for the other methods we used the built in fonction of the scikit package on python. 
-	PCA's running time varies linearly with the dataset size as we can see on the graphic below 
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.5]{pcatime.png}
-\end{center}
-\caption{running time for PCA}
-\end{figure}
-
-Kernel PCA was slower, we did not compute its running time for all the dataset, only until 12000 rows. It yields the following graph. 
-
-\begin{figure}[H]
-	\centering
-	\begin{minipage}[c]{.46\linewidth}
-       		 \centering
-      		\includegraphics[scale=0.5]{kpcatime.png} %gauche bas droite haut
-		\centering
-		\caption{running time for Kernel PCA}
-        \end{minipage}
-         \hfill%
-         \begin{minipage}[c]{.46\linewidth}
-                  \centering
-        		\includegraphics[scale=0.5]{kpcatimpe.png}
-        		\centering
-		\caption{Kernel PCA running time is a $O(n^{3})$}
-    \end{minipage}
-\end{figure}
-
-	In figure \ref{22}, we present computing time for the four different methods as a function of the sample size.
-	From this we can conclude that the quickest method is PCA. Then come isomap, kernel PCA and finally MDS. It is quite surprising to see that isomap is quicker than MDS for the same sample size. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. We found an explanation on the 'manifold guide' of Scikit-Learn:
-	
-	\begin{quotation}
-\begin{quote}
-"`In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensional Scaling on the S-Curve dataset [...]. In the third stage of algorithm, the implementation uses Partial Eigen Value decomposition instead of MDS which is the version proposed by the researchers."'	
-	\end{quote}		
-	\end{quotation}
-	
-	We did not use the 'S curve dataset' as mentioned above, but we may think that due to the round shape of earth, our dataset is quite similar to the S-curve and thus Isomap runs faster than MDS. For a fixed dimension d (=5 here), the following graph presents the complexity of every method.
-
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.8]{time.png}
-\end{center}
-\caption{computing time comparison}
-\label{22}
-\end{figure}
-
-
-We also checked how computing time of isomap varies with the number of neighbor taken into account. Figure \ref{23} shows that running time for isomap increases with the number of neighbors. So running time of isomap may be limited by the number of neighbors.
-
-\begin{figure}[H]
- \begin{center}
-	\includegraphics[scale = 0.8]{timeisoneigh.png}
-\end{center}
-\caption{computing time for isomap as a function of the number of neighbors considered}
-\label{23}
-\end{figure}
-
-\subsection{Error and preserved information}
-\subsubsection{PCA}
-
-	The main indicator of how much information has been preserved with PCA lies in eigenvalues. We plot the eigenvalues to see their relative importance in the dimension reduction.
+\[ \frac{ \sum_{i = 0}^{r} \lambda_{i}}{\sum_{i = 0}^{d} \lambda_{i}} .	\]
 
 \begin{figure}[H]
  \begin{center}
@@ -538,8 +318,294 @@ We also reconstructed the dataset from its projection with PCA. It is indeed pos
     \caption{Temperature as a function of latitude and longitude in $\hat{X}$ }
 \end{figure}
 
+As we mentioned earlier, we were not entirely satisfied by the figures yielded with PCA. The natural alternative to PCA was its non-linear counterpart, Kernel PCA. The results of this method are described in the next section. 
 
+	
+			\subsubsection{Kernel PCA}
+	
+	Kernel PCA has a complexity of $ O(n^{3}) $ so we decided to run it on a subset of our dataset. Here is the two dimension result for all latitudes between longitudes -15 and +15. 
+
+We first plot what kernel PCA would yield ideally with the RBF kernel. That means that instead of keeping the five climate variables we choose to keep only the latitude and longitude in the dataset. 
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[c]{.66\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.5]{kpca_first.png} %gauche bas droite haut
+		\centering
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.26\linewidth}
+                  \centering
+        		\includegraphics[scale=0.2]{colorslice.png}
+        		\centering
 		
+    \end{minipage}
+    \caption{Ideal Kernel PCA with two components and the RBF kernel}
+\end{figure}
+
+	The black dots are all dots along one longitude, here 15. We see however that there is a degeneracy: -15 and +15 longitude are projected on the same positions. When changing the $ \gamma $, some lines grow appart but most of them stay degenerated.
+	
+	The peak present in the center of the figure is a consequence of the fact that data from each side of the peak even if they are close numerically are not close spatially: they are the data from both north and south pole. 
+The dots representing the south and north poles are closer together, which might come from the smaller range of temperatures and climate conditions reached in these areas. 
+
+\bigskip
+The result we yield for the actual dataset is presented on figure \ref{13}.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[c]{.66\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.5]{kpca_rbf01.png} %gauche bas droite haut
+		\centering
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.26\linewidth}
+                  \centering
+        		\includegraphics[scale=0.2]{colorslice.png}
+        		\centering
+		
+    \end{minipage}
+    \caption{Kernel PCA with two components and the RBF kernel, $ \gamma = 0.05$}
+    \label{13}
+\end{figure}
+
+The great expansion of the yellow, green and red areas, is a common result with PCA, that can be explained by the larger spacial expansion of these areas and the larger variability of the climate samples. We see however that the green dots seem to be closer together and with a clearer direction than yellow and red samples. The blue peak sets another clear direction for the data: the poles where the climate is cold and less humid. 
+
+\bigskip
+The 3D version presented on figure \ref{14} shows a smoother representation of the data, and the second figure is especially interesting as it almost features all longitudes along a circle. In blue and green, some lines can be seen, that each represent one latitude. 
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[r]{.30\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.4]{kpca_rbf0053d.png} %gauche bas droite haut
+		\centering
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.25\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{kpca_rbf0053d2.png}
+        		\centering
+    \end{minipage}
+     \begin{minipage}[l]{.30\linewidth}
+                  \centering
+        		\includegraphics[scale=0.4]{kpca_rbf013d.png}
+        		\centering
+    \end{minipage}
+    \caption{3D Kernel PCA, RBF Kernel, $ \gamma = 0.05$}
+    \label{14} 
+    \end{figure}	
+
+We were able to reconstruct the data from its projection, and we plotted the difference between the temperature and the reconstructed temperature $ T - \hat{T} $ on figure \ref{15}.
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.5]{kpca_rbf005err.png}
+\end{center}
+\caption{Difference between initial and reconstructed temperature}
+\label{15}
+\end{figure}
+
+The reconstruction error for the temperature is especially bad for the south pole and the equator zones. The main parameter that we can influence is the form of the kernel. We change the kernel function to a polynomial one. This destroys the degeneracy in the ideal case (figure \ref{16}), but creates a node on equatorial values. The purple and black lines represent the -15 and 15 longitudes: they are clearly different. The node in the equatorial values is problematic as those are supposed to be the most dispersed samples. 
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[c]{.66\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.5]{kpca_poly.png} %gauche bas droite haut
+		\centering
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.26\linewidth}
+                  \centering
+        		\includegraphics[scale=0.2]{colorslice.png}
+        		\centering
+		
+    \end{minipage}
+    \caption{Kernel PCA with two components and polynomial kernel}
+    \label{16}
+\end{figure}
+
+The results yielded by Kernel PCA with a polynomial kernel are represented on figure \ref{17} for various degrees. 
+
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[r]{.30\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.3]{kpca_poly2.png} %gauche bas droite haut
+		\centering
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.25\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{kpca_poly5.png}
+        		\centering
+    \end{minipage}
+    \hfill
+     \begin{minipage}[l]{.30\linewidth}
+                  \centering
+        		\includegraphics[scale=0.3]{kpca_poly10.png}
+        		\centering
+    \end{minipage}
+    \caption{ Kernel PCA, polynomial Kernel, degrees 2, 5, 10}
+    \label{17} 
+    \end{figure}	
+
+The polynomial kernel also yields more or less overlapping zones, and the degree of the kernel has a relative influence on the projection. It seems that for lower degrees, the south pole (in pink) takes a large space separate from the other zones, which is unexpected. When the kernel degree is 10, it seems that the areas begin to grow appart, an the pink area takes up less space. 
+
+A 3D representation of the data shows that the blue and yellow areas, that seem to overlap in 2D are actually appart, but remain close. There is no explanation for this proximity since the south temperate zone and the north pole should not have similar climate data. However, they are the zones that contain the most ocean proportion, which may explain their proximity.
+
+			\subsubsection{Multidimensional Scaling - MDS}
+	
+	As MDS was extremely slow and seemed to use a lot of memory, we could not run the program for more than 600 datapoints (i.e. 600 rows).Therefore, we used a new subset of longitudes between 0° and +5°, reducing the dataset size to 546 datapoints. 
+	Figure \ref{18} shows the results of MDS. As we can see, observations from South pole and North pole are quite compact, that is to say that all points are near each other. There is not a wide range of temperature, pressure, radiation, humidity and wind speed in those regions. This is quite what we expected. 
+	
+\bigskip
+	On the contrary, regions like equator and north temperate show a wide range of climate diversity as some points are quite far from each other. It would mean that there are more diverse climate in equator and north temperate. It also seems like south temperate shows less diversity of climate as all the points seem compact. This is not what we expected, as south and north temperate are supposed to have same characteristics. This could be explained by two reasons. \textbf{Either we are missing information because we have reduced too much the dimension, or south hemisphere is quite different because it has much more ocean than the north hemisphere.} To check the first possibility, we implemented MDS in 3D. The results are shown on figures \ref{19} and \ref{20}. As we can see, the yellow points (south temperate) are not as widely spread as the green (equator) or red (north temperate) one. So it seems like the second possibility explain why we have fewer variance of climatic parameters in south temperate.
+	
+\bigskip
+It is interesting to see that MDS and Kernel PCA with a polynomial kernel render a similar representation of the data, which can be easily explained by the fact that a polynomial kernel (especially of degree 2) is close to an Euclidian distance. 
+
+\bigskip
+	It is worth mentioning that in MDS, South temperate observations are overlapping with observations from North pole and North temperate. This is not what we expected. It seems like MDS is not very adapted to represent the dataset.  This is why we decided to try with isomap. Indeed, as isomap uses the geodesic distance, much adapted to the round shape of earth, we are expecting more accurate results.
+	
+	\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.7]{graphMDS.png}
+\end{center}
+\caption{Results of MDS in 2D}
+\label{18}
+\end{figure}
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.5]{mds3Da.png}
+\end{center}
+\caption{Results of MDS in 3D}
+\label{19}
+\end{figure}
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.5]{mds3Db.png}
+\end{center}
+\caption{Results of MDS in 3D}
+\label{20}
+\end{figure}
+
+To check how accurate MDS is, we used an indicator called stress. It is roughly the square difference between the final distance of two items in the MDS model and the true distance between them. The exact formula is: 
+
+  \[ \sqrt{\frac{\sum\limits_{ij}^{n} d_{ij}^{(X)}-d_{ij}^{(Y)}}{\sum d_{ij}^{(X)}}}
+			\]
+		
+	with $d_{ij}^{(X)}=\|x_i-x_j\|^{2}$ the Euclidean distance between pairwise i and j in the original  $d \times d$ matrix $D^{(X)}$ and $d_{ij}^{(Y)}=\|y_i-y_j\|^{2}$ the Euclidean distance between pairwise i and j in the computed $ r \times r $ matrix $D^{(Y)}$.
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{mdsD.png}
+\end{center}
+\caption{reconstruction error as a function of the sample size for MDS}
+\label{27}
+\end{figure}
+
+As expected, stress is higher in 2D than 3D, because we reduce more dimension (or we suppress a degree of freedom and put more constraint). But this difference gets negligible when sample size increases.
+ 
+			\subsubsection{Isomap}
+	
+	As we have mentioned before, Isomap does not compute the Euclidean distance but a geodesic distance. For this, we consider that each point in our dataset has a finite number x of 'nearest neighbors', that is to say the  x nearest points computed with the Euclidean distance. To go from point A to point C in our dataset, one can only 'jump' from one of the nearest neighbor of point A (let's call him B), then one of the nearest neighbor of point B ... Until we reach point C. So the number of nearest neighbor is a key parameter that can completely reshape our final results. For example, if we set a number of nearest neighbor equal to our data set size n, the geodesic distance will be ... the Euclidean norm, and MDS and Isomap would yield the same results. Therefore, we present in figure \ref{21} the result of isomap for a number of neighbors between 2 to 8. 
+	
+	\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{graphiso.png}
+\end{center}
+\caption{results of isomap depending on the number of neighbors considered from 2 to 8}
+\label{21}
+\end{figure}
+
+It is obvious that the number of neighbours considered strongly influence the 2D distribution of our dataset. To know which graph is the most accurate, we refer to the 'reconstruction error'. This reconstruction error is a function embedded in Scikit-Learn. For the moment, we only need to know that it is an indicator of how much isomap mapping is accurate and respect original distance, it kind of computes difference between the final distance of two items in the isomap mapping and the true distance between them. We computed this reconstruction error with respect to the number of neighbours considered. The results are presented in figure \ref{22}.
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{isoerrorneighbour.png}
+\end{center}
+\caption{reconstruction error as a function of number of neighbours considered}
+\label{22}
+\end{figure}
+
+It is interesting to see that from eight neighbors, error seems to stabilize around 2.5. So the most 'accurate' representation should be with 8 neighbors. Indeed, representation  for 6 and 8  neighbors seemed to be the most accurate, because we can browse the entire planet from north pole to south pole, going through all zones in the order, \textbf{which is not the case in MDS}. S\textbf{o isomap better preserve the geometry of the dataset. This is what we expected: geodesic distance is more adapted to the earth due to the round shape of earth.}  It is interesting to see that pink points(i.e. south pole) are much more spread in isomap than MDS.
+
+We also checked how error reconstruction evolves with reduced dimension r (=2 or 3). Results are shown on figure \ref{23}. As the sample size increases, error for 2D isomap keep increasing compare to error in 3D isomap. As expected, error for 2D isomap is bigger than for 3D because we reduce more the dimension.
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{isoerrorsamplesizeD.png}
+\end{center}
+\caption{reconstruction error as a function of the sample size for ISOMAP}
+\label{23}
+\end{figure}
+
+
+\subsection{Time comparison}
+	
+	We implemented manually PCA, but for the other methods we used the built in fonction of the scikit package on python. 
+	PCA's running time varies linearly with the dataset size as we can see on the graphic below 
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.5]{pcatime.png}
+\end{center}
+\caption{running time for PCA}
+\end{figure}
+
+Kernel PCA was slower, we did not compute its running time for all the dataset, only until 12000 rows. It yields the following graph. 
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[c]{.46\linewidth}
+       		 \centering
+      		\includegraphics[scale=0.5]{kpcatime.png} %gauche bas droite haut
+		\centering
+		\caption{running time for Kernel PCA}
+        \end{minipage}
+         \hfill%
+         \begin{minipage}[c]{.46\linewidth}
+                  \centering
+        		\includegraphics[scale=0.5]{kpcatimpe.png}
+        		\centering
+		\caption{Kernel PCA running time is a $O(n^{3})$}
+    \end{minipage}
+\end{figure}
+
+	In figure \ref{time}, we present computing time for the four different methods as a function of the sample size.
+	From this we can conclude that the quickest method is PCA. Then come isomap, kernel PCA and finally MDS. It is quite surprising to see that isomap is quicker than MDS for the same sample size. Indeed, isomap uses the same algorithm than MDS but also needs to compute distance with neighbors first. It is thus expected to be slower. We found an explanation on the 'manifold guide' of Scikit-Learn:
+	
+	\begin{quotation}
+\begin{quote}
+"`In Scikit-Learn implementation, Isomap algorithm runs faster that Multi Dimensional Scaling on the S-Curve dataset [...]. In the third stage of algorithm, the implementation uses Partial Eigen Value decomposition instead of MDS which is the version proposed by the researchers."'	
+	\end{quote}		
+	\end{quotation}
+	
+	We did not use the 'S curve dataset' as mentioned above, but we may think that due to the round shape of earth, our dataset is quite similar to the S-curve and thus Isomap runs faster than MDS. For a fixed dimension d (=5 here), the following graph presents the complexity of every method.
+
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{time.png}
+\end{center}
+\caption{computing time comparison}
+\label{time}
+\end{figure}
+
+
+We also checked how computing time of isomap varies with the number of neighbor taken into account. Figure \ref{29} shows that running time for isomap increases with the number of neighbors. So running time of isomap may be limited by the number of neighbors.
+
+\begin{figure}[H]
+ \begin{center}
+	\includegraphics[scale = 0.8]{timeisoneigh.png}
+\end{center}
+\caption{computing time for isomap as a function of the number of neighbors considered}
+\label{29}
+\end{figure}		
 		
 \section{Conclusion}
 
