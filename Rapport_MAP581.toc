@@ -10,12 +10,11 @@
 \contentsline {subsection}{\numberline {4.1}Graphic Interpretation}{8}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}PCA}{8}{subsubsection.4.1.1}
 \contentsline {subsubsection}{\numberline {4.1.2}Three dimensions}{9}{subsubsection.4.1.2}
-\contentsline {subsubsection}{\numberline {4.1.3}Kernel PCA}{9}{subsubsection.4.1.3}
-\contentsline {subsubsection}{\numberline {4.1.4}Multidimensional Scaling - MDS}{11}{subsubsection.4.1.4}
-\contentsline {subsubsection}{\numberline {4.1.5}Isomap}{13}{subsubsection.4.1.5}
-\contentsline {subsection}{\numberline {4.2}Time comparison}{15}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Error and preserved information}{18}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}PCA}{18}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}MDS and isomap}{20}{subsubsection.4.3.2}
-\contentsline {section}{\numberline {5}Conclusion}{23}{section.5}
-\contentsline {section}{\numberline {6}Bibliography}{24}{section.6}
+\contentsline {subsubsection}{\numberline {4.1.3}Kernel PCA}{10}{subsubsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.4}Multidimensional Scaling - MDS}{12}{subsubsection.4.1.4}
+\contentsline {subsubsection}{\numberline {4.1.5}Isomap}{15}{subsubsection.4.1.5}
+\contentsline {subsection}{\numberline {4.2}Time comparison}{17}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Error and preserved information}{20}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}PCA}{20}{subsubsection.4.3.1}
+\contentsline {section}{\numberline {5}Conclusion}{21}{section.5}
+\contentsline {section}{\numberline {6}Bibliography}{22}{section.6}
